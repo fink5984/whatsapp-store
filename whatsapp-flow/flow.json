@@ -489,12 +489,8 @@
       "data": {
         "headline": { "type": "string", "__example__": "ההזמנה התקבלה" },
         "body": { "type": "string", "__example__": "" },
-        "extension_message_response": {
-          "type": "object",
-          "__example__": {
-            "params": { "flow_token": "completed", "order_number": "12345" }
-          }
-        }
+        "flow_token_param": { "type": "string", "__example__": "completed" },
+        "order_number_param": { "type": "string", "__example__": "12345" }
       },
       "layout": {
         "type": "SingleColumnLayout",
@@ -506,7 +502,10 @@
             "label": "סיום",
             "on-click-action": {
               "name": "complete",
-              "payload": "${data.extension_message_response}"
+              "payload": {
+                "flow_token": "${data.flow_token_param}",
+                "order_number": "${data.order_number_param}"
+              }
             }
           }
         ]

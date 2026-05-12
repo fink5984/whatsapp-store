@@ -304,14 +304,10 @@ export function buildSuccessScreen(order: {
   return {
     screen: 'SUCCESS',
     data: {
-      extension_message_response: {
-        params: {
-          flow_token: 'completed',
-          order_number: String(order.order_number),
-        },
-      },
       headline,
       body,
+      flow_token_param: 'completed',
+      order_number_param: String(order.order_number),
     },
   };
 }
