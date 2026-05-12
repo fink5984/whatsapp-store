@@ -615,6 +615,7 @@
       "id": "ORDER_CONFIRMED",
       "title": "סיום",
       "terminal": true,
+      "refresh_on_back": true,
       "data": {
         "headline": { "type": "string", "__example__": "ההזמנה התקבלה" },
         "body": { "type": "string", "__example__": "" }
