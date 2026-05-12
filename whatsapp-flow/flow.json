@@ -1,0 +1,516 @@
+{
+  "version": "5.1",
+  "data_api_version": "3.0",
+  "routing_model": {
+    "STORE_SEARCH": ["STORE_RESULTS"],
+    "STORE_RESULTS": ["STORE_WELCOME"],
+    "STORE_WELCOME": ["CATEGORY_SELECT"],
+    "CATEGORY_SELECT": ["PRODUCT_SELECT"],
+    "PRODUCT_SELECT": ["PRODUCT_CUSTOMIZE"],
+    "PRODUCT_CUSTOMIZE": ["CART"],
+    "CART": ["CATEGORY_SELECT", "DELIVERY_METHOD"],
+    "DELIVERY_METHOD": ["CUSTOMER_DETAILS"],
+    "CUSTOMER_DETAILS": ["ORDER_SUMMARY", "CUSTOMER_DETAILS"],
+    "ORDER_SUMMARY": ["SUCCESS"],
+    "SUCCESS": []
+  },
+  "screens": [
+    {
+      "id": "STORE_SEARCH",
+      "title": "מצא חנות",
+      "data": {
+        "title": { "type": "string", "__example__": "מצא חנות" },
+        "subtitle": { "type": "string", "__example__": "חפש לפי שם, קוד או עיר" },
+        "error_message": { "type": "string", "__example__": "" },
+        "has_error": { "type": "boolean", "__example__": false }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.title}" },
+          { "type": "TextSubheading", "text": "${data.subtitle}" },
+          {
+            "type": "TextBody",
+            "text": "${data.error_message}",
+            "visible": "${data.has_error}"
+          },
+          {
+            "type": "TextInput",
+            "name": "query",
+            "label": "שם החנות / קוד",
+            "required": false
+          },
+          {
+            "type": "TextInput",
+            "name": "city",
+            "label": "עיר",
+            "required": false
+          },
+          {
+            "type": "TextInput",
+            "name": "category",
+            "label": "קטגוריה",
+            "required": false
+          },
+          {
+            "type": "Footer",
+            "label": "חפש חנות",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "search_stores",
+                "query": "${form.query}",
+                "city": "${form.city}",
+                "category": "${form.category}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "STORE_RESULTS",
+      "title": "תוצאות חיפוש",
+      "data": {
+        "title": { "type": "string", "__example__": "נמצאו 3 חנויות" },
+        "stores": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          },
+          "__example__": [
+            { "id": "s1", "title": "פיצה נאפולי · תל אביב", "description": "פיצריה" }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.title}" },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "store_id",
+            "label": "בחר חנות",
+            "required": true,
+            "data-source": "${data.stores}"
+          },
+          {
+            "type": "Footer",
+            "label": "בחר חנות",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": { "step": "select_store", "store_id": "${form.store_id}" }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "STORE_WELCOME",
+      "title": "ברוכים הבאים",
+      "data": {
+        "store_id": { "type": "string", "__example__": "" },
+        "store_name": { "type": "string", "__example__": "פיצה נאפולי" },
+        "description": { "type": "string", "__example__": "ברוכים הבאים" },
+        "details": { "type": "string", "__example__": "" }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.store_name}" },
+          { "type": "TextBody", "text": "${data.description}" },
+          { "type": "TextBody", "text": "${data.details}" },
+          {
+            "type": "Footer",
+            "label": "התחל הזמנה",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": { "step": "get_categories" }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "CATEGORY_SELECT",
+      "title": "קטגוריות",
+      "data": {
+        "title": { "type": "string", "__example__": "בחר קטגוריה" },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          },
+          "__example__": [{ "id": "c1", "title": "פיצות", "description": "" }]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.title}" },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "category_id",
+            "label": "קטגוריה",
+            "required": true,
+            "data-source": "${data.categories}"
+          },
+          {
+            "type": "Footer",
+            "label": "המשך",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "get_products",
+                "category_id": "${form.category_id}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "PRODUCT_SELECT",
+      "title": "מוצרים",
+      "data": {
+        "title": { "type": "string", "__example__": "מוצרים" },
+        "category_name": { "type": "string", "__example__": "" },
+        "category_id": { "type": "string", "__example__": "" },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          },
+          "__example__": [{ "id": "p1", "title": "מרגריטה", "description": "₪58" }]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.title}" },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "product_id",
+            "label": "בחר מוצר",
+            "required": true,
+            "data-source": "${data.products}"
+          },
+          {
+            "type": "Footer",
+            "label": "בחר מוצר",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "select_product",
+                "product_id": "${form.product_id}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "PRODUCT_CUSTOMIZE",
+      "title": "התאם את המוצר",
+      "data": {
+        "product_id": { "type": "string", "__example__": "" },
+        "product_name": { "type": "string", "__example__": "פיצה מרגריטה" },
+        "product_description": { "type": "string", "__example__": "" },
+        "price": { "type": "string", "__example__": "₪58" },
+        "max_quantity": { "type": "number", "__example__": 20 },
+        "allow_note": { "type": "boolean", "__example__": true },
+        "group_1": {
+          "type": "object",
+          "__example__": {
+            "visible": true, "name": "גודל", "use_multi": false,
+            "options": [{ "id": "g1o1", "title": "S" }]
+          },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "name": { "type": "string" },
+            "use_multi": { "type": "boolean" },
+            "is_required": { "type": "boolean" },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+              }
+            }
+          }
+        },
+        "group_2": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } },
+        "group_3": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } },
+        "group_4": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } },
+        "group_5": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.product_name}" },
+          { "type": "TextBody", "text": "${data.product_description}" },
+          { "type": "TextBody", "text": "${data.price}" },
+
+          {
+            "type": "TextInput",
+            "name": "quantity",
+            "label": "כמות",
+            "input-type": "number",
+            "init-value": "1",
+            "required": true
+          },
+
+          { "type": "TextSubheading", "text": "${data.group_1.name}", "visible": "${data.group_1.visible}" },
+          { "type": "RadioButtonsGroup", "name": "group_1_choice", "label": "בחר", "visible": "${data.group_1.visible}", "data-source": "${data.group_1.options}" },
+
+          { "type": "TextSubheading", "text": "${data.group_2.name}", "visible": "${data.group_2.visible}" },
+          { "type": "CheckboxGroup", "name": "group_2_choice", "label": "בחר", "visible": "${data.group_2.visible}", "data-source": "${data.group_2.options}" },
+
+          { "type": "TextSubheading", "text": "${data.group_3.name}", "visible": "${data.group_3.visible}" },
+          { "type": "CheckboxGroup", "name": "group_3_choice", "label": "בחר", "visible": "${data.group_3.visible}", "data-source": "${data.group_3.options}" },
+
+          { "type": "TextSubheading", "text": "${data.group_4.name}", "visible": "${data.group_4.visible}" },
+          { "type": "CheckboxGroup", "name": "group_4_choice", "label": "בחר", "visible": "${data.group_4.visible}", "data-source": "${data.group_4.options}" },
+
+          { "type": "TextSubheading", "text": "${data.group_5.name}", "visible": "${data.group_5.visible}" },
+          { "type": "CheckboxGroup", "name": "group_5_choice", "label": "בחר", "visible": "${data.group_5.visible}", "data-source": "${data.group_5.options}" },
+
+          { "type": "TextInput", "name": "note", "label": "הערה", "required": false, "visible": "${data.allow_note}" },
+
+          {
+            "type": "Footer",
+            "label": "הוסף לעגלה",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "add_to_cart",
+                "product_id": "${data.product_id}",
+                "quantity": "${form.quantity}",
+                "group_1_choice": "${form.group_1_choice}",
+                "group_2_choice": "${form.group_2_choice}",
+                "group_3_choice": "${form.group_3_choice}",
+                "group_4_choice": "${form.group_4_choice}",
+                "group_5_choice": "${form.group_5_choice}",
+                "note": "${form.note}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "CART",
+      "title": "העגלה שלך",
+      "data": {
+        "is_empty": { "type": "boolean", "__example__": false },
+        "cart_summary": { "type": "string", "__example__": "1 × פיצה — 58 ₪" },
+        "item_count": { "type": "number", "__example__": 1 },
+        "total": { "type": "string", "__example__": "58 ₪" }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "העגלה שלך" },
+          { "type": "TextBody", "text": "${data.cart_summary}" },
+          { "type": "TextSubheading", "text": "סך הכל: ${data.total}" },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "cart_action",
+            "label": "מה תרצה לעשות?",
+            "required": true,
+            "data-source": [
+              { "id": "checkout", "title": "המשך להזמנה" },
+              { "id": "add_more", "title": "הוסף מוצר נוסף" },
+              { "id": "clear_cart", "title": "נקה עגלה" }
+            ]
+          },
+          {
+            "type": "Footer",
+            "label": "המשך",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": { "step": "${form.cart_action}" }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "DELIVERY_METHOD",
+      "title": "אופן ההזמנה",
+      "data": {
+        "store_id": { "type": "string", "__example__": "" },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          },
+          "__example__": [
+            { "id": "delivery", "title": "משלוח לכתובת" },
+            { "id": "pickup", "title": "איסוף עצמי" }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "איך תרצה לקבל?" },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "delivery_type",
+            "label": "בחר",
+            "required": true,
+            "data-source": "${data.methods}"
+          },
+          {
+            "type": "Footer",
+            "label": "המשך",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "set_delivery_method",
+                "delivery_type": "${form.delivery_type}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "CUSTOMER_DETAILS",
+      "title": "פרטי הלקוח",
+      "data": {
+        "is_delivery": { "type": "boolean", "__example__": true },
+        "customer_name": { "type": "string", "__example__": "" },
+        "customer_phone": { "type": "string", "__example__": "" },
+        "customer_email": { "type": "string", "__example__": "" },
+        "city": { "type": "string", "__example__": "" },
+        "address": { "type": "string", "__example__": "" },
+        "floor": { "type": "string", "__example__": "" },
+        "apartment": { "type": "string", "__example__": "" },
+        "note": { "type": "string", "__example__": "" },
+        "error_message": { "type": "string", "__example__": "" },
+        "has_error": { "type": "boolean", "__example__": false }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "פרטי הלקוח" },
+          { "type": "TextBody", "text": "${data.error_message}", "visible": "${data.has_error}" },
+          { "type": "TextInput", "name": "customer_name", "label": "שם מלא", "required": true, "init-value": "${data.customer_name}" },
+          { "type": "TextInput", "name": "customer_phone", "label": "טלפון", "input-type": "phone", "required": true, "init-value": "${data.customer_phone}" },
+          { "type": "TextInput", "name": "customer_email", "label": "אימייל", "input-type": "email", "required": false, "init-value": "${data.customer_email}" },
+          { "type": "TextInput", "name": "city", "label": "עיר", "required": false, "init-value": "${data.city}", "visible": "${data.is_delivery}" },
+          { "type": "TextInput", "name": "address", "label": "כתובת", "required": false, "init-value": "${data.address}", "visible": "${data.is_delivery}" },
+          { "type": "TextInput", "name": "floor", "label": "קומה", "required": false, "init-value": "${data.floor}", "visible": "${data.is_delivery}" },
+          { "type": "TextInput", "name": "apartment", "label": "דירה", "required": false, "init-value": "${data.apartment}", "visible": "${data.is_delivery}" },
+          { "type": "TextInput", "name": "note", "label": "הערה לבית העסק", "required": false, "init-value": "${data.note}" },
+          {
+            "type": "Footer",
+            "label": "המשך לסיכום",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "validate_customer_details",
+                "customer_name": "${form.customer_name}",
+                "customer_phone": "${form.customer_phone}",
+                "customer_email": "${form.customer_email}",
+                "city": "${form.city}",
+                "address": "${form.address}",
+                "floor": "${form.floor}",
+                "apartment": "${form.apartment}",
+                "note": "${form.note}"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ORDER_SUMMARY",
+      "title": "סיכום הזמנה",
+      "data": {
+        "order_summary": { "type": "string", "__example__": "" },
+        "subtotal": { "type": "string", "__example__": "" },
+        "delivery_fee": { "type": "string", "__example__": "" },
+        "total": { "type": "string", "__example__": "" },
+        "customer_name": { "type": "string", "__example__": "" },
+        "customer_phone": { "type": "string", "__example__": "" },
+        "address": { "type": "string", "__example__": "" },
+        "estimated_minutes": { "type": "number", "__example__": 30 }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "סיכום הזמנה" },
+          { "type": "TextBody", "text": "${data.order_summary}" },
+          { "type": "TextSubheading", "text": "סכום ביניים: ${data.subtotal}" },
+          { "type": "TextSubheading", "text": "משלוח: ${data.delivery_fee}" },
+          { "type": "TextSubheading", "text": "סך הכל: ${data.total}" },
+          { "type": "TextBody", "text": "${data.customer_name} · ${data.customer_phone}" },
+          { "type": "TextBody", "text": "${data.address}" },
+          { "type": "TextBody", "text": "זמן הכנה משוער: ${data.estimated_minutes} דקות" },
+          {
+            "type": "Footer",
+            "label": "אשר הזמנה",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": { "step": "submit_order" }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "SUCCESS",
+      "title": "סיום",
+      "terminal": true,
+      "success": true,
+      "data": {
+        "headline": { "type": "string", "__example__": "ההזמנה התקבלה" },
+        "body": { "type": "string", "__example__": "" },
+        "extension_message_response": {
+          "type": "object",
+          "__example__": {
+            "params": { "flow_token": "completed", "order_number": "12345" }
+          }
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.headline}" },
+          { "type": "TextBody", "text": "${data.body}" },
+          {
+            "type": "Footer",
+            "label": "סיום",
+            "on-click-action": {
+              "name": "complete",
+              "payload": "${data.extension_message_response}"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
