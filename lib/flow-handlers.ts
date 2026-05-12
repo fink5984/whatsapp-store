@@ -63,25 +63,26 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
 
   const session = await getOrCreateSession(body.flow_token);
 
+  // Hard lock: once an order has been placed for this flow_token, every subsequent
+  // request (INIT, data_exchange, BACK) replays the SUCCESS screen.
+  // WhatsApp may resume the flow client-side without sending INIT, so we cannot
+  // rely on INIT alone.
+  if (session.status === 'completed') {
+    const supabase = createSupabaseService();
+    const { data: existing } = await supabase
+      .from('orders')
+      .select('order_number, total')
+      .eq('flow_token', body.flow_token)
+      .maybeSingle();
+    return buildSuccessScreen({
+      order_number: (existing as any)?.order_number ?? 0,
+      total: Number((existing as any)?.total ?? 0),
+      estimated_minutes: 0,
+      already_completed: true,
+    });
+  }
+
   if (body.action === 'INIT') {
-    // If this flow_token has already been used to place an order, replay the SUCCESS screen
-    // so the user cannot re-order.
-    if (session.status === 'completed') {
-      const supabase = createSupabaseService();
-      const { data: existing } = await supabase
-        .from('orders')
-        .select('order_number, total')
-        .eq('flow_token', body.flow_token)
-        .maybeSingle();
-      if (existing) {
-        return buildSuccessScreen({
-          order_number: (existing as any).order_number,
-          total: Number((existing as any).total),
-          estimated_minutes: 0,
-          already_completed: true,
-        });
-      }
-    }
     await setCurrentScreen(body.flow_token, 'STORE_SEARCH');
     return buildStoreSearchScreen();
   }
@@ -504,25 +505,24 @@ async function stepValidateCustomerDetails(
 
 async function stepSubmitOrder(flowToken: string) {
   const supabase = createSupabaseService();
-  const session = await getOrCreateSession(flowToken);
 
-  if (session.status === 'completed') {
-    // Idempotent: look up the existing order and reply with the same success screen
-    const { data: existing } = await supabase
-      .from('orders')
-      .select('order_number, total')
-      .eq('flow_token', flowToken)
-      .maybeSingle();
-    if (existing) {
-      return buildSuccessScreen({
-        order_number: (existing as any).order_number,
-        total: (existing as any).total,
-        estimated_minutes: 0,
-        already_completed: true,
-      });
-    }
-    return buildErrorScreen('ההזמנה כבר נשלחה');
+  // Always check for an existing order first — covers cases where the session
+  // was not properly marked completed (e.g. DB error after order creation).
+  const { data: existingCheck } = await supabase
+    .from('orders')
+    .select('order_number, total')
+    .eq('flow_token', flowToken)
+    .maybeSingle();
+  if (existingCheck) {
+    return buildSuccessScreen({
+      order_number: (existingCheck as any).order_number,
+      total: Number((existingCheck as any).total),
+      estimated_minutes: 0,
+      already_completed: true,
+    });
   }
+
+  const session = await getOrCreateSession(flowToken);
 
   const cart = await getCart(flowToken);
   if (cart.length === 0) return buildErrorScreen('העגלה ריקה');
