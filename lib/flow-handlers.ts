@@ -64,12 +64,36 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
   const session = await getOrCreateSession(body.flow_token);
 
   if (body.action === 'INIT') {
+    // If this flow_token has already been used to place an order, replay the SUCCESS screen
+    // so the user cannot re-order.
+    if (session.status === 'completed') {
+      const supabase = createSupabaseService();
+      const { data: existing } = await supabase
+        .from('orders')
+        .select('order_number, total')
+        .eq('flow_token', body.flow_token)
+        .maybeSingle();
+      if (existing) {
+        return buildSuccessScreen({
+          order_number: (existing as any).order_number,
+          total: Number((existing as any).total),
+          estimated_minutes: 0,
+          already_completed: true,
+        });
+      }
+    }
     await setCurrentScreen(body.flow_token, 'STORE_SEARCH');
     return buildStoreSearchScreen();
   }
 
   if (body.action === 'BACK') {
-    // For simplicity, send the user back to the store search.
+    const screen = body.screen || '';
+    // Block back navigation from CART — re-render CART instead.
+    if (screen === 'CART') {
+      const cart = await getCart(body.flow_token);
+      return buildCartScreen(cart, calculateCartTotals(cart));
+    }
+    // For all other screens, default to the store search.
     return buildStoreSearchScreen();
   }
 
