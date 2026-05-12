@@ -242,8 +242,6 @@
         "product_name": { "type": "string", "__example__": "פיצה מרגריטה" },
         "product_description": { "type": "string", "__example__": "" },
         "price": { "type": "string", "__example__": "₪58" },
-        "product_image_url": { "type": "string", "__example__": "" },
-        "has_image": { "type": "boolean", "__example__": false },
         "max_quantity": { "type": "number", "__example__": 20 },
         "allow_note": { "type": "boolean", "__example__": true },
         "group_1": {
@@ -261,7 +259,13 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "image": { "type": "string" },
+                  "alt-text": { "type": "string" }
+                }
               }
             }
           }
@@ -278,7 +282,13 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "image": { "type": "string" },
+                  "alt-text": { "type": "string" }
+                }
               }
             }
           }
@@ -295,7 +305,13 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "image": { "type": "string" },
+                  "alt-text": { "type": "string" }
+                }
               }
             }
           }
@@ -312,7 +328,13 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "image": { "type": "string" },
+                  "alt-text": { "type": "string" }
+                }
               }
             }
           }
@@ -329,7 +351,13 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "image": { "type": "string" },
+                  "alt-text": { "type": "string" }
+                }
               }
             }
           }
@@ -338,14 +366,6 @@
       "layout": {
         "type": "SingleColumnLayout",
         "children": [
-          {
-            "type": "Image",
-            "src": "${data.product_image_url}",
-            "alt-text": "${data.product_name}",
-            "scale-type": "cover",
-            "aspect-ratio": 1.5,
-            "visible": "${data.has_image}"
-          },
           { "type": "TextHeading", "text": "${data.product_name}" },
           { "type": "TextBody", "text": "${data.product_description}" },
           { "type": "TextBody", "text": "${data.price}" },

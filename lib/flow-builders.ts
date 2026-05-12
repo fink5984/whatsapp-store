@@ -146,32 +146,51 @@ export async function buildProductsScreen(
   };
 }
 
-export function buildProductCustomizeScreen(
+export async function buildProductCustomizeScreen(
   product: Product,
   optionGroups: { group: OptionGroup; options: Option[] }[],
   allowNote: boolean,
-): FlowScreenResponse {
+): Promise<FlowScreenResponse> {
   // Flow JSON has up to 5 statically defined groups; we control visibility/data
   // dynamically here.
-  const groupsForFlow = optionGroups.slice(0, 5).map(({ group, options }, idx) => ({
-    index: idx + 1,
-    visible: true,
-    group_id: group.id,
-    name: group.name,
-    is_required: group.is_required,
-    min_select: group.min_select,
-    max_select: group.max_select,
-    use_multi: group.max_select > 1,
-    options: options
-      .filter((o) => o.is_active)
-      .slice(0, 10)
-      .map((o) => ({
+
+  // Fetch all option thumbnails up-front in parallel
+  const visibleGroups = optionGroups.slice(0, 5);
+  const optionLists = visibleGroups.map(({ options }) =>
+    options.filter((o) => o.is_active).slice(0, 10),
+  );
+  const allUrls = optionLists.flat().map((o) => o.image_url);
+  const allThumbs = await fetchManyAsBase64(allUrls, 80);
+
+  let cursor = 0;
+  const groupsForFlow = visibleGroups.map(({ group, options: _opts }, idx) => {
+    const opts = optionLists[idx];
+    const built = opts.map((o) => {
+      const thumb = allThumbs[cursor++];
+      const item: Record<string, unknown> = {
         id: o.id,
         title: o.price_delta > 0
           ? `${truncate(o.name, 40)} (+${formatCurrencyILS(o.price_delta)})`
           : truncate(o.name, 50),
-      })),
-  }));
+      };
+      if (thumb) {
+        item.image = thumb;
+        item['alt-text'] = o.name;
+      }
+      return item;
+    });
+    return {
+      index: idx + 1,
+      visible: true,
+      group_id: group.id,
+      name: group.name,
+      is_required: group.is_required,
+      min_select: group.min_select,
+      max_select: group.max_select,
+      use_multi: group.max_select > 1,
+      options: built,
+    };
+  });
 
   // Pad to 5 slots so flow.json has stable references.
   while (groupsForFlow.length < 5) {
@@ -196,8 +215,6 @@ export function buildProductCustomizeScreen(
       product_description: truncate(product.description ?? '', 200),
       price: formatCurrencyILS(product.price),
       price_value: product.price,
-      product_image_url: product.image_url ?? '',
-      has_image: !!product.image_url,
       max_quantity: product.max_quantity_per_order,
       allow_note: allowNote && product.allow_note,
       groups: groupsForFlow,

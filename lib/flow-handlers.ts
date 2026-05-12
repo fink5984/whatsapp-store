@@ -238,7 +238,7 @@ async function stepSelectProduct(storeId: string | null, data: Record<string, an
     }));
   }
 
-  return buildProductCustomizeScreen(product as Product, optionGroups, (product as Product).allow_note);
+  return await buildProductCustomizeScreen(product as Product, optionGroups, (product as Product).allow_note);
 }
 
 async function stepAddToCart(
