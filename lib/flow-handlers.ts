@@ -23,6 +23,7 @@ import {
   completeSession,
   getCart,
   getOrCreateSession,
+  setCart,
   setCurrentScreen,
   updateCustomerJson,
   updateSessionStore,
@@ -90,10 +91,13 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
       case 'add_to_cart':
         return await stepAddToCart(body.flow_token, session.store_id, data);
       case 'continue_shopping':
+      case 'add_more':
         return await stepGetCategories(session.store_id);
       case 'clear_cart':
         await clearCart(body.flow_token);
         return await stepGetCategories(session.store_id);
+      case 'remove_items':
+        return await stepRemoveItems(body.flow_token, data);
       case 'checkout':
         return await stepCheckout(session.store_id);
       case 'set_delivery_method':
@@ -322,6 +326,22 @@ async function stepAddToCart(
   await addItemToCart(flowToken, cartItem);
   const cart = await getCart(flowToken);
   return buildCartScreen(cart, calculateCartTotals(cart));
+}
+
+async function stepRemoveItems(flowToken: string, data: Record<string, any>) {
+  const raw = data.items_to_remove;
+  let ids: string[] = [];
+  if (Array.isArray(raw)) ids = raw.filter(Boolean);
+  else if (typeof raw === 'string' && raw) ids = [raw];
+
+  const cart = await getCart(flowToken);
+  if (ids.length === 0) {
+    // Nothing checked — just refresh CART
+    return buildCartScreen(cart, calculateCartTotals(cart));
+  }
+  const next = cart.filter((i) => !ids.includes(i.cart_item_id));
+  await setCart(flowToken, next);
+  return buildCartScreen(next, calculateCartTotals(next));
 }
 
 async function stepCheckout(storeId: string | null) {

@@ -422,16 +422,36 @@
       "title": "העגלה שלך",
       "data": {
         "is_empty": { "type": "boolean", "__example__": false },
-        "cart_summary": { "type": "string", "__example__": "1 × פיצה — 58 ₪" },
-        "item_count": { "type": "number", "__example__": 1 },
-        "total": { "type": "string", "__example__": "58 ₪" }
+        "has_items": { "type": "boolean", "__example__": true },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          },
+          "__example__": [
+            { "id": "ci_1", "title": "1 × פיצה מרגריטה", "description": "₪58" }
+          ]
+        },
+        "total_text": { "type": "string", "__example__": "סך הכל: ₪58" }
       },
       "layout": {
         "type": "SingleColumnLayout",
         "children": [
           { "type": "TextHeading", "text": "העגלה שלך" },
-          { "type": "TextBody", "text": "${data.cart_summary}" },
-          { "type": "TextSubheading", "text": "סך הכל: ${data.total}" },
+          {
+            "type": "CheckboxGroup",
+            "name": "items_to_remove",
+            "label": "בחר פריטים להסרה (אופציונלי)",
+            "visible": "${data.has_items}",
+            "required": false,
+            "data-source": "${data.items}"
+          },
+          { "type": "TextSubheading", "text": "${data.total_text}" },
           {
             "type": "RadioButtonsGroup",
             "name": "cart_action",
@@ -440,6 +460,7 @@
             "data-source": [
               { "id": "checkout", "title": "המשך להזמנה" },
               { "id": "add_more", "title": "הוסף מוצר נוסף" },
+              { "id": "remove_items", "title": "הסר פריטים שסומנו" },
               { "id": "clear_cart", "title": "נקה עגלה" }
             ]
           },
@@ -448,7 +469,10 @@
             "label": "המשך",
             "on-click-action": {
               "name": "data_exchange",
-              "payload": { "step": "${form.cart_action}" }
+              "payload": {
+                "step": "${form.cart_action}",
+                "items_to_remove": "${form.items_to_remove}"
+              }
             }
           }
         ]

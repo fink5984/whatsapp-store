@@ -231,19 +231,23 @@ export function buildCartScreen(
   cart: CartItem[],
   totals: { subtotal: number; item_count: number },
 ): FlowScreenResponse {
-  const lines = cart.map((i) => {
-    const opt = i.options.length ? `   (${i.options.map((o) => o.option_name).join(', ')})` : '';
-    return `${i.quantity} × ${i.product_name} — ${formatCurrencyILS(i.total_price)}${opt}`;
+  const items = cart.map((i) => {
+    const opts = i.options.length ? ` (${i.options.map((o) => o.option_name).join(', ')})` : '';
+    return {
+      id: i.cart_item_id,
+      title: truncate(`${i.quantity} × ${i.product_name}${opts}`, 80),
+      description: formatCurrencyILS(i.total_price),
+    };
   });
 
   return {
     screen: 'CART',
     data: {
       is_empty: cart.length === 0,
-      cart_summary: lines.join('\n') || 'העגלה ריקה',
+      has_items: cart.length > 0,
+      items,
       item_count: totals.item_count,
-      total: formatCurrencyILS(totals.subtotal),
-      total_value: totals.subtotal,
+      total_text: cart.length === 0 ? 'העגלה ריקה' : `סך הכל: ${formatCurrencyILS(totals.subtotal)}`,
     },
   };
 }
