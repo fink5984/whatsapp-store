@@ -382,7 +382,7 @@
           },
 
           { "type": "TextSubheading", "text": "${data.group_1.name}", "visible": "${data.group_1.visible}" },
-          { "type": "RadioButtonsGroup", "name": "group_1_choice", "label": "בחר", "visible": "${data.group_1.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_1.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_1_choice", "label": "בחר", "visible": "${data.group_1.visible}", "init-value": "${data.empty_string}", "data-source": "${data.group_1.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_2.name}", "visible": "${data.group_2.visible}" },
           { "type": "CheckboxGroup", "name": "group_2_choice", "label": "בחר", "visible": "${data.group_2.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_2.options}" },
