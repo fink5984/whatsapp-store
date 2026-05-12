@@ -9,3 +9,5 @@ out
 .vercel
 .turbo
 dist
+tsconfig.tsbuildinfo
+*.tsbuildinfo
