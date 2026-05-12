@@ -29,11 +29,11 @@ export async function POST(req: Request) {
     return new NextResponse('decryption failed', { status: 421 });
   }
 
-  const flowBody = decrypted.decryptedBody as FlowRequestBody;
+  const flowBody = decrypted.decryptedBody as unknown as FlowRequestBody;
   const response = await handleFlow(flowBody);
 
   const encrypted = encryptWhatsAppFlowResponse(
-    response,
+    response as unknown as Record<string, unknown>,
     decrypted.aesKeyBuffer,
     decrypted.initialVectorBuffer,
   );
