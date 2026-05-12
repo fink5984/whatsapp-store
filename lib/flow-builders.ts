@@ -9,6 +9,7 @@ import type {
   Store,
 } from './supabase/database.types';
 import { formatCurrencyILS } from './pricing';
+import { fetchManyAsBase64 } from './image-base64';
 
 export interface FlowScreenResponse {
   screen: string;
@@ -36,17 +37,26 @@ export function buildStoreSearchScreen(opts: { error_message?: string } = {}): F
   };
 }
 
-export function buildStoreResultsScreen(stores: Store[]): FlowScreenResponse {
+export async function buildStoreResultsScreen(stores: Store[]): Promise<FlowScreenResponse> {
   if (stores.length === 0) {
     return buildStoreSearchScreen({
       error_message: 'לא נמצאו חנויות מתאימות. נסה לחפש בשם אחר.',
     });
   }
-  const items = stores.slice(0, 10).map((s) => ({
-    id: s.id,
-    title: truncate(`${s.name}${s.city ? ` · ${s.city}` : ''}`, 60),
-    description: truncate(s.category ?? s.description ?? '', 60),
-  }));
+  const top = stores.slice(0, 10);
+  const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
+  const items = top.map((s, i) => {
+    const item: Record<string, unknown> = {
+      id: s.id,
+      title: truncate(s.name, 60),
+      description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
+    };
+    if (thumbs[i]) {
+      item.image = thumbs[i];
+      item['alt-text'] = s.name;
+    }
+    return item;
+  });
   return {
     screen: 'STORE_RESULTS',
     data: {
@@ -78,15 +88,21 @@ export function buildStoreWelcomeScreen(store: Store): FlowScreenResponse {
   };
 }
 
-export function buildCategoryScreen(store: Store, categories: Category[]): FlowScreenResponse {
-  const items = categories
-    .filter((c) => c.is_active)
-    .slice(0, 20)
-    .map((c) => ({
+export async function buildCategoryScreen(store: Store, categories: Category[]): Promise<FlowScreenResponse> {
+  const top = categories.filter((c) => c.is_active).slice(0, 20);
+  const thumbs = await fetchManyAsBase64(top.map((c) => c.image_url), 100);
+  const items = top.map((c, i) => {
+    const item: Record<string, unknown> = {
       id: c.id,
       title: truncate(c.name, 50),
       description: truncate(c.description ?? '', 60),
-    }));
+    };
+    if (thumbs[i]) {
+      item.image = thumbs[i];
+      item['alt-text'] = c.name;
+    }
+    return item;
+  });
   return {
     screen: 'CATEGORY_SELECT',
     data: {
@@ -98,21 +114,26 @@ export function buildCategoryScreen(store: Store, categories: Category[]): FlowS
   };
 }
 
-export function buildProductsScreen(
+export async function buildProductsScreen(
   store: Store,
   category: Category | null,
   products: Product[],
-): FlowScreenResponse {
-  const items = products
-    .filter((p) => p.is_active && p.is_available)
-    .slice(0, 20)
-    .map((p) => ({
+): Promise<FlowScreenResponse> {
+  const top = products.filter((p) => p.is_active && p.is_available).slice(0, 20);
+  const thumbs = await fetchManyAsBase64(top.map((p) => p.image_url), 120);
+  const items = top.map((p, i) => {
+    const item: Record<string, unknown> = {
       id: p.id,
       title: truncate(p.name, 50),
-      description: `${formatCurrencyILS(p.price)}${
-        p.description ? ` · ${truncate(p.description, 50)}` : ''
-      }`,
-    }));
+      description: truncate(p.description ?? '', 80),
+      metadata: formatCurrencyILS(p.price),
+    };
+    if (thumbs[i]) {
+      item.image = thumbs[i];
+      item['alt-text'] = p.name;
+    }
+    return item;
+  });
   return {
     screen: 'PRODUCT_SELECT',
     data: {

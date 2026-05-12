@@ -80,11 +80,13 @@
             "properties": {
               "id": { "type": "string" },
               "title": { "type": "string" },
-              "description": { "type": "string" }
+              "description": { "type": "string" },
+              "image": { "type": "string" },
+              "alt-text": { "type": "string" }
             }
           },
           "__example__": [
-            { "id": "s1", "title": "פיצה נאפולי · תל אביב", "description": "פיצריה" }
+            { "id": "s1", "title": "פיצה נאפולי", "description": "תל אביב · פיצריה" }
           ]
         }
       },
@@ -148,7 +150,9 @@
             "properties": {
               "id": { "type": "string" },
               "title": { "type": "string" },
-              "description": { "type": "string" }
+              "description": { "type": "string" },
+              "image": { "type": "string" },
+              "alt-text": { "type": "string" }
             }
           },
           "__example__": [{ "id": "c1", "title": "פיצות", "description": "" }]
@@ -193,10 +197,15 @@
             "properties": {
               "id": { "type": "string" },
               "title": { "type": "string" },
-              "description": { "type": "string" }
+              "description": { "type": "string" },
+              "metadata": { "type": "string" },
+              "image": { "type": "string" },
+              "alt-text": { "type": "string" }
             }
           },
-          "__example__": [{ "id": "p1", "title": "מרגריטה", "description": "₪58" }]
+          "__example__": [
+            { "id": "p1", "title": "מרגריטה", "description": "רוטב, מוצרלה", "metadata": "₪58" }
+          ]
         }
       },
       "layout": {
@@ -208,6 +217,7 @@
             "name": "product_id",
             "label": "בחר מוצר",
             "required": true,
+            "media-size": "large",
             "data-source": "${data.products}"
           },
           {

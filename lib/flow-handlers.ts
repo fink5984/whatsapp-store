@@ -133,7 +133,7 @@ async function stepSearchStores(data: Record<string, any>) {
   const { data: stores, error } = await query;
   if (error) throw new Error(error.message);
 
-  return buildStoreResultsScreen((stores as Store[]) ?? []);
+  return await buildStoreResultsScreen((stores as Store[]) ?? []);
 }
 
 async function stepSelectStore(flowToken: string, data: Record<string, any>) {
@@ -169,7 +169,7 @@ async function stepGetCategories(storeId: string | null) {
       .order('sort_order'),
   ]);
   if (!store) return buildErrorScreen('החנות לא נמצאה');
-  return buildCategoryScreen(store as Store, (cats as Category[]) ?? []);
+  return await buildCategoryScreen(store as Store, (cats as Category[]) ?? []);
 }
 
 async function stepGetProducts(storeId: string | null, data: Record<string, any>) {
@@ -192,7 +192,7 @@ async function stepGetProducts(storeId: string | null, data: Record<string, any>
   ]);
 
   if (!store || !cat) return buildErrorScreen('קטגוריה לא נמצאה');
-  return buildProductsScreen(store as Store, cat as Category, (products as Product[]) ?? []);
+  return await buildProductsScreen(store as Store, cat as Category, (products as Product[]) ?? []);
 }
 
 async function stepSelectProduct(storeId: string | null, data: Record<string, any>) {
