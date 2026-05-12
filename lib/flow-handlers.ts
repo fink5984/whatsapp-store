@@ -94,6 +94,21 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
       const cart = await getCart(body.flow_token);
       return buildCartScreen(cart, calculateCartTotals(cart));
     }
+    // Block back navigation from SUCCESS — the order is done.
+    if (screen === 'SUCCESS') {
+      const supabase = createSupabaseService();
+      const { data: existing } = await supabase
+        .from('orders')
+        .select('order_number, total')
+        .eq('flow_token', body.flow_token)
+        .maybeSingle();
+      return buildSuccessScreen({
+        order_number: (existing as any)?.order_number ?? 0,
+        total: Number((existing as any)?.total ?? 0),
+        estimated_minutes: 0,
+        already_completed: true,
+      });
+    }
     // For all other screens, default to the store search.
     return buildStoreSearchScreen();
   }
