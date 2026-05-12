@@ -244,6 +244,8 @@
         "price": { "type": "string", "__example__": "₪58" },
         "max_quantity": { "type": "number", "__example__": 20 },
         "allow_note": { "type": "boolean", "__example__": true },
+        "empty_array": { "type": "array", "items": { "type": "string" }, "__example__": [] },
+        "empty_string": { "type": "string", "__example__": "" },
         "group_1": {
           "type": "object",
           "__example__": {
@@ -380,21 +382,21 @@
           },
 
           { "type": "TextSubheading", "text": "${data.group_1.name}", "visible": "${data.group_1.visible}" },
-          { "type": "RadioButtonsGroup", "name": "group_1_choice", "label": "בחר", "visible": "${data.group_1.visible}", "data-source": "${data.group_1.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_1_choice", "label": "בחר", "visible": "${data.group_1.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_1.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_2.name}", "visible": "${data.group_2.visible}" },
-          { "type": "CheckboxGroup", "name": "group_2_choice", "label": "בחר", "visible": "${data.group_2.visible}", "data-source": "${data.group_2.options}" },
+          { "type": "CheckboxGroup", "name": "group_2_choice", "label": "בחר", "visible": "${data.group_2.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_2.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_3.name}", "visible": "${data.group_3.visible}" },
-          { "type": "CheckboxGroup", "name": "group_3_choice", "label": "בחר", "visible": "${data.group_3.visible}", "data-source": "${data.group_3.options}" },
+          { "type": "CheckboxGroup", "name": "group_3_choice", "label": "בחר", "visible": "${data.group_3.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_3.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_4.name}", "visible": "${data.group_4.visible}" },
-          { "type": "CheckboxGroup", "name": "group_4_choice", "label": "בחר", "visible": "${data.group_4.visible}", "data-source": "${data.group_4.options}" },
+          { "type": "CheckboxGroup", "name": "group_4_choice", "label": "בחר", "visible": "${data.group_4.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_4.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_5.name}", "visible": "${data.group_5.visible}" },
-          { "type": "CheckboxGroup", "name": "group_5_choice", "label": "בחר", "visible": "${data.group_5.visible}", "data-source": "${data.group_5.options}" },
+          { "type": "CheckboxGroup", "name": "group_5_choice", "label": "בחר", "visible": "${data.group_5.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_5.options}" },
 
-          { "type": "TextInput", "name": "note", "label": "הערה", "required": false, "visible": "${data.allow_note}" },
+          { "type": "TextInput", "name": "note", "label": "הערה", "required": false, "visible": "${data.allow_note}", "init-value": "${data.empty_string}" },
 
           {
             "type": "Footer",

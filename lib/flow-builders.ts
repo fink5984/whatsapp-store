@@ -217,6 +217,11 @@ export async function buildProductCustomizeScreen(
       price_value: product.price,
       max_quantity: product.max_quantity_per_order,
       allow_note: allowNote && product.allow_note,
+      // Force-clear form fields each time the screen is rendered.
+      // WhatsApp Flow keeps form state across navigations to the same screen
+      // unless overridden by init-value.
+      empty_array: [],
+      empty_string: '',
       groups: groupsForFlow,
       group_1: groupsForFlow[0],
       group_2: groupsForFlow[1],
