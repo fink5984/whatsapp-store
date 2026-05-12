@@ -338,7 +338,6 @@ export function buildSuccessScreen(order: {
   total: number;
   estimated_minutes: number;
   already_completed?: boolean;
-  flow_token?: string;
 }): FlowScreenResponse {
   const headline = order.already_completed
     ? 'ההזמנה כבר נקלטה'
@@ -347,13 +346,13 @@ export function buildSuccessScreen(order: {
     ? `ההזמנה שלך מספר #${order.order_number} כבר אצלנו בטיפול.`
     : `מספר הזמנה: #${order.order_number}\nסכום: ${formatCurrencyILS(order.total)}\nזמן הכנה משוער: ${order.estimated_minutes} דקות.`;
 
+  // NOTE: screen id MUST NOT be "SUCCESS" — that's a WhatsApp Flow reserved
+  // keyword that auto-closes the flow before the screen renders.
   return {
-    screen: 'SUCCESS',
+    screen: 'ORDER_CONFIRMED',
     data: {
       headline,
       body,
-      flow_token_param: order.flow_token ?? 'completed',
-      order_number_param: String(order.order_number),
     },
   };
 }

@@ -11,8 +11,8 @@
     "CART": ["CATEGORY_SELECT", "DELIVERY_METHOD"],
     "DELIVERY_METHOD": ["CUSTOMER_DETAILS"],
     "CUSTOMER_DETAILS": ["ORDER_SUMMARY"],
-    "ORDER_SUMMARY": ["SUCCESS"],
-    "SUCCESS": []
+    "ORDER_SUMMARY": ["ORDER_CONFIRMED"],
+    "ORDER_CONFIRMED": []
   },
   "screens": [
     {
@@ -612,31 +612,18 @@
       }
     },
     {
-      "id": "SUCCESS",
+      "id": "ORDER_CONFIRMED",
       "title": "סיום",
       "terminal": true,
       "data": {
         "headline": { "type": "string", "__example__": "ההזמנה התקבלה" },
-        "body": { "type": "string", "__example__": "" },
-        "flow_token_param": { "type": "string", "__example__": "completed" },
-        "order_number_param": { "type": "string", "__example__": "12345" }
+        "body": { "type": "string", "__example__": "" }
       },
       "layout": {
         "type": "SingleColumnLayout",
         "children": [
           { "type": "TextHeading", "text": "${data.headline}" },
-          { "type": "TextBody", "text": "${data.body}" },
-          {
-            "type": "Footer",
-            "label": "סיום",
-            "on-click-action": {
-              "name": "complete",
-              "payload": {
-                "flow_token": "${data.flow_token_param}",
-                "order_number": "${data.order_number_param}"
-              }
-            }
-          }
+          { "type": "TextBody", "text": "${data.body}" }
         ]
       }
     }
