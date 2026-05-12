@@ -1,5 +1,5 @@
 {
-  "version": "5.1",
+  "version": "6.0",
   "data_api_version": "3.0",
   "routing_model": {
     "STORE_SEARCH": ["STORE_RESULTS"],
@@ -79,12 +79,17 @@
             "type": "object",
             "properties": {
               "id": { "type": "string" },
-              "title": { "type": "string" },
-              "description": { "type": "string" }
+              "main-content": { "type": "object" },
+              "start": { "type": "object" },
+              "on-click-action": { "type": "object" }
             }
           },
           "__example__": [
-            { "id": "s1", "title": "פיצה נאפולי · תל אביב", "description": "פיצריה" }
+            {
+              "id": "s1",
+              "main-content": { "title": "פיצה נאפולי", "description": "תל אביב · פיצריה" },
+              "on-click-action": { "name": "data_exchange", "payload": { "step": "select_store", "store_id": "s1" } }
+            }
           ]
         }
       },
@@ -93,19 +98,9 @@
         "children": [
           { "type": "TextHeading", "text": "${data.title}" },
           {
-            "type": "RadioButtonsGroup",
-            "name": "store_id",
-            "label": "בחר חנות",
-            "required": true,
-            "data-source": "${data.stores}"
-          },
-          {
-            "type": "Footer",
-            "label": "בחר חנות",
-            "on-click-action": {
-              "name": "data_exchange",
-              "payload": { "step": "select_store", "store_id": "${form.store_id}" }
-            }
+            "type": "NavigationList",
+            "name": "stores_list",
+            "list-items": "${data.stores}"
           }
         ]
       }
@@ -147,11 +142,18 @@
             "type": "object",
             "properties": {
               "id": { "type": "string" },
-              "title": { "type": "string" },
-              "description": { "type": "string" }
+              "main-content": { "type": "object" },
+              "start": { "type": "object" },
+              "on-click-action": { "type": "object" }
             }
           },
-          "__example__": [{ "id": "c1", "title": "פיצות", "description": "" }]
+          "__example__": [
+            {
+              "id": "c1",
+              "main-content": { "title": "פיצות", "description": "" },
+              "on-click-action": { "name": "data_exchange", "payload": { "step": "get_products", "category_id": "c1" } }
+            }
+          ]
         }
       },
       "layout": {
@@ -159,22 +161,9 @@
         "children": [
           { "type": "TextHeading", "text": "${data.title}" },
           {
-            "type": "RadioButtonsGroup",
-            "name": "category_id",
-            "label": "קטגוריה",
-            "required": true,
-            "data-source": "${data.categories}"
-          },
-          {
-            "type": "Footer",
-            "label": "המשך",
-            "on-click-action": {
-              "name": "data_exchange",
-              "payload": {
-                "step": "get_products",
-                "category_id": "${form.category_id}"
-              }
-            }
+            "type": "NavigationList",
+            "name": "categories_list",
+            "list-items": "${data.categories}"
           }
         ]
       }
@@ -192,11 +181,20 @@
             "type": "object",
             "properties": {
               "id": { "type": "string" },
-              "title": { "type": "string" },
-              "description": { "type": "string" }
+              "main-content": { "type": "object" },
+              "start": { "type": "object" },
+              "end": { "type": "object" },
+              "on-click-action": { "type": "object" }
             }
           },
-          "__example__": [{ "id": "p1", "title": "מרגריטה", "description": "₪58" }]
+          "__example__": [
+            {
+              "id": "p1",
+              "main-content": { "title": "מרגריטה", "description": "רוטב, מוצרלה" },
+              "end": { "title": "₪58" },
+              "on-click-action": { "name": "data_exchange", "payload": { "step": "select_product", "product_id": "p1" } }
+            }
+          ]
         }
       },
       "layout": {
@@ -204,22 +202,9 @@
         "children": [
           { "type": "TextHeading", "text": "${data.title}" },
           {
-            "type": "RadioButtonsGroup",
-            "name": "product_id",
-            "label": "בחר מוצר",
-            "required": true,
-            "data-source": "${data.products}"
-          },
-          {
-            "type": "Footer",
-            "label": "בחר מוצר",
-            "on-click-action": {
-              "name": "data_exchange",
-              "payload": {
-                "step": "select_product",
-                "product_id": "${form.product_id}"
-              }
-            }
+            "type": "NavigationList",
+            "name": "products_list",
+            "list-items": "${data.products}"
           }
         ]
       }

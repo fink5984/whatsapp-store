@@ -37,17 +37,24 @@ export function buildStoreSearchScreen(opts: { error_message?: string } = {}): F
 }
 
 export function buildStoreResultsScreen(stores: Store[]): FlowScreenResponse {
-  const items = stores.slice(0, 10).map((s) => ({
-    id: s.id,
-    title: truncate(`${s.name}${s.city ? ` · ${s.city}` : ''}`, 60),
-    description: truncate(s.category ?? s.description ?? '', 60),
-  }));
-
-  if (items.length === 0) {
+  if (stores.length === 0) {
     return buildStoreSearchScreen({
       error_message: 'לא נמצאו חנויות מתאימות. נסה לחפש בשם אחר.',
     });
   }
+  const items = stores.slice(0, 10).map((s) => ({
+    id: s.id,
+    'main-content': {
+      title: truncate(s.name, 60),
+      description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
+    },
+    ...(s.logo_url ? { start: { image: s.logo_url } } : {}),
+    'on-click-action': {
+      name: 'data_exchange',
+      payload: { step: 'select_store', store_id: s.id },
+    },
+  }));
+
   return {
     screen: 'STORE_RESULTS',
     data: {
@@ -85,8 +92,15 @@ export function buildCategoryScreen(store: Store, categories: Category[]): FlowS
     .slice(0, 20)
     .map((c) => ({
       id: c.id,
-      title: truncate(c.name, 50),
-      description: truncate(c.description ?? '', 60),
+      'main-content': {
+        title: truncate(c.name, 50),
+        description: truncate(c.description ?? '', 60),
+      },
+      ...(c.image_url ? { start: { image: c.image_url } } : {}),
+      'on-click-action': {
+        name: 'data_exchange',
+        payload: { step: 'get_products', category_id: c.id },
+      },
     }));
 
   return {
@@ -110,10 +124,16 @@ export function buildProductsScreen(
     .slice(0, 20)
     .map((p) => ({
       id: p.id,
-      title: truncate(p.name, 50),
-      description: `${formatCurrencyILS(p.price)}${
-        p.description ? ` · ${truncate(p.description, 50)}` : ''
-      }`,
+      'main-content': {
+        title: truncate(p.name, 50),
+        description: truncate(p.description ?? '', 80),
+      },
+      end: { title: formatCurrencyILS(p.price) },
+      ...(p.image_url ? { start: { image: p.image_url } } : {}),
+      'on-click-action': {
+        name: 'data_exchange',
+        payload: { step: 'select_product', product_id: p.id },
+      },
     }));
 
   return {
