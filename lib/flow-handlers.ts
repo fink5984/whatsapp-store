@@ -79,6 +79,7 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
       total: Number((existing as any)?.total ?? 0),
       estimated_minutes: 0,
       already_completed: true,
+      flow_token: body.flow_token,
     });
   }
 
@@ -107,6 +108,7 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
         total: Number((existing as any)?.total ?? 0),
         estimated_minutes: 0,
         already_completed: true,
+        flow_token: body.flow_token,
       });
     }
     // For all other screens, default to the store search.
@@ -534,6 +536,7 @@ async function stepSubmitOrder(flowToken: string) {
       total: Number((existingCheck as any).total),
       estimated_minutes: 0,
       already_completed: true,
+      flow_token: flowToken,
     });
   }
 
@@ -613,6 +616,7 @@ async function stepSubmitOrder(flowToken: string) {
         total: (existing as any).total,
         estimated_minutes: (store as Store).estimated_preparation_minutes,
         already_completed: true,
+        flow_token: flowToken,
       });
     }
     throw orderError;
@@ -663,5 +667,6 @@ async function stepSubmitOrder(flowToken: string) {
     order_number: order.order_number,
     total: order.total,
     estimated_minutes: (store as Store).estimated_preparation_minutes,
+    flow_token: flowToken,
   });
 }

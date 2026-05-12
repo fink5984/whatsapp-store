@@ -338,6 +338,7 @@ export function buildSuccessScreen(order: {
   total: number;
   estimated_minutes: number;
   already_completed?: boolean;
+  flow_token?: string;
 }): FlowScreenResponse {
   const headline = order.already_completed
     ? 'ההזמנה כבר נקלטה'
@@ -351,6 +352,8 @@ export function buildSuccessScreen(order: {
     data: {
       headline,
       body,
+      flow_token_param: order.flow_token ?? 'completed',
+      order_number_param: String(order.order_number),
     },
   };
 }
