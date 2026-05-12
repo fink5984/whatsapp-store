@@ -178,6 +178,8 @@ export function buildProductCustomizeScreen(
       product_description: truncate(product.description ?? '', 200),
       price: formatCurrencyILS(product.price),
       price_value: product.price,
+      product_image_url: product.image_url ?? '',
+      has_image: !!product.image_url,
       max_quantity: product.max_quantity_per_order,
       allow_note: allowNote && product.allow_note,
       groups: groupsForFlow,
