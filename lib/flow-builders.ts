@@ -351,8 +351,6 @@ export function buildSuccessScreen(order: {
     data: {
       headline,
       body,
-      flow_token_param: 'completed',
-      order_number_param: String(order.order_number),
     },
   };
 }
