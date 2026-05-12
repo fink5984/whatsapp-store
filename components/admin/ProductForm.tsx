@@ -9,6 +9,7 @@ import { Input, Select, Textarea } from '@/components/ui/input';
 import { SwitchRow } from '@/components/ui/switch';
 import { Empty } from '@/components/ui/empty';
 import { useToast } from '@/components/ui/toaster';
+import { ImageUploader } from '@/components/admin/ImageUploader';
 import type { Category, OptionGroup, Product } from '@/lib/supabase/database.types';
 
 interface ProductFormProps {
@@ -31,6 +32,7 @@ export function ProductForm({ storeId, product, categories, optionGroups, linked
     category_id: product?.category_id ?? categories[0]?.id ?? '',
     sku: product?.sku ?? '',
     badge: product?.badge ?? '',
+    image_url: product?.image_url ?? '',
     is_active: product?.is_active ?? true,
     is_available: product?.is_available ?? true,
     is_featured: product?.is_featured ?? false,
@@ -202,6 +204,17 @@ export function ProductForm({ storeId, product, categories, optionGroups, linked
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <Card title="תמונת מוצר">
+            <ImageUploader
+              storeId={storeId}
+              kind="products"
+              value={form.image_url || null}
+              onChange={(url) => setF('image_url', url ?? '')}
+              height={200}
+              label="גרור תמונה או לחץ להעלאה"
+            />
+          </Card>
+
           <Card title="זמינות וסטטוס">
             <SwitchRow label="פעיל" sub="מוצג בתפריט ב־WhatsApp" checked={form.is_active} onChange={(v) => setF('is_active', v)} />
             <SwitchRow label="זמין כעת" sub="ניתן להזמין עכשיו" checked={form.is_available} onChange={(v) => setF('is_available', v)} />

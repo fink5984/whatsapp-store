@@ -277,13 +277,12 @@ export function buildOrderSummaryScreen(draft: OrderDraft): FlowScreenResponse {
     screen: 'ORDER_SUMMARY',
     data: {
       order_summary: lines.join('\n'),
-      subtotal: formatCurrencyILS(draft.subtotal),
-      delivery_fee: formatCurrencyILS(draft.delivery_fee),
-      total: formatCurrencyILS(draft.total),
-      customer_name: draft.customer.name ?? '',
-      customer_phone: draft.customer.phone ?? '',
+      subtotal_text: `סכום ביניים: ${formatCurrencyILS(draft.subtotal)}`,
+      delivery_fee_text: `משלוח: ${formatCurrencyILS(draft.delivery_fee)}`,
+      total_text: `סך הכל: ${formatCurrencyILS(draft.total)}`,
+      customer_line: [draft.customer.name, draft.customer.phone].filter(Boolean).join(' · '),
       address,
-      estimated_minutes: draft.estimated_minutes,
+      estimated_text: `זמן הכנה משוער: ${draft.estimated_minutes} דקות`,
     },
   };
 }

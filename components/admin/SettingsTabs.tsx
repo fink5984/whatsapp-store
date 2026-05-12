@@ -8,6 +8,7 @@ import { Field } from '@/components/ui/field';
 import { Input, Textarea, Select } from '@/components/ui/input';
 import { Switch, SwitchRow } from '@/components/ui/switch';
 import { useToast } from '@/components/ui/toaster';
+import { ImageUploader } from '@/components/admin/ImageUploader';
 import type { Store, StoreOpeningHours, StoreNotification } from '@/lib/supabase/database.types';
 
 const DAY_NAMES = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
@@ -40,6 +41,8 @@ export function SettingsTabs({
         slug: store.slug,
         store_code: store.store_code,
         description: store.description,
+        logo_url: store.logo_url,
+        cover_image_url: store.cover_image_url,
         phone: store.phone,
         whatsapp_phone: store.whatsapp_phone,
         email: store.email,
@@ -136,6 +139,31 @@ export function SettingsTabs({
           </Card>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <Card title="מותג">
+              <Field label="לוגו" hint="מומלץ 200×200, רקע שקוף">
+                <ImageUploader
+                  storeId={store.id}
+                  kind="logos"
+                  value={store.logo_url}
+                  onChange={(url) => setS('logo_url', url)}
+                  height={120}
+                  label="העלה לוגו"
+                />
+              </Field>
+              <div style={{ marginTop: 12 }}>
+                <Field label="תמונת קאבר" hint="מומלץ 1200×400">
+                  <ImageUploader
+                    storeId={store.id}
+                    kind="covers"
+                    value={store.cover_image_url}
+                    onChange={(url) => setS('cover_image_url', url)}
+                    height={100}
+                    label="העלה קאבר"
+                  />
+                </Field>
+              </div>
+            </Card>
+
             <Card title="זמינות">
               <SwitchRow label="חנות פעילה" sub="כשכבוי, הלקוחות לא יראו את החנות" checked={store.is_active} onChange={(v) => setS('is_active', v)} />
               <SwitchRow label="משלוחים" checked={store.accepts_delivery} onChange={(v) => setS('accepts_delivery', v)} />

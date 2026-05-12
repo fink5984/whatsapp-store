@@ -56,6 +56,7 @@ export default async function ProductsListPage({
           <table className="table table--clickable">
             <thead>
               <tr>
+                <th style={{ width: 64 }}></th>
                 <th>שם</th>
                 <th>קטגוריה</th>
                 <th>מחיר</th>
@@ -68,6 +69,32 @@ export default async function ProductsListPage({
             <tbody>
               {allProducts.map((p) => (
                 <tr key={p.id}>
+                  <td>
+                    {p.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={p.image_url}
+                        alt=""
+                        style={{ width: 48, height: 48, objectFit: 'cover', borderRadius: 'var(--r-sm)', border: '1px solid var(--border)' }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          width: 48,
+                          height: 48,
+                          borderRadius: 'var(--r-sm)',
+                          background: 'var(--surface-2)',
+                          border: '1px dashed var(--border-strong)',
+                          display: 'grid',
+                          placeItems: 'center',
+                          color: 'var(--text-subtle)',
+                          fontSize: 11,
+                        }}
+                      >
+                        ⌂
+                      </div>
+                    )}
+                  </td>
                   <td>
                     <div className="cell-strong">
                       <Link href={`/admin/stores/${storeId}/products/${p.id}`}>{p.name}</Link>

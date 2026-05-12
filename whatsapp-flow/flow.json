@@ -10,7 +10,7 @@
     "PRODUCT_CUSTOMIZE": ["CART"],
     "CART": ["CATEGORY_SELECT", "DELIVERY_METHOD"],
     "DELIVERY_METHOD": ["CUSTOMER_DETAILS"],
-    "CUSTOMER_DETAILS": ["ORDER_SUMMARY", "CUSTOMER_DETAILS"],
+    "CUSTOMER_DETAILS": ["ORDER_SUMMARY"],
     "ORDER_SUMMARY": ["SUCCESS"],
     "SUCCESS": []
   },
@@ -254,10 +254,74 @@
             }
           }
         },
-        "group_2": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } },
-        "group_3": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } },
-        "group_4": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } },
-        "group_5": { "type": "object", "__example__": { "visible": false, "name": "", "use_multi": false, "options": [] } }
+        "group_2": {
+          "type": "object",
+          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "name": { "type": "string" },
+            "use_multi": { "type": "boolean" },
+            "is_required": { "type": "boolean" },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+              }
+            }
+          }
+        },
+        "group_3": {
+          "type": "object",
+          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "name": { "type": "string" },
+            "use_multi": { "type": "boolean" },
+            "is_required": { "type": "boolean" },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+              }
+            }
+          }
+        },
+        "group_4": {
+          "type": "object",
+          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "name": { "type": "string" },
+            "use_multi": { "type": "boolean" },
+            "is_required": { "type": "boolean" },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+              }
+            }
+          }
+        },
+        "group_5": {
+          "type": "object",
+          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "name": { "type": "string" },
+            "use_multi": { "type": "boolean" },
+            "is_required": { "type": "boolean" },
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": { "id": { "type": "string" }, "title": { "type": "string" } }
+              }
+            }
+          }
+        }
       },
       "layout": {
         "type": "SingleColumnLayout",
@@ -451,25 +515,24 @@
       "title": "סיכום הזמנה",
       "data": {
         "order_summary": { "type": "string", "__example__": "" },
-        "subtotal": { "type": "string", "__example__": "" },
-        "delivery_fee": { "type": "string", "__example__": "" },
-        "total": { "type": "string", "__example__": "" },
-        "customer_name": { "type": "string", "__example__": "" },
-        "customer_phone": { "type": "string", "__example__": "" },
+        "subtotal_text": { "type": "string", "__example__": "סכום ביניים: ₪0" },
+        "delivery_fee_text": { "type": "string", "__example__": "משלוח: ₪0" },
+        "total_text": { "type": "string", "__example__": "סך הכל: ₪0" },
+        "customer_line": { "type": "string", "__example__": "" },
         "address": { "type": "string", "__example__": "" },
-        "estimated_minutes": { "type": "number", "__example__": 30 }
+        "estimated_text": { "type": "string", "__example__": "זמן הכנה משוער: 30 דקות" }
       },
       "layout": {
         "type": "SingleColumnLayout",
         "children": [
           { "type": "TextHeading", "text": "סיכום הזמנה" },
           { "type": "TextBody", "text": "${data.order_summary}" },
-          { "type": "TextSubheading", "text": "סכום ביניים: ${data.subtotal}" },
-          { "type": "TextSubheading", "text": "משלוח: ${data.delivery_fee}" },
-          { "type": "TextSubheading", "text": "סך הכל: ${data.total}" },
-          { "type": "TextBody", "text": "${data.customer_name} · ${data.customer_phone}" },
+          { "type": "TextSubheading", "text": "${data.subtotal_text}" },
+          { "type": "TextSubheading", "text": "${data.delivery_fee_text}" },
+          { "type": "TextSubheading", "text": "${data.total_text}" },
+          { "type": "TextBody", "text": "${data.customer_line}" },
           { "type": "TextBody", "text": "${data.address}" },
-          { "type": "TextBody", "text": "זמן הכנה משוער: ${data.estimated_minutes} דקות" },
+          { "type": "TextBody", "text": "${data.estimated_text}" },
           {
             "type": "Footer",
             "label": "אשר הזמנה",

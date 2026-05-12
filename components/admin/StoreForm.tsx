@@ -8,6 +8,7 @@ import { Input, Select, Textarea } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { SwitchRow } from '@/components/ui/switch';
 import { useToast } from '@/components/ui/toaster';
+import { ImageUploader } from '@/components/admin/ImageUploader';
 import type { Store } from '@/lib/supabase/database.types';
 
 type Mode = 'create' | 'edit';
@@ -27,6 +28,8 @@ export function StoreForm({
     slug: store?.slug ?? '',
     store_code: store?.store_code ?? '',
     description: store?.description ?? '',
+    logo_url: store?.logo_url ?? '',
+    cover_image_url: store?.cover_image_url ?? '',
     phone: store?.phone ?? '',
     whatsapp_phone: store?.whatsapp_phone ?? '',
     email: store?.email ?? '',
@@ -217,6 +220,47 @@ export function StoreForm({
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {store?.id ? (
+            <Card title="מותג">
+              <Field label="לוגו" hint="מומלץ 200×200, רקע שקוף">
+                <ImageUploader
+                  storeId={store.id}
+                  kind="logos"
+                  value={form.logo_url || null}
+                  onChange={(url) => setF('logo_url', url ?? '')}
+                  height={120}
+                  label="העלה לוגו"
+                />
+              </Field>
+              <div style={{ marginTop: 12 }}>
+                <Field label="תמונת קאבר" hint="מומלץ 1200×400">
+                  <ImageUploader
+                    storeId={store.id}
+                    kind="covers"
+                    value={form.cover_image_url || null}
+                    onChange={(url) => setF('cover_image_url', url ?? '')}
+                    height={100}
+                    label="העלה קאבר"
+                  />
+                </Field>
+              </div>
+            </Card>
+          ) : (
+            <div
+              style={{
+                padding: 14,
+                background: 'var(--surface-2)',
+                border: '1px dashed var(--border-strong)',
+                borderRadius: 'var(--r-md)',
+                fontSize: 12,
+                color: 'var(--text-muted)',
+              }}
+            >
+              <div style={{ fontWeight: 600, marginBottom: 4, color: 'var(--text)' }}>תמונות מותג</div>
+              שמור את החנות תחילה — אחר כך תוכל להעלות לוגו ותמונת קאבר.
+            </div>
+          )}
+
           <Card title="סטטוס">
             <SwitchRow
               label="החנות פעילה"

@@ -11,6 +11,7 @@ import { Dialog } from '@/components/ui/dialog';
 import { SwitchRow } from '@/components/ui/switch';
 import { Empty } from '@/components/ui/empty';
 import { useToast } from '@/components/ui/toaster';
+import { ImageUploader } from '@/components/admin/ImageUploader';
 import type { Category } from '@/lib/supabase/database.types';
 
 interface CategoryWithCount extends Category {
@@ -21,6 +22,7 @@ interface DraftCategory {
   id?: string;
   name: string;
   description: string;
+  image_url: string | null;
   sort_order: number;
   is_active: boolean;
 }
@@ -41,12 +43,13 @@ export function CategoriesManager({
   const refresh = () => router.refresh();
 
   const openNew = () =>
-    setDraft({ name: '', description: '', sort_order: list.length + 1, is_active: true });
+    setDraft({ name: '', description: '', image_url: null, sort_order: list.length + 1, is_active: true });
   const openEdit = (c: CategoryWithCount) =>
     setDraft({
       id: c.id,
       name: c.name,
       description: c.description ?? '',
+      image_url: c.image_url ?? null,
       sort_order: c.sort_order,
       is_active: c.is_active,
     });
@@ -115,6 +118,7 @@ export function CategoriesManager({
           <table className="table">
             <thead>
               <tr>
+                <th style={{ width: 56 }}></th>
                 <th>שם</th>
                 <th>תיאור</th>
                 <th>מוצרים</th>
@@ -128,6 +132,31 @@ export function CategoriesManager({
                 .sort((a, b) => a.sort_order - b.sort_order)
                 .map((c) => (
                   <tr key={c.id}>
+                    <td>
+                      {c.image_url ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={c.image_url}
+                          alt=""
+                          style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: 'var(--r-sm)', border: '1px solid var(--border)' }}
+                        />
+                      ) : (
+                        <div
+                          style={{
+                            width: 40,
+                            height: 40,
+                            borderRadius: 'var(--r-sm)',
+                            background: 'var(--surface-2)',
+                            color: 'var(--text-subtle)',
+                            display: 'grid',
+                            placeItems: 'center',
+                            fontSize: 12,
+                          }}
+                        >
+                          ◯
+                        </div>
+                      )}
+                    </td>
                     <td className="cell-strong">{c.name}</td>
                     <td className="cell-muted">{c.description ?? '—'}</td>
                     <td className="cell-strong">{c.product_count ?? 0}</td>
@@ -169,6 +198,16 @@ export function CategoriesManager({
                 rows={2}
                 value={draft.description}
                 onChange={(e) => setDraft({ ...draft, description: e.target.value })}
+              />
+            </Field>
+            <Field label="תמונת קטגוריה" hint="מוצגת מעל המוצרים בתפריט">
+              <ImageUploader
+                storeId={storeId}
+                kind="categories"
+                value={draft.image_url}
+                onChange={(url) => setDraft({ ...draft, image_url: url })}
+                height={120}
+                label="העלה תמונה לקטגוריה"
               />
             </Field>
             <div className="grid gap-4 grid-cols-2">

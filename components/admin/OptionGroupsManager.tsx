@@ -11,6 +11,7 @@ import { Input, Textarea } from '@/components/ui/input';
 import { SwitchRow } from '@/components/ui/switch';
 import { Empty } from '@/components/ui/empty';
 import { useToast } from '@/components/ui/toaster';
+import { ImageUploader } from '@/components/admin/ImageUploader';
 import { formatCurrencyILS } from '@/lib/pricing';
 import type { Option, OptionGroup } from '@/lib/supabase/database.types';
 
@@ -34,6 +35,7 @@ interface DraftOption {
   group_id: string;
   name: string;
   price_delta: number;
+  image_url: string | null;
   is_active: boolean;
   sort_order?: number;
 }
@@ -206,6 +208,24 @@ export function OptionGroupsManager({
               <div className="option-group-card-body">
                 {g.options.map((o) => (
                   <div key={o.id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 10px', border: '1px solid var(--divider)', borderRadius: 'var(--r-sm)' }}>
+                    {o.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={o.image_url}
+                        alt=""
+                        style={{ width: 36, height: 36, objectFit: 'cover', borderRadius: 'var(--r-sm)', border: '1px solid var(--border)' }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          width: 36,
+                          height: 36,
+                          borderRadius: 'var(--r-sm)',
+                          background: 'var(--surface-2)',
+                          border: '1px dashed var(--border)',
+                        }}
+                      />
+                    )}
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: 13, fontWeight: 500 }}>{o.name}</div>
                       <div style={{ fontSize: 11.5, color: 'var(--text-subtle)' }}>
@@ -215,7 +235,7 @@ export function OptionGroupsManager({
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => setOptionDraft({ id: o.id, group_id: g.id, name: o.name, price_delta: o.price_delta, is_active: o.is_active })}
+                      onClick={() => setOptionDraft({ id: o.id, group_id: g.id, name: o.name, price_delta: o.price_delta, image_url: o.image_url ?? null, is_active: o.is_active })}
                     >
                       עריכה
                     </Button>
@@ -230,6 +250,7 @@ export function OptionGroupsManager({
                       group_id: g.id,
                       name: '',
                       price_delta: 0,
+                      image_url: null,
                       is_active: true,
                       sort_order: g.options.length + 1,
                     })
@@ -301,6 +322,16 @@ export function OptionGroupsManager({
                   onChange={(e) => setOptionDraft({ ...optionDraft, price_delta: Number(e.target.value) })}
                 />
               </div>
+            </Field>
+            <Field label="תמונה" hint="אופציונלית">
+              <ImageUploader
+                storeId={storeId}
+                kind="options"
+                value={optionDraft.image_url}
+                onChange={(url) => setOptionDraft({ ...optionDraft, image_url: url })}
+                height={100}
+                label="העלה תמונה לאפשרות"
+              />
             </Field>
             <SwitchRow label="פעיל" checked={optionDraft.is_active} onChange={(v) => setOptionDraft({ ...optionDraft, is_active: v })} />
           </div>
