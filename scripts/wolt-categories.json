@@ -1,0 +1,5724 @@
+{
+  "assortment_id": "6981cd695d0e502b7b070caf",
+  "loading_strategy": "full",
+  "primary_language": "he",
+  "selected_language": "he",
+  "available_languages": [
+    {
+      "autotranslated": true,
+      "language": "ar",
+      "name": "ערבית"
+    },
+    {
+      "autotranslated": true,
+      "language": "en",
+      "name": "אנגלית"
+    },
+    {
+      "autotranslated": true,
+      "language": "fr",
+      "name": "צרפתית"
+    },
+    {
+      "autotranslated": false,
+      "language": "he",
+      "name": "עברית"
+    },
+    {
+      "autotranslated": true,
+      "language": "ru",
+      "name": "רוסית"
+    }
+  ],
+  "compliance_info": {
+    "badges": [],
+    "disclaimers": null,
+    "how_search_works": null,
+    "lowest_price_calculation_interval_in_days": 30,
+    "should_display_original_price_for_unit_price": true,
+    "should_display_price_by_subtracting_deposit": false
+  },
+  "categories": [
+    {
+      "id": "b39981fd53cc843a20e9bc5e",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/69971a0a017a1a25739f1947",
+          "blurhash": null
+        }
+      ],
+      "name": "‫שימו 💙",
+      "slug": "menucategory-1",
+      "subcategories": [],
+      "item_ids": [
+        "e99a2a9429e2546525afeaff"
+      ]
+    },
+    {
+      "id": "6e8e548452bb3ff8b63e7a6c",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/66717fd8750bf16648d2aed9",
+          "blurhash": "L7J*uAj[~qt7xufQM{fQ%MofIURj"
+        }
+      ],
+      "name": "מספר סועדים",
+      "slug": "menucategory-2",
+      "subcategories": [],
+      "item_ids": [
+        "6e066b2773fdd8ddf9bc6b51"
+      ]
+    },
+    {
+      "id": "d226861f2736472b224dd25c",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda6142acc16e0b4991fe",
+          "blurhash": null
+        }
+      ],
+      "name": "ארוחות",
+      "slug": "menucategory-3",
+      "subcategories": [],
+      "item_ids": [
+        "8265d9b3a298e200865e1546",
+        "ae620448397b8e5b09aaf600",
+        "4f57e70d30c48e7f90cc65ce"
+      ]
+    },
+    {
+      "id": "9cb62600c5482a0db03578c5",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2ed",
+          "blurhash": null
+        }
+      ],
+      "name": "בלחם",
+      "slug": "menucategory-4",
+      "subcategories": [],
+      "item_ids": [
+        "6532c151623492dea8695157",
+        "59a68503731e001bd6bf22cf",
+        "5981da9e1d2343c0cb973e4c",
+        "a3047b6ef2547143702df21f",
+        "df0bdf9a05dcaa4a19f84c3d",
+        "15f6717c85a8318540dd7a00",
+        "5504cbe08aeb61a9d8bb2b1c"
+      ]
+    },
+    {
+      "id": "a6711ef823a8c41917d60caf",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2f1",
+          "blurhash": null
+        }
+      ],
+      "name": "סלטים",
+      "slug": "menucategory-5",
+      "subcategories": [],
+      "item_ids": [
+        "899d6a690f6bb3771a901f18",
+        "5745cba9bcbecf8ce0070739"
+      ]
+    },
+    {
+      "id": "5559c5da25352d30960e7e50",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2ed",
+          "blurhash": null
+        }
+      ],
+      "name": "ילדים",
+      "slug": "menucategory-6",
+      "subcategories": [],
+      "item_ids": [
+        "65e661cd1aedc2c5e25d45f2",
+        "de5edae9a968735663d67da4"
+      ]
+    },
+    {
+      "id": "63d967007dd513ba33120244",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaff0edcf1136ce14fcb",
+          "blurhash": null
+        }
+      ],
+      "name": "תוספות",
+      "slug": "menucategory-7",
+      "subcategories": [],
+      "item_ids": [
+        "d07a9c442eb4984f836c54cd",
+        "814dc4d7aeba656b3bb3f3e8",
+        "5b67a7639866976c93426429",
+        "011284f837a4c8a97adb2a18",
+        "64fa252659a307de377678e2",
+        "0cdf90ee0d9fcac675051aca"
+      ]
+    },
+    {
+      "id": "6205db415d5658091b5ed8ca",
+      "description": "",
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda5942acc16e0b4991f9",
+          "blurhash": null
+        }
+      ],
+      "name": "רטבים",
+      "slug": "menucategory-8",
+      "subcategories": [],
+      "item_ids": [
+        "927be1718de4fd9392757547",
+        "3a0c179600d41acbbebcf870",
+        "3187c841704734e13a089f24",
+        "13f3267d94a20b95ca31e210",
+        "10cc519b977622758d293b23",
+        "55b43d402ee7e0bea079bb22",
+        "dfbc1a8fa3b48880f2609364",
+        "f70317f12493b6d76410c743"
+      ]
+    },
+    {
+      "id": "9db4c390efe61a822db318f6",
+      "description": "",
+      "images": [
+        {
+          "url": "https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/5fbe3d6b40ccbfedccfd71a0/db31ed34-9ae8-11ec-979c-ee0a42a95e9b_1a7063e8_42c7_11eb_9443_92ca09493036_coca_cola_can_330ml.jpeg",
+          "blurhash": null
+        }
+      ],
+      "name": "שתייה קלה",
+      "slug": "menucategory-9",
+      "subcategories": [],
+      "item_ids": [
+        "8e9492b60ca1212139e3fd19",
+        "887855a82b5e4ae6687b0bd0",
+        "03e042d5075992f124d628b3",
+        "092fa14a6c6c90c1a86d071f",
+        "922da55c46e14daa98fc3abc",
+        "5a9e5f3151c03873a5ccdfa5",
+        "ef23b9313a9afb138f2e6f47",
+        "97fdc0941e4edcf16ce6119b",
+        "5ba51615d78d666e87747195"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "011284f837a4c8a97adb2a18",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "32ac2412d9858e427888e8610d79be98",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddb030edcf1136ce14fcd",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "צ׳יפס מתובל",
+      "options": [
+        {
+          "id": "67bbf6fa9ef0bfed51f7aaad",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 10
+            },
+            "max_single_selections": 10,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 2000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [
+        {
+          "id": "popular",
+          "label": "פופולרי",
+          "decoration": "star",
+          "color": "primary",
+          "style": {
+            "background_color": "#009de0",
+            "text_color": "#ffffff",
+            "background_color_key": "color-bg-fill-brand",
+            "text_color_key": "color-text-on-bg-fill-brand"
+          }
+        }
+      ],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "03e042d5075992f124d628b3",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "28488fee164f90bf80f7aec92a0ac8d0",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/5fbe3d6b40ccbfedccfd71a0/f082f296-f8ea-11eb-a003-9a7dc0e18722_53003_wolt_1440x810_sprite_can_330ml_lime.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "ספרייט | פחית | 330 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "092fa14a6c6c90c1a86d071f",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "ba05ec2d329599447156bfccaa95667c",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/695fabd4480a5d9363758d0d",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "פאנטה | פחית | 330 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "0cdf90ee0d9fcac675051aca",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "4401983595a9a0746c896a292af6f109",
+      "description": "כנפיים חצויות ברוטב לבחירה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2e8",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "כנפיים",
+      "options": [
+        {
+          "id": "f0043a96fffef137bd78b9e4",
+          "option_id": "3338459c4e5dc85aa22189c9",
+          "name": "בחרו רוטב",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 3100,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "10cc519b977622758d293b23",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "63dda2e90a8d64fd439a07949a945aea",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2fd",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "רוטב שום",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "13f3267d94a20b95ca31e210",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "6e058cb657db7fa4b5daa3354dd04b8c",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddb110edcf1136ce14fd6",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "צ׳ילי חריף 🌶️",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "15f6717c85a8318540dd7a00",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "9b18fb67c4d9ed7563c1112b01e7aeab",
+      "description": "קציצת המבורגר 150 גר׳ עם סלטים ורטבים לבחירה בלחמניה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda7042acc16e0b49920f",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "המבורגר | 150 גר׳",
+      "options": [
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 4900,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "3187c841704734e13a089f24",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "1a7c3d014b31856d0ed9cf814969b6f1",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddb0c0edcf1136ce14fd2",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "צ׳ילי מתוק",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "3a0c179600d41acbbebcf870",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "642294b48e547dbe8faf231692fde980",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddb090edcf1136ce14fd0",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "פסטו",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "4f57e70d30c48e7f90cc65ce",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "deeb75672740956d3ac5f7fe504ced83",
+      "description": "‫5 מנות בשר עם סלטים וממרחים בלחם לבחירה\nמוגש עם 5 תוספות ו-5 משקאות",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda5f42acc16e0b4991fd",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "ארוחה לחמישה סועדים",
+      "options": [
+        {
+          "id": "ea436a69dc327e5cbeec92d4",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "2558d1c85a03ed49a4450a26",
+          "option_id": "b7ca43fba38afcb9cd8b0657",
+          "name": "בחרו בשר למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "a16eafc7528964efd4ebff28",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל",
+          "prerequisite_values": [
+            "21a7521a2296e28b003f61a6"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "d555fcb1c550eaefa44f2617",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "a9eeb3525a16913a2a630cd0",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "009fa0beae9883e60be48d14",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "43edcb09a5fcf5f05b2681ba",
+          "option_id": "cb529220ce7f48183a6095a0",
+          "name": "בחרו בשר למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "2e32cf1daeb5b1c93c441d98",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #2",
+          "prerequisite_values": [
+            "a3fc3301aec0027e1c7a7730"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "d27db17e669716de385dc9e5",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "02e3b24d3e63cd5ecc7cc7a3",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "7afb27cda5c3ca3b471bf6d6",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "0c6afa3a173cb837c64f250e",
+          "option_id": "03025eb6f42398da5948df34",
+          "name": "בחרו בשר למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 2
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "62072986da82a9293247ae2d",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #3",
+          "prerequisite_values": [
+            "91b18cf3331ca3efc30e4dd7"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "24570b10485853b84b6df94a",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "eadf60e24f09e054eac1cf2f",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "7d3d8fed9054995a3f60a918",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "92c3309ba6af941728915bd7",
+          "option_id": "4952be4c19fd29eb8ff4f1fc",
+          "name": "בחרו בשר למנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "e4ea4314657dd2dc6ef379b5",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #4",
+          "prerequisite_values": [
+            "8f3a2afb5d34df1b0afd65ba"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "466f7a717c11ea2cff3ca2a5",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "ddf93e49181ec1c57aba420f",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "39faa52d98f2274bb7bfb683",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "3d9033474e29d952d4e63041",
+          "option_id": "c158bda3a013865aed3fa1de",
+          "name": "בחרו בשר למנה #5",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "879427760e8b086458307f09",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל",
+          "prerequisite_values": [
+            "7bcd8b6130a267a76f8917f5"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "befd8bee9b2317a7765fadfb",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "32647c118108303e223d2f10",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "9533950f579fc1963cc260aa",
+          "option_id": "bd7f5afe94ffa30d45cfecf8",
+          "name": "בחרו תוספות",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 5,
+              "max": 5
+            },
+            "max_single_selections": 5,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "ca613decf560015795dcd90d",
+          "option_id": "11b041a4d4305d5fa1dfcb34",
+          "name": "בחרו שתייה",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 5,
+              "max": 5
+            },
+            "max_single_selections": 5,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 29900,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "5504cbe08aeb61a9d8bb2b1c",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "3a30dc00e1cd37aa6fbd0c595ff1f47c",
+      "description": "קציצת המבורגר 300 גר׳ עם סלטים ורטבים לבחירה בלחמניה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda7242acc16e0b499211",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "המבורגר | 300 גר׳",
+      "options": [
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 6200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "55b43d402ee7e0bea079bb22",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "77138dc5c9bd5f31499e9afcbade0c31",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2df",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "ברביקיו",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "5745cba9bcbecf8ce0070739",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "73e1e9ee8c43419aa42d8c49b7d0f685",
+      "description": "בחרו ירקות ורטבים לסלט",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2f0",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "סלט פרגית",
+      "options": [
+        {
+          "id": "12f9b9d0c2e3fa015a00f46a",
+          "option_id": "5c2624a5d3218d1449ee4053",
+          "name": "בחרו ירקות",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 7
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "cf1622aff520d1c53055305f",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 6600,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "5981da9e1d2343c0cb973e4c",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "77a90185b09fff9dde07655111f597f5",
+      "description": "סלטים ורטבים בלחם לבחירה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda7e42acc16e0b499216",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "חזה עוף",
+      "options": [
+        {
+          "id": "4b2809251f71fae20260b6af",
+          "option_id": "e84db339b9a1d204b1476a30",
+          "name": "בחרו לחם",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 3000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "59a68503731e001bd6bf22cf",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "3a78cf5909b7624fe290b0e4e46040da",
+      "description": "סלטים ורטבים בלחם לבחירה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaf10edcf1136ce14fc0",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "שניצל",
+      "options": [
+        {
+          "id": "4b2809251f71fae20260b6af",
+          "option_id": "e84db339b9a1d204b1476a30",
+          "name": "בחרו לחם",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "ec00e2f8ca813f7c63cd57ca",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 3000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [
+        {
+          "id": "popular",
+          "label": "פופולרי",
+          "decoration": "star",
+          "color": "primary",
+          "style": {
+            "background_color": "#009de0",
+            "text_color": "#ffffff",
+            "background_color_key": "color-bg-fill-brand",
+            "text_color_key": "color-text-on-bg-fill-brand"
+          }
+        }
+      ],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "5a9e5f3151c03873a5ccdfa5",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "5cdf622f45ffd0ce27f9a4be35268bca",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6410311caef26065757dd3d6/4719bdea-6754-11ee-8b19-3ef883fe4379_96a47a02_f8e9_11eb_a39c_467f67de554e_coca_cola_zero_500ml.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "קולה זירו | פלסטיק | 500 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "5b67a7639866976c93426429",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "d4bcd1d90de86d79aa0f64f8f0614456",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2e7",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "כדורי פירה",
+      "options": [
+        {
+          "id": "67bbf6fa9ef0bfed51f7aaad",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 10
+            },
+            "max_single_selections": 10,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1700,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "5ba51615d78d666e87747195",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "19feaa423dc151c4d0e0547dc5746bc7",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/68a7349c10ec70798b771902",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "מים מינרלים נביעות | פלסטיק | 500 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 800,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "64fa252659a307de377678e2",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "c2d81bc1e8bb1dc29339c230ec2d0c73",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2f2",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "פוטטוס",
+      "options": [
+        {
+          "id": "67bbf6fa9ef0bfed51f7aaad",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 10
+            },
+            "max_single_selections": 10,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 2000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "6532c151623492dea8695157",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "2e569d16d87c0851b2be72088fa95547",
+      "description": "סלטים ורטבים לבחירה בלחמניה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2ed",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "נקניקיה בלחמניה",
+      "options": [
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 2000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "65e661cd1aedc2c5e25d45f2",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "4da73b8591adada2aa9e6c1fe113b20f",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2ed",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "נקניקיה בלחמניה",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 2000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "6e066b2773fdd8ddf9bc6b51",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": "00729000000109",
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "167d35f46509ac84930f823bc02dd314",
+      "description": "אנא בחרו פריט זה כמספר הסועדים הזקוקים לסכו\"ם חד\"פ",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/66717fd8750bf16648d2aed9",
+          "blurhash": "L7J*uAj[~qt7xufQM{fQ%MofIURj"
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "‫סכו״ם חד\"פ 🍴",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 0,
+      "net_price": null,
+      "product_hierarchy_tags": [
+        "UNKNOWN"
+      ],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "814dc4d7aeba656b3bb3f3e8",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "812984440abec16b624e5ed956c45642",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2e5",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "טבעות בצל",
+      "options": [
+        {
+          "id": "67bbf6fa9ef0bfed51f7aaad",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 10
+            },
+            "max_single_selections": 10,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1700,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [
+        {
+          "id": "popular",
+          "label": "פופולרי",
+          "decoration": "star",
+          "color": "primary",
+          "style": {
+            "background_color": "#009de0",
+            "text_color": "#ffffff",
+            "background_color_key": "color-bg-fill-brand",
+            "text_color_key": "color-text-on-bg-fill-brand"
+          }
+        }
+      ],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "8265d9b3a298e200865e1546",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "d9dd3ea98a9ef5b1b6ef883dd683ff0e",
+      "description": "‫3 מנות בשר עם סלטים וממרחים בלחם לבחירה\nמוגש עם 3 תוספות ו-3 משקאות",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda6142acc16e0b4991fe",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "ארוחה לשלושה סועדים",
+      "options": [
+        {
+          "id": "f18740706f8ebb1ff67299d1",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "90216083f35a5654f0c7d52b",
+          "option_id": "b7ca43fba38afcb9cd8b0657",
+          "name": "בחרו בשר למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "2783a646e3f6262831f743e9",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #1",
+          "prerequisite_values": [
+            "21a7521a2296e28b003f61a6"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "9d2c5a8caf2a64f9170e3399",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "8c34b14d481580648ae2a058",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "f5f91670b327127d7cd60954",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "d8b8584b3a41deb85ea0a472",
+          "option_id": "cb529220ce7f48183a6095a0",
+          "name": "בחרו בשר למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "7f12f40ee024385b964f4864",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל",
+          "prerequisite_values": [
+            "a3fc3301aec0027e1c7a7730"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "0b1fd8d62df9e31172f87892",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "4e6c163773788f93bfc1fdaf",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "ac4b5e856ef44985341b398d",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "2cc217dc8bd893ac73723804",
+          "option_id": "03025eb6f42398da5948df34",
+          "name": "בחרו בשר למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "6be1fb76007141d2b95929cf",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #3",
+          "prerequisite_values": [
+            "91b18cf3331ca3efc30e4dd7"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "8d866f01c5fa7acfd0be7039",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "b2bc4cc00a64104d9b3ec147",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "87ccad87d16ecda55374f692",
+          "option_id": "bd7f5afe94ffa30d45cfecf8",
+          "name": "בחרו תוספות",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 3,
+              "max": 3
+            },
+            "max_single_selections": 3,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "350da9ffb0a04847c8b597d9",
+          "option_id": "11b041a4d4305d5fa1dfcb34",
+          "name": "בחרו שתייה",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 3,
+              "max": 3
+            },
+            "max_single_selections": 3,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 19900,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "887855a82b5e4ae6687b0bd0",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "ddd4f8fb9f971031823723bd326781f7",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/5fbe3d6b40ccbfedccfd71a0/f628dd82-9ae8-11ec-950f-ae0219d22a58_de86245a_f8ea_11eb_9c89_6eb8ab816b95_______________.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "קולה זירו | פחית | 330 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "899d6a690f6bb3771a901f18",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "c5557876e87cdd5e3ec881feeaf5e19d",
+      "description": "בחרו ירקות ורטבים לסלט",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d2f1",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "סלט שניצל",
+      "options": [
+        {
+          "id": "12f9b9d0c2e3fa015a00f46a",
+          "option_id": "5c2624a5d3218d1449ee4053",
+          "name": "בחרו ירקות",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 7
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "cf1622aff520d1c53055305f",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 6200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "8e9492b60ca1212139e3fd19",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "62b612f0beb03d60e23f3ca6ee78abc0",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/5fbe3d6b40ccbfedccfd71a0/db31ed34-9ae8-11ec-979c-ee0a42a95e9b_1a7063e8_42c7_11eb_9443_92ca09493036_coca_cola_can_330ml.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "קוקה קולה | פחית | 330 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "922da55c46e14daa98fc3abc",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "8409bf4df5ea59a1de12c3b689272672",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/5fbe3d6b40ccbfedccfd71a0/071f93ba-f8eb-11eb-a31c-6eb8ab816b95_fanta_grapes_sleek_330ml.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "פאנטה ענבים | פחית | 330 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1000,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "927be1718de4fd9392757547",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "e7ac6ffe10b251d62d3d3dc9e93b7080",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda5942acc16e0b4991f9",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "אלף האיים",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "97fdc0941e4edcf16ce6119b",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "bd54c596f18e42b7ac5c60a31a55ff07",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6410311caef26065757dd3d6/c86c2816-6753-11ee-8b19-3ef883fe4379_dc602cbc_f8e9_11eb_a705_c268f97193e5_fuze_tea_peach_500ml.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "פיוזטי אפרסק | פלסטיק | 500 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "a3047b6ef2547143702df21f",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "b4f1c26da72e2c0d57da68d881bbabb6",
+      "description": "סלטים ורטבים בלחם לבחירה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaf40edcf1136ce14fc3",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "קבב",
+      "options": [
+        {
+          "id": "0dcfd765edbf99c46bd8158e",
+          "option_id": "d62758312c90922cbbcbcb2a",
+          "name": "בחרו לחם",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 3500,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "ae620448397b8e5b09aaf600",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "225c32011e8329b41060927f3980db50",
+      "description": "‫4 מנות בשר עם סלטים וממרחים בלחם לבחירה\nמוגש עם 4 תוספות ו-4 משקאות",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698dda5d42acc16e0b4991fa",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "ארוחה לארבעה סועדים",
+      "options": [
+        {
+          "id": "39b0703f9836411301896c46",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "90216083f35a5654f0c7d52b",
+          "option_id": "b7ca43fba38afcb9cd8b0657",
+          "name": "בחרו בשר למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "70cb7d05e6a206ac9e20f62a",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "db7fe3a27d4198eb2c7fb3f3",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "fd79ee21c49c56890f02ca4d",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #1",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "2d11b8118f0f44cb19560ff5",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "d8b8584b3a41deb85ea0a472",
+          "option_id": "cb529220ce7f48183a6095a0",
+          "name": "בחרו בשר למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "ee36ecca0becff7ba412a235",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #2",
+          "prerequisite_values": [
+            "a3fc3301aec0027e1c7a7730"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "337bf1ee86ce86b5b8d8a2cf",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "08d53b0c99039a40ee887dcf",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #2",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "a3beec6805d7d3f31f0990c3",
+          "option_id": "03025eb6f42398da5948df34",
+          "name": "בחרו בשר למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "0cdef86a0697630be6f90f5c",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #3",
+          "prerequisite_values": [
+            "91b18cf3331ca3efc30e4dd7"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "45a6c66cab6739436f30d7d4",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "eb170a3d86a75c31f85729e1",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה #3",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "1c793cb75d9ad00d2b7344bd",
+          "option_id": "bd230e741b59379394055f3f",
+          "name": "בחרו לחם למנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "5242439496b3bd9c735abaf5",
+          "option_id": "4952be4c19fd29eb8ff4f1fc",
+          "name": "בחרו בשר למנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "1274b74ce6527f4913523a9b",
+          "option_id": "383c8501e205e1376687763b",
+          "name": "בחרו שניצל למנה #4",
+          "prerequisite_values": [
+            "8f3a2afb5d34df1b0afd65ba"
+          ],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "8c113b21d942da88b04e2ab2",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים מנה #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "afefee7880424319b2dcc19e",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים למנה. #4",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        },
+        {
+          "id": "eeb84fabb821485ded79e1f8",
+          "option_id": "11b041a4d4305d5fa1dfcb34",
+          "name": "בחרו שתייה",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 4,
+              "max": 4
+            },
+            "max_single_selections": 4,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "abb154186bbc4c0841c30319",
+          "option_id": "bd7f5afe94ffa30d45cfecf8",
+          "name": "בחרו תוספות",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 4,
+              "max": 4
+            },
+            "max_single_selections": 4,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 24900,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "d07a9c442eb4984f836c54cd",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "0c312b2486e820d7d91336ed4b79e2d0",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaff0edcf1136ce14fcb",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "צ׳יפס",
+      "options": [
+        {
+          "id": "67bbf6fa9ef0bfed51f7aaad",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 10
+            },
+            "max_single_selections": 10,
+            "free_selections": 0
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1700,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [
+        {
+          "id": "popular",
+          "label": "פופולרי",
+          "decoration": "star",
+          "color": "primary",
+          "style": {
+            "background_color": "#009de0",
+            "text_color": "#ffffff",
+            "background_color_key": "color-bg-fill-brand",
+            "text_color_key": "color-text-on-bg-fill-brand"
+          }
+        }
+      ],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "de5edae9a968735663d67da4",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "cebf5d6032ed08d8c0f82fe205848323",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaa96934b09ea5c0d300",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "שניצלונים וצ׳יפס",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 5500,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [
+        {
+          "id": "popular",
+          "label": "פופולרי",
+          "decoration": "star",
+          "color": "primary",
+          "style": {
+            "background_color": "#009de0",
+            "text_color": "#ffffff",
+            "background_color_key": "color-bg-fill-brand",
+            "text_color_key": "color-text-on-bg-fill-brand"
+          }
+        }
+      ],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "df0bdf9a05dcaa4a19f84c3d",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "1f9c2f544234b1127ec444832183d851",
+      "description": "סלטים ורטבים בלחם לבחירה",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddaf70edcf1136ce14fc6",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "פרגית",
+      "options": [
+        {
+          "id": "5edc978309799cb5f9786c60",
+          "option_id": "80dd0a1a631020775ac6e71c",
+          "name": "בחרו לחם",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 1,
+              "max": 1
+            },
+            "max_single_selections": 1,
+            "free_selections": 0
+          }
+        },
+        {
+          "id": "a2184259b3e85840d26dfa01",
+          "option_id": "d27bb1effc170a477df04d98",
+          "name": "בחרו סלטים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 11
+            },
+            "max_single_selections": 1,
+            "free_selections": 5
+          }
+        },
+        {
+          "id": "45308269a93c455f11d3011c",
+          "option_id": "021835ffb34e14bb1b229542",
+          "name": "בחרו רטבים",
+          "prerequisite_values": [],
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 9
+            },
+            "max_single_selections": 1,
+            "free_selections": 2
+          }
+        }
+      ],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 4700,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "dfbc1a8fa3b48880f2609364",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "0ea8136bb5953eb0162414f6f4b4ac02",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddb2e0edcf1136ce14fe3",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "טחינה",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "e99a2a9429e2546525afeaff",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "8ff6212cbe16a190d9cc43933901513a",
+      "description": "הכשרות באחריות בית העסק בלבד",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/699d79d514f2a96f9776b3de",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "כשרות בד״ץ קהילות",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 0,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "ef23b9313a9afb138f2e6f47",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "homedelivery",
+        "takeaway",
+        "eatin"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "c2706e049e2ea055200a530e6938ebd8",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6410311caef26065757dd3d6/7b21ccb4-6753-11ee-ad1e-5e681c65d0c8_906e1954_f8e9_11eb_b582_467f67de554e_coca_cola_classic_500ml.jpeg",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "קוקה קולה | פלסטיק | 500 מ״ל",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 1200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    },
+    {
+      "id": "f70317f12493b6d76410c743",
+      "advertising_info": null,
+      "alcohol_permille": 0,
+      "allowed_delivery_methods": [
+        "eatin",
+        "takeaway",
+        "homedelivery"
+      ],
+      "available_times": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start_time": 0,
+          "end_time": 86400000
+        }
+      ],
+      "barcode_gtin": null,
+      "caffeine_info": null,
+      "can_be_promoted": {
+        "basket": true,
+        "venue": true,
+        "credits": true
+      },
+      "checksum": "fc318036a00c9d4df47a59ae953d37dc",
+      "description": "",
+      "deposit": null,
+      "dietary_preferences": [],
+      "disabled_info": null,
+      "fulfillment_lead_time": null,
+      "has_extra_info": false,
+      "images": [
+        {
+          "url": "https://imageproxy.wolt.com/assets/698ddb160edcf1136ce14fd9",
+          "blurhash": null
+        }
+      ],
+      "videos": [],
+      "is_cutlery": false,
+      "is_no_contact_delivery_allowed": true,
+      "is_wolt_plus_only": false,
+      "lowest_price": null,
+      "lowest_price_v2": null,
+      "max_quantity_per_purchase": null,
+      "min_quantity_per_purchase": null,
+      "name": "קטשופ",
+      "options": [],
+      "original_price": null,
+      "original_net_price": null,
+      "item_price_discount_validity_period": null,
+      "price": 200,
+      "net_price": null,
+      "product_hierarchy_tags": [],
+      "purchasable_balance": null,
+      "restrictions": [],
+      "return_policy": null,
+      "sell_by_weight_config": null,
+      "should_display_purchasable_balance": false,
+      "tags": [],
+      "unit_info": null,
+      "unit_price": null,
+      "variant": null,
+      "vat_category_code": "ISR-1",
+      "vat_percentage": 18,
+      "vat_percentage_decimal": "18.0",
+      "external_compliance_link": null,
+      "consent_info": {
+        "ask_consent": false,
+        "blur_image": false
+      }
+    }
+  ],
+  "options": [
+    {
+      "id": "11b041a4d4305d5fa1dfcb34",
+      "name": "בחרו שתייה",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "20255d3e098a49f9fd5fe540",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קוקה קולה | פחית",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "82fe35ef87dafc2ecbc69585",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קולה זירו | פחית",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "024266e35679da2565ab79f8",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פאנטה | פחית",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "a4512c5fee08524f42ad6db3",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פאנטה ענבים | פחית",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "f87de25c6db6488ee44dd0c1",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "ספרייט | פחית",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "477063bfd7f47161e1bb86a1",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קוקה קולה | בקבוק",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "a2769bc7b5a39d64c3e8ea57",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קולה זירו | בקבוק",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "97ff8e8dce98de09ae06eec7",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פיוזטי אפרסק",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "151c86d76a840a44fa69662e",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "מים מינרלים",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "20255d3e098a49f9fd5fe540",
+      "has_extra_info": false
+    },
+    {
+      "id": "bd7f5afe94ffa30d45cfecf8",
+      "name": "בחרו תוספות",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "bdf031eaacd4b2b93881707d",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "צ׳יפס",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "d21689d4e4a22c76639ce575",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "כדורי פירה",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "07206827865fef2b3f1c567f",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "צ׳יפס מתובל",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "1bee0cb6d48698a40abc1293",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "צ׳יפס בטטה",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "bdf031eaacd4b2b93881707d",
+      "has_extra_info": false
+    },
+    {
+      "id": "b7ca43fba38afcb9cd8b0657",
+      "name": "בחרו בשר למנה #1",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "21a7521a2296e28b003f61a6",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "174081aa90ec9c67a5ca16d1",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קבב",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "21a7521a2296e28b003f61a6",
+      "has_extra_info": false
+    },
+    {
+      "id": "c158bda3a013865aed3fa1de",
+      "name": "בחרו בשר למנה #5",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "7bcd8b6130a267a76f8917f5",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "e1af8b4edd1fd82ebee6f133",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קבב",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "7bcd8b6130a267a76f8917f5",
+      "has_extra_info": false
+    },
+    {
+      "id": "4952be4c19fd29eb8ff4f1fc",
+      "name": "בחרו בשר למנה #4",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "8f3a2afb5d34df1b0afd65ba",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "ef46cd83dec5dc4dede87bb9",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קבב",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "8f3a2afb5d34df1b0afd65ba",
+      "has_extra_info": false
+    },
+    {
+      "id": "383c8501e205e1376687763b",
+      "name": "בחרו שניצל",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "3087c3a593b3493f97894990",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל עשבי תיבול",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "c0ebe795d7348ca6882eda99",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל שום",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "eb5567744694ccb58caef297",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל פיקנטי 🌶️",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "41395b2866840f1563251d36",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל שומשום",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "3087c3a593b3493f97894990",
+      "has_extra_info": false
+    },
+    {
+      "id": "021835ffb34e14bb1b229542",
+      "name": "בחרו רטבים",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "179622819ee99b4750a9394c",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "טחינה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "b01617cf68536897bb5db877",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פסטו",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "9b866b824a2833dae369bec3",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "אלף האיים",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "698f9204f4e17d1b9c5b2f4c",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "צ׳ילי מתוק",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "f53ceb9925057ce8422392f2",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "צ׳ילי חריף 🌶️",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "b78df008ebe32a7070ecba63",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "רוטב שום",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "6b83efc3f9f3567803460289",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "ברביקיו",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "96404249e7b2e000e46083ab",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קטשופ",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "f6f139761eca62ac3a5837e0",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חרדל",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "179622819ee99b4750a9394c",
+      "has_extra_info": false
+    },
+    {
+      "id": "d27bb1effc170a477df04d98",
+      "name": "בחרו סלטים",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "aab91f3b24a537109e5e5939",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חומוס",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "cabadb39a27e8f516fe9301d",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חריף 🌶️",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "4524741217c7020682b714ce",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "טחינה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "57cf759165af22465baf1eed",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "מטבוחה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "af2d67a06e5bc91af0b8f514",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חסה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "a93b4ee8211b7068382bc2ce",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "עגבניה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "c86f94c7fc31207a37b06752",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "מלפפון",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "b38736adfc678461cec9f5f0",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "כרוב לבן",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "d4a1afc64d7081cb50ffd606",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "כרוב סגול במיונז",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "6031e47dec92f5a59fb9a3ed",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חציל מטוגן",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "ddd765e81acfeb179cef1b8f",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "רצועות פלפל חריף 🌶️",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "aab91f3b24a537109e5e5939",
+      "has_extra_info": false
+    },
+    {
+      "id": "cb529220ce7f48183a6095a0",
+      "name": "בחרו בשר למנה #2",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "a3fc3301aec0027e1c7a7730",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "dbbd6b39c58e5476fdbc4d35",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "קבב",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "a3fc3301aec0027e1c7a7730",
+      "has_extra_info": false
+    },
+    {
+      "id": "5c2624a5d3218d1449ee4053",
+      "name": "בחרו ירקות",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "dd9b55ba642695b97039f0c8",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חסה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "1460b9411d605667fc0f5815",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "עגבניה",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "8b22de5ab84eac612d2423f6",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "מלפפון",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "f859cc87a0baa71bc3530d70",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "כרוב לבן",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "258efd8df3b1338de41d4cbd",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "כרוב סגול במיונז",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "abc13679be3edb9865f9804f",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "חציל מטוגן",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "84cb9d12429014021c23a2ba",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "רצועות פלפל חריף 🌶️",
+          "price": 300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "dd9b55ba642695b97039f0c8",
+      "has_extra_info": false
+    },
+    {
+      "id": "3338459c4e5dc85aa22189c9",
+      "name": "בחרו רוטב",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "f05970c25b0555ad534ece09",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "צ׳ילי מתוק",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "1d408d40926c6af3a9f1c0fe",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "ברביקיו",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "f05970c25b0555ad534ece09",
+      "has_extra_info": false
+    },
+    {
+      "id": "bfd6db7af62d81b532927451",
+      "name": "בחרו לחם",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "7d56cf335b79eaabd30587ea",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פיתה",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "3da5895afb6fd063eba1366a",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "בגט",
+          "price": 800,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "bf50fcb36acec5ea1f72cfb0",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "לאפה",
+          "price": 800,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "7d56cf335b79eaabd30587ea",
+      "has_extra_info": false
+    },
+    {
+      "id": "80dd0a1a631020775ac6e71c",
+      "name": "בחרו לחם",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "6ceae56233ee484ba32470c5",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פיתה",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "b39160187c0ebe671d38c3a7",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "בגט",
+          "price": 700,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "1ea43c55e5c051d0510c9a1f",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "לאפה",
+          "price": 700,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "6ceae56233ee484ba32470c5",
+      "has_extra_info": false
+    },
+    {
+      "id": "d62758312c90922cbbcbcb2a",
+      "name": "בחרו לחם",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "0295d47993ebfa3a596c9a37",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "לחמניה",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "749e0049ce3ae323b9083610",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "בגט",
+          "price": 1400,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "f21eeee73aaf3842cecef2a6",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "לאפה",
+          "price": 1900,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "0295d47993ebfa3a596c9a37",
+      "has_extra_info": false
+    },
+    {
+      "id": "e84db339b9a1d204b1476a30",
+      "name": "בחרו לחם",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "bc1d65cd2b7ab17a90365bd6",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "לחמניה",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "a5f28f566dd2cf16b30cdb2e",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "פיתה",
+          "price": 1300,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "id": "18c54255f67e8a9591314ed9",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "בגט",
+          "price": 1900,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "bc1d65cd2b7ab17a90365bd6",
+      "has_extra_info": false
+    },
+    {
+      "id": "bd230e741b59379394055f3f",
+      "name": "בחרו לחם",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "4313494dc9516253bdefa446",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "בגט",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "4313494dc9516253bdefa446",
+      "has_extra_info": false
+    },
+    {
+      "id": "03025eb6f42398da5948df34",
+      "name": "בחרו בשר למנה #3",
+      "type": "multi_choice",
+      "values": [
+        {
+          "id": "91b18cf3331ca3efc30e4dd7",
+          "deposit": null,
+          "dietary_preferences": [],
+          "name": "שניצל",
+          "price": 0,
+          "multi_choice_config": {
+            "total_range": {
+              "min": 0,
+              "max": 0
+            }
+          }
+        }
+      ],
+      "default_value": "91b18cf3331ca3efc30e4dd7",
+      "has_extra_info": false
+    }
+  ],
+  "variant_groups": []
+}

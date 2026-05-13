@@ -1,0 +1,536 @@
+{
+  "venue": {
+    "id": "696e31e87de938ca4d6a7fff",
+    "image_url": "https://imageproxy.wolt.com/assets/698dda4e42acc16e0b4991ef",
+    "image_blurhash": "j3IUFy;28xXpXK4zd5Nr0IHtFa9b",
+    "brand_logo_image_url": null,
+    "brand_logo_image_blurhash": null,
+    "brand_slug": null,
+    "brand_name": null,
+    "name": "שניצקה",
+    "description": "בשרים | כריכים\nכשרות בד״ץ קהילות\nהכשרות באחריות בית העסק בלבד",
+    "rating": {
+      "rating": 3,
+      "score": "7.6",
+      "score_raw": 7.6,
+      "volume": 100
+    },
+    "opening_times_schedule": [
+      {
+        "day": "יום שני",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום שלישי",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום רביעי",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום חמישי",
+        "formatted_times": "11:00–23:30"
+      },
+      {
+        "day": "יום שישי",
+        "formatted_times": "11:30–14:00"
+      },
+      {
+        "day": "יום שבת",
+        "formatted_times": "סגורים כרגע"
+      },
+      {
+        "day": "יום ראשון",
+        "formatted_times": "11:00–23:00"
+      }
+    ],
+    "delivery_times_schedule": [
+      {
+        "day": "יום שני",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום שלישי",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום רביעי",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום חמישי",
+        "formatted_times": "11:00–23:00"
+      },
+      {
+        "day": "יום שישי",
+        "formatted_times": "11:30–14:00"
+      },
+      {
+        "day": "יום שבת",
+        "formatted_times": "סגורים כרגע"
+      },
+      {
+        "day": "יום ראשון",
+        "formatted_times": "11:00–23:00"
+      }
+    ],
+    "group_order_enabled": true,
+    "share_url": "https://wolt.com/he/isr/beit-shemesh-area/restaurant/shnitzka",
+    "delivery_methods": [
+      "homedelivery",
+      "takeaway"
+    ],
+    "currency": "ILS",
+    "active_menu": "6981cd695d0e502b7b070caf",
+    "address": "נחל ניצנים 3, בית שמש",
+    "city": "Beit Shemesh Area",
+    "country": "ISR",
+    "type": "purchase",
+    "website": null,
+    "substitutions_enabled": null,
+    "post_code": "9909635",
+    "product_line": "restaurant",
+    "secondary_product_line": "none",
+    "phone": "+97225904011",
+    "self_delivery": false,
+    "timezone": "Asia/Jerusalem",
+    "delivery_base_price": 1000,
+    "delivery_geo_range": {
+      "bbox": null,
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            34.88060417719961,
+            31.75203932280036
+          ],
+          [
+            34.8913370098692,
+            31.769150769154137
+          ],
+          [
+            34.9057943677842,
+            31.784151680335878
+          ],
+          [
+            34.92342121143791,
+            31.79646442833754
+          ],
+          [
+            34.943539619658935,
+            31.8056146878703
+          ],
+          [
+            34.96537492153441,
+            31.811249840743827
+          ],
+          [
+            34.988085700000006,
+            31.81315267665107
+          ],
+          [
+            35.01079647846558,
+            31.811249840743827
+          ],
+          [
+            35.02108248683882,
+            31.808595275674286
+          ],
+          [
+            35.03342715395181,
+            31.786786
+          ],
+          [
+            35.023315,
+            31.718606
+          ],
+          [
+            35.053277,
+            31.678998
+          ],
+          [
+            35.01686780101705,
+            31.65576343815353
+          ],
+          [
+            34.97568,
+            31.651249
+          ],
+          [
+            34.94375923445496,
+            31.65541600929479
+          ],
+          [
+            34.918696,
+            31.664566
+          ],
+          [
+            34.905903,
+            31.693518
+          ],
+          [
+            34.911745,
+            31.725591
+          ],
+          [
+            34.87425576614518,
+            31.73417647397556
+          ],
+          [
+            34.88060417719961,
+            31.75203932280036
+          ]
+        ]
+      ]
+    },
+    "service_fee_short_description": "דמי תפעול עד 5%, בין ₪1.00 ל-₪5.90",
+    "service_fee_estimate": {
+      "min": 100,
+      "max": 590,
+      "percentage": 5
+    },
+    "feature_croatia_currency_selection_enabled": false,
+    "show_eco_packaging": false,
+    "is_pickup_friendly": false,
+    "age_verification_method": "consent_only",
+    "trader_information": null,
+    "show_delivery_preestimate_by_time": false,
+    "merchant": {
+      "id": "696e31e87de938ca4d6a8000",
+      "name": "Hai Nehama Bakery Ltd",
+      "business_id": "515257111",
+      "street_address": "נחל ניצנים 3",
+      "city": "בית שמש",
+      "post_code": "9909635",
+      "country": "ישראל"
+    },
+    "digital_services_act_information": {
+      "name": "Hai Nehama Bakery Ltd",
+      "business_id": "515257111",
+      "address": null,
+      "self_certification": null,
+      "report_item_url": null
+    },
+    "slug": "shnitzka",
+    "venue_supports_wolt_pay": false,
+    "group_order_id": null,
+    "info": {
+      "venue_info_service_fee_description": "דמי התפעול הם 5% מסך עלות הפריטים בהזמנה כפי שבוצעה במקור, עד למקסימום של ₪5.90. דמי תפעול מופחתים בסך ₪1.00 יחולו כאשר עלות בפריטים בהזמנה כאמור נמוכה מ- ₪60.00.",
+      "venue_info_order_minimum": "₪50.00",
+      "venue_info_base_delivery_price": "₪10.00"
+    },
+    "zero_distance_fees": {
+      "delivery_price": 1000
+    },
+    "return_policy_display": null
+  },
+  "venue_raw": {
+    "id": "696e31e87de938ca4d6a7fff",
+    "name": "שניצקה",
+    "image_url": "https://imageproxy.wolt.com/assets/698dda4e42acc16e0b4991ef",
+    "image_blurhash": "j3IUFy;28xXpXK4zd5Nr0IHtFa9b",
+    "brand_logo_image_url": null,
+    "brand_logo_image_blurhash": null,
+    "description": "בשרים | כריכים\nכשרות בד״ץ קהילות\nהכשרות באחריות בית העסק בלבד",
+    "group_order_enabled": true,
+    "share_url": "https://wolt.com/he/isr/beit-shemesh-area/restaurant/shnitzka",
+    "delivery_methods": [
+      "homedelivery",
+      "takeaway"
+    ],
+    "currency": "ILS",
+    "opening_times": {
+      "monday": [
+        {
+          "type": "open",
+          "value": 39600
+        },
+        {
+          "type": "close",
+          "value": 82800
+        }
+      ],
+      "tuesday": [
+        {
+          "type": "open",
+          "value": 39600
+        },
+        {
+          "type": "close",
+          "value": 82800
+        }
+      ],
+      "wednesday": [
+        {
+          "type": "open",
+          "value": 39600
+        },
+        {
+          "type": "close",
+          "value": 82800
+        }
+      ],
+      "thursday": [
+        {
+          "type": "open",
+          "value": 39600
+        },
+        {
+          "type": "close",
+          "value": 84600
+        }
+      ],
+      "friday": [
+        {
+          "type": "open",
+          "value": 41400
+        },
+        {
+          "type": "close",
+          "value": 50400
+        }
+      ],
+      "saturday": [],
+      "sunday": [
+        {
+          "type": "open",
+          "value": 39600
+        },
+        {
+          "type": "close",
+          "value": 82800
+        }
+      ]
+    },
+    "preorder_config": null,
+    "preorder_specs": {
+      "preorder_only": false,
+      "time_step": 5,
+      "homedelivery_spec": {
+        "earliest_timedelta": 60,
+        "latest_timedelta": 7,
+        "preorder_times": {
+          "monday": [
+            {
+              "type": "open",
+              "value": 42300
+            },
+            {
+              "type": "close",
+              "value": 82800
+            }
+          ],
+          "tuesday": [
+            {
+              "type": "open",
+              "value": 42300
+            },
+            {
+              "type": "close",
+              "value": 82800
+            }
+          ],
+          "wednesday": [
+            {
+              "type": "open",
+              "value": 42300
+            },
+            {
+              "type": "close",
+              "value": 82800
+            }
+          ],
+          "thursday": [
+            {
+              "type": "open",
+              "value": 42300
+            },
+            {
+              "type": "close",
+              "value": 82800
+            }
+          ],
+          "friday": [
+            {
+              "type": "open",
+              "value": 44100
+            },
+            {
+              "type": "close",
+              "value": 50400
+            }
+          ],
+          "saturday": null,
+          "sunday": [
+            {
+              "type": "open",
+              "value": 42300
+            },
+            {
+              "type": "close",
+              "value": 82800
+            }
+          ]
+        }
+      },
+      "takeaway_spec": {
+        "earliest_timedelta": 45,
+        "latest_timedelta": 7,
+        "preorder_times": {
+          "monday": [
+            {
+              "type": "open",
+              "value": 41400
+            },
+            {
+              "type": "close",
+              "value": 81900
+            }
+          ],
+          "tuesday": [
+            {
+              "type": "open",
+              "value": 41400
+            },
+            {
+              "type": "close",
+              "value": 81900
+            }
+          ],
+          "wednesday": [
+            {
+              "type": "open",
+              "value": 41400
+            },
+            {
+              "type": "close",
+              "value": 81900
+            }
+          ],
+          "thursday": [
+            {
+              "type": "open",
+              "value": 41400
+            },
+            {
+              "type": "close",
+              "value": 83700
+            }
+          ],
+          "friday": [
+            {
+              "type": "open",
+              "value": 43200
+            },
+            {
+              "type": "close",
+              "value": 49500
+            }
+          ],
+          "saturday": null,
+          "sunday": [
+            {
+              "type": "open",
+              "value": 41400
+            },
+            {
+              "type": "close",
+              "value": 81900
+            }
+          ]
+        }
+      },
+      "eatin_spec": null
+    },
+    "ncd_allowed": true,
+    "tipping": {
+      "currency": "ILS",
+      "tip_amounts": [
+        500,
+        1000,
+        1500
+      ],
+      "max_amount": 10000,
+      "min_amount": 500,
+      "type": "pre_tipping_amount"
+    },
+    "delivery_note": null,
+    "public_visible": true,
+    "bag_fee": null,
+    "comment_disabled": false,
+    "short_description": "בשרים | כריכים - כשרות בד״ץ קהילות",
+    "city_id": "6943f73fce4c94e42c20d76a",
+    "merchant": "696e31e87de938ca4d6a8000",
+    "show_allergy_disclaimer_on_menu": false,
+    "price_range": 2,
+    "item_cards_enabled": false,
+    "service_fee_description": "דמי התפעול הם 5% מסך עלות הפריטים בהזמנה כפי שבוצעה במקור, עד למקסימום של ₪5.90. דמי תפעול מופחתים בסך ₪1.00 יחולו כאשר עלות בפריטים בהזמנה כאמור נמוכה מ- ₪60.00.",
+    "food_tags": [
+      "ים תיכוני",
+      "‫סנדוויץ'",
+      "אוכל רחוב",
+      "Kosher 7",
+      "כשר"
+    ],
+    "allowed_payment_methods": [
+      "card",
+      "cibus"
+    ],
+    "food_safety_reports": null,
+    "is_wolt_plus": true,
+    "categories": [
+      {
+        "primary": true,
+        "name": "ים תיכוני",
+        "link_slug": "category-mediterranean:beit shemesh area",
+        "slug": "mediterranean"
+      },
+      {
+        "primary": false,
+        "name": "סנדוויץ'",
+        "link_slug": "category-sandwich:beit shemesh area",
+        "slug": "sandwich"
+      },
+      {
+        "primary": false,
+        "name": "אוכל רחוב",
+        "link_slug": "category-street_food:beit shemesh area",
+        "slug": "street_food"
+      },
+      {
+        "primary": false,
+        "name": "כשר",
+        "link_slug": "category-kosher:beit shemesh area",
+        "slug": "kosher"
+      },
+      {
+        "primary": false,
+        "name": "כשר לפסח",
+        "link_slug": "category-kosher-for-passover:beit shemesh area",
+        "slug": "kosher-for-passover"
+      }
+    ],
+    "rating": {
+      "rating": 3,
+      "score": "7.6",
+      "score_raw": 7.6,
+      "volume": 100
+    },
+    "location": {
+      "bbox": null,
+      "type": "Point",
+      "coordinates": [
+        34.9880857,
+        31.7142273
+      ]
+    },
+    "string_overrides": {
+      "weighted_items_popup_disclaimer": "אנו נשמור 20% נוסף מערך הפריטים המשוקללים כדי לקחת בחשבון הבדלים אפשריים במשקל. החיוב יתבסס על המשקל האמיתי של המוצרים שנשלחו.",
+      "restricted_item_bottom_sheet_title": "Age verification needed",
+      "restricted_item_bottom_sheet_info": "ההזמנה שלך כוללת פריטים עם הגבלת גיל. יש לאשר כי אתה בגיל שבו מותר לרכוש אותם בהתאם להוראות החוק במדינה שלך, ולהיות מוכן להציג לשליח ID תקפה עם תמונה במעמד המסירה. האם אתה רשאי לקנות מוצרים אלה?",
+      "restricted_item_bottom_sheet_confirm": "Yes, I'm allowed"
+    }
+  },
+  "order_minimum": 5000
+}
