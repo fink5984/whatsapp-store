@@ -241,3 +241,21 @@ export interface StoreNotification {
   target: string;
   is_active: boolean;
 }
+
+export type PaymentStatus = 'pending' | 'paid' | 'failed' | 'cancelled';
+
+export interface Payment {
+  id: UUID;
+  order_id: UUID;
+  flow_token: string | null;
+  amount: number;
+  currency: string;
+  provider: string;
+  provider_payment_id: string | null;
+  status: PaymentStatus;
+  transaction_id: string | null;
+  paid_at: ISO | null;
+  raw_webhook: Record<string, unknown> | null;
+  created_at: ISO;
+  updated_at: ISO;
+}

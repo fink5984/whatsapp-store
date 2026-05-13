@@ -12,6 +12,7 @@ import {
   buildProductsScreen,
   buildStoreResultsScreen,
   buildStoreSearchScreen,
+  buildPaymentPendingScreen,
   buildStoreWelcomeScreen,
   buildSuccessScreen,
   type FlowScreenResponse,
@@ -29,7 +30,12 @@ import {
   updateSessionStore,
 } from './flow-sessions';
 import { calculateCartTotals, calculateItemTotal } from './pricing';
-import { sendStoreOrderNotification } from './notifications';
+import {
+  createPendingPayment,
+  findActivePaymentForOrder,
+  findOrderByFlowToken,
+  paymentUrlFor,
+} from './payments';
 import type {
   CartItem,
   Category,
@@ -63,10 +69,10 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
 
   const session = await getOrCreateSession(body.flow_token);
 
-  // Hard lock: once an order has been placed for this flow_token, every subsequent
-  // request (INIT, data_exchange, BACK) replays the SUCCESS screen.
-  // WhatsApp may resume the flow client-side without sending INIT, so we cannot
-  // rely on INIT alone.
+  // Hard lock: once an order has been placed for this flow_token, every
+  // subsequent request (INIT, data_exchange, BACK) replays the confirmation
+  // screen. WhatsApp may resume the flow client-side without sending INIT,
+  // so we cannot rely on INIT alone.
   if (session.status === 'completed') {
     const supabase = createSupabaseService();
     const { data: existing } = await supabase
@@ -80,6 +86,16 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
       estimated_minutes: 0,
       already_completed: true,
     });
+  }
+
+  // Resume lock: order created but payment not yet confirmed. Re-render
+  // PAYMENT_PENDING regardless of the action the client sent. The user can
+  // still click "בדוק תשלום" because the step itself is allowed below;
+  // the difference is that closing/reopening the flow lands them back here
+  // instead of restarting from STORE_SEARCH.
+  if (session.status === 'pending_payment' && body.action !== 'data_exchange') {
+    const pending = await loadPendingPaymentScreen(body.flow_token);
+    if (pending) return pending;
   }
 
   if (body.action === 'INIT') {
@@ -144,8 +160,13 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
         return await stepSetDeliveryMethod(body.flow_token, data);
       case 'validate_customer_details':
         return await stepValidateCustomerDetails(body.flow_token, session.store_id, data);
+      case 'create_payment':
+        return await stepCreatePayment(body.flow_token);
+      case 'check_payment_status':
+        return await stepCheckPaymentStatus(body.flow_token);
       case 'submit_order':
-        return await stepSubmitOrder(body.flow_token);
+        // legacy step — kept so old in-flight flows finish without crashing
+        return await stepCreatePayment(body.flow_token);
       default:
         return buildErrorScreen('פעולה לא ידועה');
     }
@@ -518,27 +539,63 @@ async function stepValidateCustomerDetails(
   return buildOrderSummaryScreen(draft);
 }
 
-async function stepSubmitOrder(flowToken: string) {
-  const supabase = createSupabaseService();
+/* ----------------------- payment flow ----------------------- */
 
-  // Always check for an existing order first — covers cases where the session
-  // was not properly marked completed (e.g. DB error after order creation).
-  const { data: existingCheck } = await supabase
-    .from('orders')
-    .select('order_number, total')
-    .eq('flow_token', flowToken)
-    .maybeSingle();
-  if (existingCheck) {
-    return buildSuccessScreen({
-      order_number: (existingCheck as any).order_number,
-      total: Number((existingCheck as any).total),
-      estimated_minutes: 0,
-      already_completed: true,
+/**
+ * Build the PAYMENT_PENDING response for the order tied to this flow_token.
+ * Returns null when there is no order yet (caller should fall through to the
+ * normal flow). Re-uses the existing pending payment row when one is present;
+ * if the previous payment was cancelled/failed, opens a fresh one.
+ */
+async function loadPendingPaymentScreen(
+  flowToken: string,
+  opts: { error_message?: string } = {},
+): Promise<FlowScreenResponse | null> {
+  const order = await findOrderByFlowToken(flowToken);
+  if (!order) return null;
+
+  let payment = await findActivePaymentForOrder(order.id);
+  if (!payment) {
+    payment = await createPendingPayment({
+      orderId: order.id,
+      flowToken,
+      amount: Number(order.total),
     });
   }
 
-  const session = await getOrCreateSession(flowToken);
+  return buildPaymentPendingScreen({
+    payment_id: payment.id,
+    order_id: order.id,
+    store_id: order.store_id,
+    payment_url: paymentUrlFor(payment.id),
+    amount: Number(order.total),
+    error_message: opts.error_message,
+  });
+}
 
+async function stepCreatePayment(flowToken: string) {
+  const supabase = createSupabaseService();
+
+  // Idempotency: if an order already exists for this flow_token, jump straight
+  // to its payment screen (or its success screen if the payment is already
+  // paid — that path is also covered by the top-level hard locks, but we
+  // mirror it here so the step is self-contained).
+  const existingOrder = await findOrderByFlowToken(flowToken);
+  if (existingOrder) {
+    const existingPayment = await findActivePaymentForOrder(existingOrder.id);
+    if (existingPayment?.status === 'paid') {
+      return buildSuccessScreen({
+        order_number: existingOrder.order_number,
+        total: Number(existingOrder.total),
+        estimated_minutes: 0,
+        already_completed: true,
+      });
+    }
+    const pending = await loadPendingPaymentScreen(flowToken);
+    if (pending) return pending;
+  }
+
+  const session = await getOrCreateSession(flowToken);
   const cart = await getCart(flowToken);
   if (cart.length === 0) return buildErrorScreen('העגלה ריקה');
   if (!session.store_id) return buildErrorScreen('לא נבחרה חנות');
@@ -596,25 +653,16 @@ async function stepSubmitOrder(flowToken: string) {
       subtotal,
       delivery_fee: deliveryFee,
       total,
+      payment_status: 'unpaid',
     })
     .select('*')
     .single();
 
   if (orderError) {
-    // Likely the unique violation on flow_token — try to recover the existing row
-    const { data: existing } = await supabase
-      .from('orders')
-      .select('order_number, total')
-      .eq('flow_token', flowToken)
-      .maybeSingle();
-    if (existing) {
-      return buildSuccessScreen({
-        order_number: (existing as any).order_number,
-        total: (existing as any).total,
-        estimated_minutes: (store as Store).estimated_preparation_minutes,
-        already_completed: true,
-      });
-    }
+    // Lost the race against a concurrent insert — recover and continue with
+    // that row's payment screen.
+    const pending = await loadPendingPaymentScreen(flowToken);
+    if (pending) return pending;
     throw orderError;
   }
 
@@ -652,16 +700,66 @@ async function stepSubmitOrder(flowToken: string) {
     }
   }
 
-  await completeSession(flowToken);
+  const payment = await createPendingPayment({
+    orderId,
+    flowToken,
+    amount: Number(order.total),
+  });
 
-  // fire-and-forget notification (do NOT await — keep WhatsApp response fast)
-  sendStoreOrderNotification(session.store_id, orderId).catch((e) =>
-    console.warn('notification failed', (e as Error).message),
-  );
+  // Lock the session so reopening the flow lands the user back on the
+  // payment screen instead of restarting from STORE_SEARCH. The notification
+  // intentionally does NOT fire here — it fires from the payment webhook
+  // once the payment is actually paid.
+  await supabase
+    .from('flow_sessions')
+    .update({ status: 'pending_payment', updated_at: new Date().toISOString() })
+    .eq('flow_token', flowToken);
 
-  return buildSuccessScreen({
-    order_number: order.order_number,
-    total: order.total,
-    estimated_minutes: (store as Store).estimated_preparation_minutes,
+  return buildPaymentPendingScreen({
+    payment_id: payment.id,
+    order_id: orderId,
+    store_id: session.store_id,
+    payment_url: paymentUrlFor(payment.id),
+    amount: Number(order.total),
+  });
+}
+
+async function stepCheckPaymentStatus(flowToken: string) {
+  const order = await findOrderByFlowToken(flowToken);
+  if (!order) {
+    return buildErrorScreen('לא נמצאה הזמנה פעילה. נסה לפתוח את ההזמנה שוב.');
+  }
+
+  const payment = await findActivePaymentForOrder(order.id);
+  if (!payment) {
+    return buildErrorScreen('לא נמצאה בקשת תשלום פעילה. נסה לפתוח את ההזמנה שוב.');
+  }
+
+  if (payment.status === 'paid') {
+    await completeSession(flowToken);
+
+    const supabase = createSupabaseService();
+    const { data: store } = await supabase
+      .from('stores')
+      .select('estimated_preparation_minutes')
+      .eq('id', order.store_id)
+      .maybeSingle();
+
+    return buildSuccessScreen({
+      order_number: order.order_number,
+      total: Number(order.total),
+      estimated_minutes: (store as { estimated_preparation_minutes?: number } | null)?.estimated_preparation_minutes ?? 0,
+    });
+  }
+
+  // Still pending — re-render PAYMENT_PENDING with a soft error so the user
+  // understands the click was received but the provider hasn't confirmed yet.
+  return buildPaymentPendingScreen({
+    payment_id: payment.id,
+    order_id: order.id,
+    store_id: order.store_id,
+    payment_url: paymentUrlFor(payment.id),
+    amount: Number(order.total),
+    error_message: 'התשלום עדיין לא אומת. אם השלמת אותו, המתן רגע ולחץ שוב.',
   });
 }

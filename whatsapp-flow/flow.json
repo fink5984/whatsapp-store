@@ -11,7 +11,8 @@
     "CART": ["CATEGORY_SELECT", "DELIVERY_METHOD"],
     "DELIVERY_METHOD": ["CUSTOMER_DETAILS"],
     "CUSTOMER_DETAILS": ["ORDER_SUMMARY"],
-    "ORDER_SUMMARY": ["ORDER_CONFIRMED"],
+    "ORDER_SUMMARY": ["PAYMENT_PENDING"],
+    "PAYMENT_PENDING": ["ORDER_CONFIRMED"],
     "ORDER_CONFIRMED": []
   },
   "screens": [
@@ -602,10 +603,55 @@
           { "type": "TextBody", "text": "${data.estimated_text}" },
           {
             "type": "Footer",
-            "label": "אשר הזמנה",
+            "label": "המשך לתשלום",
             "on-click-action": {
               "name": "data_exchange",
-              "payload": { "step": "submit_order" }
+              "payload": { "step": "create_payment" }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "PAYMENT_PENDING",
+      "title": "תשלום",
+      "data": {
+        "headline": { "type": "string", "__example__": "מעבר לתשלום" },
+        "body": { "type": "string", "__example__": "פתח את דף התשלום, השלם את התשלום, ואז חזור לכאן ולחץ על בדוק תשלום." },
+        "payment_url": { "type": "string", "__example__": "https://example.com/pay/123" },
+        "payment_id": { "type": "string", "__example__": "00000000-0000-0000-0000-000000000000" },
+        "order_draft_id": { "type": "string", "__example__": "00000000-0000-0000-0000-000000000000" },
+        "store_id": { "type": "string", "__example__": "00000000-0000-0000-0000-000000000000" },
+        "amount_text": { "type": "string", "__example__": "סכום לתשלום: ₪0" },
+        "has_error": { "type": "boolean", "__example__": false },
+        "error_message": { "type": "string", "__example__": "" }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          { "type": "TextHeading", "text": "${data.headline}" },
+          { "type": "TextBody", "text": "${data.body}" },
+          { "type": "TextSubheading", "text": "${data.amount_text}" },
+          { "type": "TextBody", "text": "${data.error_message}", "visible": "${data.has_error}" },
+          {
+            "type": "EmbeddedLink",
+            "text": "פתח תשלום מאובטח",
+            "on-click-action": {
+              "name": "open_url",
+              "url": "${data.payment_url}"
+            }
+          },
+          {
+            "type": "Footer",
+            "label": "בדוק תשלום",
+            "on-click-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "check_payment_status",
+                "store_id": "${data.store_id}",
+                "order_draft_id": "${data.order_draft_id}",
+                "payment_id": "${data.payment_id}"
+              }
             }
           }
         ]

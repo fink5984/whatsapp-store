@@ -333,6 +333,33 @@ export function buildOrderSummaryScreen(draft: OrderDraft): FlowScreenResponse {
   };
 }
 
+export function buildPaymentPendingScreen(opts: {
+  payment_id: string;
+  order_id: string;
+  store_id: string;
+  payment_url: string;
+  amount: number;
+  error_message?: string;
+}): FlowScreenResponse {
+  const hasError = !!opts.error_message;
+  return {
+    screen: 'PAYMENT_PENDING',
+    data: {
+      headline: hasError ? 'התשלום עדיין לא אומת' : 'מעבר לתשלום',
+      body: hasError
+        ? 'אם השלמת את התשלום, לחץ שוב על "בדוק תשלום" עוד רגע. אחרת — פתח את דף התשלום והשלם אותו.'
+        : 'פתח את דף התשלום המאובטח, השלם את התשלום, ואז חזור לכאן ולחץ על "בדוק תשלום".',
+      payment_url: opts.payment_url,
+      payment_id: opts.payment_id,
+      order_draft_id: opts.order_id,
+      store_id: opts.store_id,
+      amount_text: `סכום לתשלום: ${formatCurrencyILS(opts.amount)}`,
+      has_error: hasError,
+      error_message: opts.error_message ?? '',
+    },
+  };
+}
+
 export function buildSuccessScreen(order: {
   order_number: number;
   total: number;
