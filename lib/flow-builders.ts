@@ -54,12 +54,19 @@ export async function buildStoreResultsScreen(
   const top = stores.slice(0, 10);
   const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
   const items = top.map((s, i) => {
-    // Keep the inline description minimal — full details are shown below the
-    // radio in the "selected" panel after the customer taps a store.
+    const isSelected = !!opts.selectedStoreId && opts.selectedStoreId === s.id;
+    const brief = [s.city, s.category].filter(Boolean).join(' · ');
+    // For the selected store, bake the full info block straight into its
+    // radio description so the details render *under that specific row*
+    // rather than below the whole list (RadioButtonsGroup doesn't allow
+    // inserting content between items).
+    const description = isSelected
+      ? truncate([brief, formatStoreDetails(s)].filter(Boolean).join('\n'), 300)
+      : truncate(brief, 60);
     const item: Record<string, unknown> = {
       id: s.id,
       title: truncate(s.name, 60),
-      description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
+      description,
     };
     if (thumbs[i]) {
       item.image = thumbs[i];
@@ -67,10 +74,6 @@ export async function buildStoreResultsScreen(
     }
     return item;
   });
-
-  const selected = opts.selectedStoreId
-    ? stores.find((s) => s.id === opts.selectedStoreId) ?? null
-    : null;
 
   return {
     screen: 'STORE_RESULTS',
@@ -80,10 +83,7 @@ export async function buildStoreResultsScreen(
       query: opts.search?.query ?? '',
       city: opts.search?.city ?? '',
       category: opts.search?.category ?? '',
-      selected_store_id: selected?.id ?? '',
-      selected_title: selected ? selected.name : '',
-      selected_details: selected ? formatStoreDetails(selected) : '',
-      has_selected: !!selected,
+      selected_store_id: opts.selectedStoreId ?? '',
     },
   };
 }

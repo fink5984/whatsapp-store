@@ -92,10 +92,7 @@
         "query": { "type": "string", "__example__": "" },
         "city": { "type": "string", "__example__": "" },
         "category": { "type": "string", "__example__": "" },
-        "selected_store_id": { "type": "string", "__example__": "" },
-        "selected_title": { "type": "string", "__example__": "" },
-        "selected_details": { "type": "string", "__example__": "" },
-        "has_selected": { "type": "boolean", "__example__": false }
+        "selected_store_id": { "type": "string", "__example__": "" }
       },
       "layout": {
         "type": "SingleColumnLayout",
@@ -119,8 +116,6 @@
               }
             }
           },
-          { "type": "TextSubheading", "text": "${data.selected_title}", "visible": "${data.has_selected}" },
-          { "type": "TextBody", "text": "${data.selected_details}", "visible": "${data.has_selected}" },
           {
             "type": "Footer",
             "label": "בחר חנות",
