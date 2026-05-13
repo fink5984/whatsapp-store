@@ -63,6 +63,7 @@ export const optionGroupSchema = z.object({
   description: z.string().max(1000).optional().nullable(),
   min_select: z.coerce.number().int().min(0).optional(),
   max_select: z.coerce.number().int().min(0).optional(),
+  free_selections: z.coerce.number().int().min(0).optional(),
   is_required: z.boolean().optional(),
   is_active: z.boolean().optional(),
   sort_order: z.coerce.number().int().optional(),

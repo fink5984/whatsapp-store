@@ -25,6 +25,7 @@ interface DraftGroup {
   description: string;
   min_select: number;
   max_select: number;
+  free_selections: number;
   is_required: boolean;
   is_active: boolean;
   sort_order?: number;
@@ -163,6 +164,7 @@ export function OptionGroupsManager({
                 description: '',
                 min_select: 0,
                 max_select: 1,
+                free_selections: 0,
                 is_required: false,
                 is_active: true,
                 sort_order: groups.length + 1,
@@ -190,12 +192,13 @@ export function OptionGroupsManager({
                     <span>{g.options.length} אפשרויות</span>
                     <span>·</span>
                     <span>בחר {g.min_select}-{g.max_select}</span>
+                    {(g.free_selections ?? 0) > 0 && <><span>·</span><span>{g.free_selections} חינם</span></>}
                     {g.is_required && <><span>·</span><Badge variant="warn">חובה</Badge></>}
                   </div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 4 }} onClick={(e) => e.stopPropagation()}>
-                <Button variant="ghost" size="sm" onClick={() => setGroupDraft({ ...g, description: g.description ?? '' })}>
+                <Button variant="ghost" size="sm" onClick={() => setGroupDraft({ ...g, description: g.description ?? '', free_selections: g.free_selections ?? 0 })}>
                   עריכה
                 </Button>
                 <Button variant="ghost" size="sm" onClick={() => removeGroup(g.id)}>מחק</Button>
@@ -291,6 +294,16 @@ export function OptionGroupsManager({
                 <Input type="number" value={groupDraft.max_select} onChange={(e) => setGroupDraft({ ...groupDraft, max_select: Number(e.target.value) })} />
               </Field>
             </div>
+            <Field
+              label="כמות חינם"
+              hint="כמה בחירות ראשונות אינן מחויבות. מעבר לכך הלקוח משלם את 'תוספת המחיר' של כל אפשרות. השאר 0 לתמחור רגיל."
+            >
+              <Input
+                type="number"
+                value={groupDraft.free_selections}
+                onChange={(e) => setGroupDraft({ ...groupDraft, free_selections: Number(e.target.value) })}
+              />
+            </Field>
             <SwitchRow label="חובה למילוי" checked={groupDraft.is_required} onChange={(v) => setGroupDraft({ ...groupDraft, is_required: v })} />
             <SwitchRow label="פעיל" checked={groupDraft.is_active} onChange={(v) => setGroupDraft({ ...groupDraft, is_active: v })} />
           </div>
