@@ -54,19 +54,10 @@ export async function buildStoreResultsScreen(
   const top = stores.slice(0, 10);
   const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
   const items = top.map((s, i) => {
-    const isSelected = !!opts.selectedStoreId && opts.selectedStoreId === s.id;
-    // For the selected store, bake the full info into the radio description
-    // so the details render *under that specific row* (RadioButtonsGroup
-    // doesn't allow inserting siblings between items, and the renderer
-    // drops "\n" from description text — keep it a single dot-separated line).
-    const brief = [s.city, s.category].filter(Boolean).join(' · ');
-    const description = isSelected
-      ? truncate(formatStoreDetails(s), 300)
-      : truncate(brief, 60);
     const item: Record<string, unknown> = {
       id: s.id,
       title: truncate(s.name, 60),
-      description,
+      description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
     };
     if (thumbs[i]) {
       item.image = thumbs[i];
@@ -74,6 +65,11 @@ export async function buildStoreResultsScreen(
     }
     return item;
   });
+
+  const selected = opts.selectedStoreId
+    ? stores.find((s) => s.id === opts.selectedStoreId) ?? null
+    : null;
+  const detailLines = selected ? formatStoreDetailLines(selected) : [];
 
   return {
     screen: 'STORE_RESULTS',
@@ -83,30 +79,47 @@ export async function buildStoreResultsScreen(
       query: opts.search?.query ?? '',
       city: opts.search?.city ?? '',
       category: opts.search?.category ?? '',
-      selected_store_id: opts.selectedStoreId ?? '',
+      selected_store_id: selected?.id ?? '',
+      selected_title: selected ? selected.name : '',
+      // The detail panel renders as one TextSubheading + up to four TextBody
+      // rows. Each row has its own visibility flag so empty lines don't
+      // produce ghost gaps when a store doesn't have e.g. a minimum order.
+      selected_line_1: detailLines[0] ?? '',
+      selected_line_2: detailLines[1] ?? '',
+      selected_line_3: detailLines[2] ?? '',
+      selected_line_4: detailLines[3] ?? '',
+      has_line_1: !!detailLines[0],
+      has_line_2: !!detailLines[1],
+      has_line_3: !!detailLines[2],
+      has_line_4: !!detailLines[3],
+      has_selected: !!selected,
     },
   };
 }
 
-function formatStoreDetails(s: Store): string {
-  // Single line, dot-separated. WhatsApp Flow doesn't honour "\n" inside a
-  // RadioButtonsGroup description, so we trade vertical structure for
-  // compactness. Tokens are intentionally short (~25 דק', מינ' 50₪) to keep
-  // the line scannable when it wraps.
+function formatStoreDetailLines(s: Store): string[] {
+  // Each entry becomes a separate TextBody row in the layout (WhatsApp Flow
+  // doesn't honour "\n" inside text components, so we split into rows
+  // ourselves). Order matters — the first non-empty entries are rendered
+  // top-to-bottom in the slots above.
+  const lines: string[] = [];
+  const head = [s.city, s.category].filter(Boolean).join(' · ');
+  if (head) lines.push(head);
   const channels = [
     s.accepts_delivery ? 'משלוחים' : null,
-    s.accepts_pickup ? 'איסוף' : null,
-  ].filter(Boolean).join('+');
-
-  const parts: string[] = [];
-  if (s.city) parts.push(s.city);
-  if (s.category) parts.push(s.category);
-  if (channels) parts.push(channels);
-  if (s.estimated_preparation_minutes) parts.push(`~${s.estimated_preparation_minutes} דק'`);
-  if (s.minimum_order) parts.push(`מינ' ${formatCurrencyILS(s.minimum_order)}`);
-  if (s.address) parts.push(s.address);
-  if (s.description) parts.push(s.description);
-  return parts.join(' · ');
+    s.accepts_pickup ? 'איסוף עצמי' : null,
+  ].filter(Boolean).join(' · ');
+  const channelsLine = [
+    channels,
+    s.estimated_preparation_minutes ? `זמן הכנה משוער: ${s.estimated_preparation_minutes} דקות` : null,
+  ].filter(Boolean).join(' · ');
+  if (channelsLine) lines.push(channelsLine);
+  const moneyLine = s.minimum_order ? `מינימום הזמנה: ${formatCurrencyILS(s.minimum_order)}` : '';
+  const addrLine = [s.address, s.city].filter(Boolean).join(', ');
+  if (moneyLine) lines.push(moneyLine);
+  if (addrLine) lines.push(addrLine);
+  if (s.description) lines.push(s.description);
+  return lines;
 }
 
 export async function buildCategoryScreen(store: Store, categories: Category[]): Promise<FlowScreenResponse> {

@@ -92,7 +92,17 @@
         "query": { "type": "string", "__example__": "" },
         "city": { "type": "string", "__example__": "" },
         "category": { "type": "string", "__example__": "" },
-        "selected_store_id": { "type": "string", "__example__": "" }
+        "selected_store_id": { "type": "string", "__example__": "" },
+        "selected_title": { "type": "string", "__example__": "" },
+        "selected_line_1": { "type": "string", "__example__": "" },
+        "selected_line_2": { "type": "string", "__example__": "" },
+        "selected_line_3": { "type": "string", "__example__": "" },
+        "selected_line_4": { "type": "string", "__example__": "" },
+        "has_line_1": { "type": "boolean", "__example__": false },
+        "has_line_2": { "type": "boolean", "__example__": false },
+        "has_line_3": { "type": "boolean", "__example__": false },
+        "has_line_4": { "type": "boolean", "__example__": false },
+        "has_selected": { "type": "boolean", "__example__": false }
       },
       "layout": {
         "type": "SingleColumnLayout",
@@ -116,6 +126,11 @@
               }
             }
           },
+          { "type": "TextSubheading", "text": "${data.selected_title}", "visible": "${data.has_selected}" },
+          { "type": "TextBody", "text": "${data.selected_line_1}", "visible": "${data.has_line_1}" },
+          { "type": "TextBody", "text": "${data.selected_line_2}", "visible": "${data.has_line_2}" },
+          { "type": "TextBody", "text": "${data.selected_line_3}", "visible": "${data.has_line_3}" },
+          { "type": "TextBody", "text": "${data.selected_line_4}", "visible": "${data.has_line_4}" },
           {
             "type": "Footer",
             "label": "בחר חנות",
