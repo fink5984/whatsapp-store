@@ -84,13 +84,33 @@ export default async function PaymentPage(props: { params: Promise<{ id: string 
             style={{
               background: '#ecfdf5',
               color: '#065f46',
-              padding: 12,
+              padding: 16,
               borderRadius: 8,
               textAlign: 'center',
               marginBottom: 16,
             }}
           >
-            ✓ התשלום אומת. חזור ל־WhatsApp ולחץ על "בדוק תשלום".
+            <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 4 }}>
+              התשלום אומת
+            </div>
+            <div style={{ fontSize: 14 }}>
+              חזור ל־WhatsApp — ההזמנה תיסגר אוטומטית.
+            </div>
+            <a
+              href="https://wa.me/"
+              style={{
+                display: 'inline-block',
+                marginTop: 12,
+                background: '#25d366',
+                color: '#fff',
+                padding: '10px 20px',
+                borderRadius: 8,
+                textDecoration: 'none',
+                fontWeight: 600,
+              }}
+            >
+              חזור ל־WhatsApp
+            </a>
           </div>
         )}
 
