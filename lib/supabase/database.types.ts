@@ -93,6 +93,7 @@ export interface OptionGroup {
   type: string | null;
   min_select: number;
   max_select: number;
+  free_selections: number;
   is_required: boolean;
   is_active: boolean;
   sort_order: number;
@@ -150,6 +151,10 @@ export interface CartItemOption {
   group_name: string;
   option_name: string;
   price_delta: number;
+  // Number of free selections in this option's group. The pricing logic groups
+  // selections by group_id and waives the cheapest N per group. All options
+  // sharing a group_id should carry the same value.
+  group_free_selections?: number;
 }
 
 export interface CartItem {

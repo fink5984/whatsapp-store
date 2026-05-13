@@ -392,11 +392,18 @@ async function stepAddToCart(
     pushVal(data[`group_${i}_choice`]);
   }
 
-  let options: { id: string; name: string; price_delta: number; group_id: string; group_name: string }[] = [];
+  let options: {
+    id: string;
+    name: string;
+    price_delta: number;
+    group_id: string;
+    group_name: string;
+    group_free_selections: number;
+  }[] = [];
   if (chosenIds.length) {
     const { data: optionRows } = await supabase
       .from('options')
-      .select('*, option_groups!inner(id, name, store_id)')
+      .select('*, option_groups!inner(id, name, free_selections, store_id)')
       .in('id', chosenIds)
       .eq('store_id', storeId);
 
@@ -406,6 +413,7 @@ async function stepAddToCart(
       price_delta: Number(o.price_delta || 0),
       group_id: o.option_groups?.id,
       group_name: o.option_groups?.name ?? '',
+      group_free_selections: Number(o.option_groups?.free_selections || 0),
     }));
   }
 
@@ -417,6 +425,7 @@ async function stepAddToCart(
       group_name: o.group_name,
       option_name: o.name,
       price_delta: o.price_delta,
+      group_free_selections: o.group_free_selections,
     })),
     quantity,
   );
@@ -433,6 +442,7 @@ async function stepAddToCart(
       group_name: o.group_name,
       option_name: o.name,
       price_delta: o.price_delta,
+      group_free_selections: o.group_free_selections,
     })),
     options_total: totals.options_total,
     total_price: totals.total_price,

@@ -218,16 +218,37 @@ export async function buildProductCustomizeScreen(
     // one is visible. min/max_select are forwarded so the Checkbox can
     // enforce the count limit client-side via min/max-selected-items.
     const isMulti = group.max_select > 1;
+    // If max_select >= available options, the cap is redundant — cap it to the
+    // option count so WhatsApp's "select up to N" hint at least reflects the
+    // real ceiling (we can't fully hide the hint without changing flow.json).
+    const optionCount = opts.length;
+    const effectiveMax = Math.min(
+      Math.max(1, group.max_select),
+      Math.max(1, optionCount || 1),
+    );
+    // Surface "first N free" to the customer in the group's heading.
+    const freeSelections = Number(group.free_selections || 0);
+    let displayName = group.name;
+    if (isMulti && freeSelections > 0) {
+      const extraPrice = opts
+        .map((o) => Number(o.price_delta || 0))
+        .filter((n) => n > 0)
+        .sort((a, b) => a - b)[0];
+      const suffix = extraPrice
+        ? ` (${freeSelections} ראשונים חינם, +${formatCurrencyILS(extraPrice)} לכל נוסף)`
+        : ` (${freeSelections} ראשונים חינם)`;
+      displayName = `${group.name}${suffix}`;
+    }
     return {
       index: idx + 1,
       visible: true,
       visible_single: !isMulti,
       visible_multi: isMulti,
       group_id: group.id,
-      name: group.name,
+      name: displayName,
       is_required: group.is_required,
       min_select: Math.max(0, group.min_select),
-      max_select: Math.max(1, group.max_select),
+      max_select: effectiveMax,
       use_multi: isMulti,
       options: built,
     };
