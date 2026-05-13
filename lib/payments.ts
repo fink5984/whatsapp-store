@@ -6,9 +6,21 @@ import type { Order, Payment } from './supabase/database.types';
  * Resolve the public-facing checkout URL for a given payment id.
  * The demo provider serves /pay/<id> in this same Next.js app. Real providers
  * would expose their hosted URL instead and we'd store it on the row.
+ *
+ * WhatsApp Flow rejects http:// and localhost URLs at render time — the
+ * PAYMENT_PENDING screen will crash with "משהו השתבש" if the URL isn't a
+ * publicly reachable https URL. We log a clear warning so the failure mode
+ * is obvious in the server logs.
  */
 export function paymentUrlFor(paymentId: string): string {
   const base = (process.env.NEXT_PUBLIC_APP_URL ?? '').replace(/\/$/, '');
+  if (!base.startsWith('https://') || /localhost|127\.0\.0\.1/.test(base)) {
+    console.warn(
+      `[payments] NEXT_PUBLIC_APP_URL is "${base || '<empty>'}" — WhatsApp Flow ` +
+        `requires a public https URL for open_url. The PAYMENT_PENDING screen ` +
+        `will crash on the client until this is set to a tunneled or deployed URL.`,
+    );
+  }
   return `${base}/pay/${paymentId}`;
 }
 

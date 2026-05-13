@@ -630,17 +630,17 @@
         "type": "SingleColumnLayout",
         "children": [
           { "type": "TextHeading", "text": "${data.headline}" },
-          { "type": "TextBody", "text": "${data.body}" },
           { "type": "TextSubheading", "text": "${data.amount_text}" },
-          { "type": "TextBody", "text": "${data.error_message}", "visible": "${data.has_error}" },
           {
             "type": "EmbeddedLink",
-            "text": "פתח תשלום מאובטח",
+            "text": "שלם עכשיו — פתח דף תשלום",
             "on-click-action": {
               "name": "open_url",
               "url": "${data.payment_url}"
             }
           },
+          { "type": "TextBody", "text": "${data.body}" },
+          { "type": "TextBody", "text": "${data.error_message}", "visible": "${data.has_error}" },
           {
             "type": "Footer",
             "label": "בדוק תשלום",
