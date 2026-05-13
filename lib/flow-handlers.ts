@@ -376,12 +376,20 @@ async function stepAddToCart(
     return buildErrorScreen('המוצר אינו זמין');
   }
 
-  // Gather chosen option ids from groups 1..5 (each may be string id or array of ids)
+  // Gather chosen option ids from groups 1..5. Each slot exposes two form
+  // fields — `_single` (RadioButtonsGroup, string) and `_multi`
+  // (CheckboxGroup, array) — depending on whether the admin configured
+  // max_select=1 or >1. We also accept the legacy `_choice` name so flows
+  // already in flight don't break during the rollout.
   const chosenIds: string[] = [];
-  for (let i = 1; i <= 5; i++) {
-    const raw = data[`group_${i}_choice`];
-    if (Array.isArray(raw)) chosenIds.push(...raw.filter(Boolean));
+  const pushVal = (raw: unknown) => {
+    if (Array.isArray(raw)) chosenIds.push(...raw.filter((v): v is string => typeof v === 'string' && !!v));
     else if (typeof raw === 'string' && raw) chosenIds.push(raw);
+  };
+  for (let i = 1; i <= 5; i++) {
+    pushVal(data[`group_${i}_single`]);
+    pushVal(data[`group_${i}_multi`]);
+    pushVal(data[`group_${i}_choice`]);
   }
 
   let options: { id: string; name: string; price_delta: number; group_id: string; group_name: string }[] = [];

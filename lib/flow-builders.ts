@@ -200,15 +200,22 @@ export async function buildProductCustomizeScreen(
       }
       return item;
     });
+    // max_select <= 1 → single-pick (Radio); otherwise multi-pick (Checkbox).
+    // Both components live in the flow JSON per slot — we just toggle which
+    // one is visible. min/max_select are forwarded so the Checkbox can
+    // enforce the count limit client-side via min/max-selected-items.
+    const isMulti = group.max_select > 1;
     return {
       index: idx + 1,
       visible: true,
+      visible_single: !isMulti,
+      visible_multi: isMulti,
       group_id: group.id,
       name: group.name,
       is_required: group.is_required,
-      min_select: group.min_select,
-      max_select: group.max_select,
-      use_multi: group.max_select > 1,
+      min_select: Math.max(0, group.min_select),
+      max_select: Math.max(1, group.max_select),
+      use_multi: isMulti,
       options: built,
     };
   });
@@ -218,11 +225,13 @@ export async function buildProductCustomizeScreen(
     groupsForFlow.push({
       index: groupsForFlow.length + 1,
       visible: false,
+      visible_single: false,
+      visible_multi: false,
       group_id: '',
       name: '',
       is_required: false,
       min_select: 0,
-      max_select: 0,
+      max_select: 1,
       use_multi: false,
       options: [],
     });

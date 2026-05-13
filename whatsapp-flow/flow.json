@@ -238,14 +238,20 @@
         "group_1": {
           "type": "object",
           "__example__": {
-            "visible": true, "name": "גודל", "use_multi": false,
+            "visible": true, "visible_single": true, "visible_multi": false,
+            "name": "גודל", "use_multi": false, "is_required": false,
+            "min_select": 0, "max_select": 1,
             "options": [{ "id": "g1o1", "title": "S" }]
           },
           "properties": {
             "visible": { "type": "boolean" },
+            "visible_single": { "type": "boolean" },
+            "visible_multi": { "type": "boolean" },
             "name": { "type": "string" },
             "use_multi": { "type": "boolean" },
             "is_required": { "type": "boolean" },
+            "min_select": { "type": "number" },
+            "max_select": { "type": "number" },
             "options": {
               "type": "array",
               "items": {
@@ -263,12 +269,16 @@
         },
         "group_2": {
           "type": "object",
-          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "__example__": { "visible": false, "visible_single": false, "visible_multi": false, "name": "", "use_multi": false, "is_required": false, "min_select": 0, "max_select": 1, "options": [] },
           "properties": {
             "visible": { "type": "boolean" },
+            "visible_single": { "type": "boolean" },
+            "visible_multi": { "type": "boolean" },
             "name": { "type": "string" },
             "use_multi": { "type": "boolean" },
             "is_required": { "type": "boolean" },
+            "min_select": { "type": "number" },
+            "max_select": { "type": "number" },
             "options": {
               "type": "array",
               "items": {
@@ -286,12 +296,16 @@
         },
         "group_3": {
           "type": "object",
-          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "__example__": { "visible": false, "visible_single": false, "visible_multi": false, "name": "", "use_multi": false, "is_required": false, "min_select": 0, "max_select": 1, "options": [] },
           "properties": {
             "visible": { "type": "boolean" },
+            "visible_single": { "type": "boolean" },
+            "visible_multi": { "type": "boolean" },
             "name": { "type": "string" },
             "use_multi": { "type": "boolean" },
             "is_required": { "type": "boolean" },
+            "min_select": { "type": "number" },
+            "max_select": { "type": "number" },
             "options": {
               "type": "array",
               "items": {
@@ -309,12 +323,16 @@
         },
         "group_4": {
           "type": "object",
-          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "__example__": { "visible": false, "visible_single": false, "visible_multi": false, "name": "", "use_multi": false, "is_required": false, "min_select": 0, "max_select": 1, "options": [] },
           "properties": {
             "visible": { "type": "boolean" },
+            "visible_single": { "type": "boolean" },
+            "visible_multi": { "type": "boolean" },
             "name": { "type": "string" },
             "use_multi": { "type": "boolean" },
             "is_required": { "type": "boolean" },
+            "min_select": { "type": "number" },
+            "max_select": { "type": "number" },
             "options": {
               "type": "array",
               "items": {
@@ -332,12 +350,16 @@
         },
         "group_5": {
           "type": "object",
-          "__example__": { "visible": false, "name": "", "use_multi": false, "is_required": false, "options": [] },
+          "__example__": { "visible": false, "visible_single": false, "visible_multi": false, "name": "", "use_multi": false, "is_required": false, "min_select": 0, "max_select": 1, "options": [] },
           "properties": {
             "visible": { "type": "boolean" },
+            "visible_single": { "type": "boolean" },
+            "visible_multi": { "type": "boolean" },
             "name": { "type": "string" },
             "use_multi": { "type": "boolean" },
             "is_required": { "type": "boolean" },
+            "min_select": { "type": "number" },
+            "max_select": { "type": "number" },
             "options": {
               "type": "array",
               "items": {
@@ -371,19 +393,24 @@
           },
 
           { "type": "TextSubheading", "text": "${data.group_1.name}", "visible": "${data.group_1.visible}" },
-          { "type": "RadioButtonsGroup", "name": "group_1_choice", "label": "בחר", "visible": "${data.group_1.visible}", "init-value": "${data.empty_string}", "data-source": "${data.group_1.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_1_single", "label": "בחר", "visible": "${data.group_1.visible_single}", "init-value": "${data.empty_string}", "data-source": "${data.group_1.options}" },
+          { "type": "CheckboxGroup", "name": "group_1_multi", "label": "בחר", "visible": "${data.group_1.visible_multi}", "init-value": "${data.empty_array}", "min-selected-items": "${data.group_1.min_select}", "max-selected-items": "${data.group_1.max_select}", "data-source": "${data.group_1.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_2.name}", "visible": "${data.group_2.visible}" },
-          { "type": "CheckboxGroup", "name": "group_2_choice", "label": "בחר", "visible": "${data.group_2.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_2.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_2_single", "label": "בחר", "visible": "${data.group_2.visible_single}", "init-value": "${data.empty_string}", "data-source": "${data.group_2.options}" },
+          { "type": "CheckboxGroup", "name": "group_2_multi", "label": "בחר", "visible": "${data.group_2.visible_multi}", "init-value": "${data.empty_array}", "min-selected-items": "${data.group_2.min_select}", "max-selected-items": "${data.group_2.max_select}", "data-source": "${data.group_2.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_3.name}", "visible": "${data.group_3.visible}" },
-          { "type": "CheckboxGroup", "name": "group_3_choice", "label": "בחר", "visible": "${data.group_3.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_3.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_3_single", "label": "בחר", "visible": "${data.group_3.visible_single}", "init-value": "${data.empty_string}", "data-source": "${data.group_3.options}" },
+          { "type": "CheckboxGroup", "name": "group_3_multi", "label": "בחר", "visible": "${data.group_3.visible_multi}", "init-value": "${data.empty_array}", "min-selected-items": "${data.group_3.min_select}", "max-selected-items": "${data.group_3.max_select}", "data-source": "${data.group_3.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_4.name}", "visible": "${data.group_4.visible}" },
-          { "type": "CheckboxGroup", "name": "group_4_choice", "label": "בחר", "visible": "${data.group_4.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_4.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_4_single", "label": "בחר", "visible": "${data.group_4.visible_single}", "init-value": "${data.empty_string}", "data-source": "${data.group_4.options}" },
+          { "type": "CheckboxGroup", "name": "group_4_multi", "label": "בחר", "visible": "${data.group_4.visible_multi}", "init-value": "${data.empty_array}", "min-selected-items": "${data.group_4.min_select}", "max-selected-items": "${data.group_4.max_select}", "data-source": "${data.group_4.options}" },
 
           { "type": "TextSubheading", "text": "${data.group_5.name}", "visible": "${data.group_5.visible}" },
-          { "type": "CheckboxGroup", "name": "group_5_choice", "label": "בחר", "visible": "${data.group_5.visible}", "init-value": "${data.empty_array}", "data-source": "${data.group_5.options}" },
+          { "type": "RadioButtonsGroup", "name": "group_5_single", "label": "בחר", "visible": "${data.group_5.visible_single}", "init-value": "${data.empty_string}", "data-source": "${data.group_5.options}" },
+          { "type": "CheckboxGroup", "name": "group_5_multi", "label": "בחר", "visible": "${data.group_5.visible_multi}", "init-value": "${data.empty_array}", "min-selected-items": "${data.group_5.min_select}", "max-selected-items": "${data.group_5.max_select}", "data-source": "${data.group_5.options}" },
 
           { "type": "TextInput", "name": "note", "label": "הערה", "required": false, "visible": "${data.allow_note}", "init-value": "${data.empty_string}" },
 
@@ -396,11 +423,16 @@
                 "step": "add_to_cart",
                 "product_id": "${data.product_id}",
                 "quantity": "${form.quantity}",
-                "group_1_choice": "${form.group_1_choice}",
-                "group_2_choice": "${form.group_2_choice}",
-                "group_3_choice": "${form.group_3_choice}",
-                "group_4_choice": "${form.group_4_choice}",
-                "group_5_choice": "${form.group_5_choice}",
+                "group_1_single": "${form.group_1_single}",
+                "group_1_multi": "${form.group_1_multi}",
+                "group_2_single": "${form.group_2_single}",
+                "group_2_multi": "${form.group_2_multi}",
+                "group_3_single": "${form.group_3_single}",
+                "group_3_multi": "${form.group_3_multi}",
+                "group_4_single": "${form.group_4_single}",
+                "group_4_multi": "${form.group_4_multi}",
+                "group_5_single": "${form.group_5_single}",
+                "group_5_multi": "${form.group_5_multi}",
                 "note": "${form.note}"
               }
             }
