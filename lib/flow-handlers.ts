@@ -246,8 +246,10 @@ async function stepPreviewStore(data: Record<string, any>) {
 }
 
 async function stepSelectStore(flowToken: string, data: Record<string, any>) {
-  const storeId = data.store_id as string;
-  if (!storeId) return buildErrorScreen('לא נבחרה חנות');
+  // STORE_RESULTS now passes selected_store_id from screen data; older flows
+  // sent `store_id`. Accept either so in-flight sessions keep working.
+  const storeId = (data.store_id as string) || (data.selected_store_id as string);
+  if (!storeId) return buildErrorScreen('לא נבחרה חנות. גלול ובחר חנות מהרשימה.');
   const supabase = createSupabaseService();
 
   const [{ data: store, error }, { data: cats }] = await Promise.all([

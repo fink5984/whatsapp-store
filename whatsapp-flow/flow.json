@@ -73,70 +73,141 @@
       "title": "תוצאות חיפוש",
       "data": {
         "title": { "type": "string", "__example__": "נמצאו 3 חנויות" },
-        "stores": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": { "type": "string" },
-              "title": { "type": "string" },
-              "description": { "type": "string" },
-              "image": { "type": "string" },
-              "alt-text": { "type": "string" }
-            }
-          },
-          "__example__": [
-            { "id": "s1", "title": "פיצה נאפולי", "description": "תל אביב · פיצריה" }
-          ]
-        },
         "query": { "type": "string", "__example__": "" },
         "city": { "type": "string", "__example__": "" },
         "category": { "type": "string", "__example__": "" },
         "selected_store_id": { "type": "string", "__example__": "" },
-        "selected_title": { "type": "string", "__example__": "" },
-        "selected_line_1": { "type": "string", "__example__": "" },
-        "selected_line_2": { "type": "string", "__example__": "" },
-        "selected_line_3": { "type": "string", "__example__": "" },
-        "selected_line_4": { "type": "string", "__example__": "" },
-        "has_line_1": { "type": "boolean", "__example__": false },
-        "has_line_2": { "type": "boolean", "__example__": false },
-        "has_line_3": { "type": "boolean", "__example__": false },
-        "has_line_4": { "type": "boolean", "__example__": false },
-        "has_selected": { "type": "boolean", "__example__": false }
+        "has_selected": { "type": "boolean", "__example__": false },
+        "slot_1": {
+          "type": "object",
+          "__example__": {
+            "visible": true, "id": "s1", "selected_value": "", "is_selected": false,
+            "option_list": [{ "id": "s1", "title": "פיצה נאפולי", "description": "תל אביב · פיצריה" }],
+            "line_1": "", "line_2": "", "line_3": "", "line_4": "",
+            "show_line_1": false, "show_line_2": false, "show_line_3": false, "show_line_4": false
+          },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "id": { "type": "string" },
+            "selected_value": { "type": "string" },
+            "is_selected": { "type": "boolean" },
+            "option_list": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "image": { "type": "string" },
+                  "alt-text": { "type": "string" }
+                }
+              }
+            },
+            "line_1": { "type": "string" },
+            "line_2": { "type": "string" },
+            "line_3": { "type": "string" },
+            "line_4": { "type": "string" },
+            "show_line_1": { "type": "boolean" },
+            "show_line_2": { "type": "boolean" },
+            "show_line_3": { "type": "boolean" },
+            "show_line_4": { "type": "boolean" }
+          }
+        },
+        "slot_2": {
+          "type": "object",
+          "__example__": { "visible": false, "id": "", "selected_value": "", "is_selected": false, "option_list": [{ "id": "_empty", "title": "", "description": "" }], "line_1": "", "line_2": "", "line_3": "", "line_4": "", "show_line_1": false, "show_line_2": false, "show_line_3": false, "show_line_4": false },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "id": { "type": "string" },
+            "selected_value": { "type": "string" },
+            "is_selected": { "type": "boolean" },
+            "option_list": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "description": { "type": "string" }, "image": { "type": "string" }, "alt-text": { "type": "string" } } } },
+            "line_1": { "type": "string" }, "line_2": { "type": "string" }, "line_3": { "type": "string" }, "line_4": { "type": "string" },
+            "show_line_1": { "type": "boolean" }, "show_line_2": { "type": "boolean" }, "show_line_3": { "type": "boolean" }, "show_line_4": { "type": "boolean" }
+          }
+        },
+        "slot_3": {
+          "type": "object",
+          "__example__": { "visible": false, "id": "", "selected_value": "", "is_selected": false, "option_list": [{ "id": "_empty", "title": "", "description": "" }], "line_1": "", "line_2": "", "line_3": "", "line_4": "", "show_line_1": false, "show_line_2": false, "show_line_3": false, "show_line_4": false },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "id": { "type": "string" },
+            "selected_value": { "type": "string" },
+            "is_selected": { "type": "boolean" },
+            "option_list": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "description": { "type": "string" }, "image": { "type": "string" }, "alt-text": { "type": "string" } } } },
+            "line_1": { "type": "string" }, "line_2": { "type": "string" }, "line_3": { "type": "string" }, "line_4": { "type": "string" },
+            "show_line_1": { "type": "boolean" }, "show_line_2": { "type": "boolean" }, "show_line_3": { "type": "boolean" }, "show_line_4": { "type": "boolean" }
+          }
+        },
+        "slot_4": {
+          "type": "object",
+          "__example__": { "visible": false, "id": "", "selected_value": "", "is_selected": false, "option_list": [{ "id": "_empty", "title": "", "description": "" }], "line_1": "", "line_2": "", "line_3": "", "line_4": "", "show_line_1": false, "show_line_2": false, "show_line_3": false, "show_line_4": false },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "id": { "type": "string" },
+            "selected_value": { "type": "string" },
+            "is_selected": { "type": "boolean" },
+            "option_list": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "description": { "type": "string" }, "image": { "type": "string" }, "alt-text": { "type": "string" } } } },
+            "line_1": { "type": "string" }, "line_2": { "type": "string" }, "line_3": { "type": "string" }, "line_4": { "type": "string" },
+            "show_line_1": { "type": "boolean" }, "show_line_2": { "type": "boolean" }, "show_line_3": { "type": "boolean" }, "show_line_4": { "type": "boolean" }
+          }
+        },
+        "slot_5": {
+          "type": "object",
+          "__example__": { "visible": false, "id": "", "selected_value": "", "is_selected": false, "option_list": [{ "id": "_empty", "title": "", "description": "" }], "line_1": "", "line_2": "", "line_3": "", "line_4": "", "show_line_1": false, "show_line_2": false, "show_line_3": false, "show_line_4": false },
+          "properties": {
+            "visible": { "type": "boolean" },
+            "id": { "type": "string" },
+            "selected_value": { "type": "string" },
+            "is_selected": { "type": "boolean" },
+            "option_list": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "description": { "type": "string" }, "image": { "type": "string" }, "alt-text": { "type": "string" } } } },
+            "line_1": { "type": "string" }, "line_2": { "type": "string" }, "line_3": { "type": "string" }, "line_4": { "type": "string" },
+            "show_line_1": { "type": "boolean" }, "show_line_2": { "type": "boolean" }, "show_line_3": { "type": "boolean" }, "show_line_4": { "type": "boolean" }
+          }
+        }
       },
       "layout": {
         "type": "SingleColumnLayout",
         "children": [
           { "type": "TextHeading", "text": "${data.title}" },
-          {
-            "type": "RadioButtonsGroup",
-            "name": "store_id",
-            "label": "בחר חנות",
-            "required": true,
-            "init-value": "${data.selected_store_id}",
-            "data-source": "${data.stores}",
-            "on-select-action": {
-              "name": "data_exchange",
-              "payload": {
-                "step": "preview_store",
-                "store_id": "${form.store_id}",
-                "query": "${data.query}",
-                "city": "${data.city}",
-                "category": "${data.category}"
-              }
-            }
-          },
-          { "type": "TextSubheading", "text": "${data.selected_title}", "visible": "${data.has_selected}" },
-          { "type": "TextBody", "text": "${data.selected_line_1}", "visible": "${data.has_line_1}" },
-          { "type": "TextBody", "text": "${data.selected_line_2}", "visible": "${data.has_line_2}" },
-          { "type": "TextBody", "text": "${data.selected_line_3}", "visible": "${data.has_line_3}" },
-          { "type": "TextBody", "text": "${data.selected_line_4}", "visible": "${data.has_line_4}" },
+
+          { "type": "RadioButtonsGroup", "name": "slot_1_choice", "label": "בחר חנות", "visible": "${data.slot_1.visible}", "init-value": "${data.slot_1.selected_value}", "data-source": "${data.slot_1.option_list}", "on-select-action": { "name": "data_exchange", "payload": { "step": "preview_store", "store_id": "${data.slot_1.id}", "query": "${data.query}", "city": "${data.city}", "category": "${data.category}" } } },
+          { "type": "TextBody", "text": "${data.slot_1.line_1}", "visible": "${data.slot_1.show_line_1}" },
+          { "type": "TextBody", "text": "${data.slot_1.line_2}", "visible": "${data.slot_1.show_line_2}" },
+          { "type": "TextBody", "text": "${data.slot_1.line_3}", "visible": "${data.slot_1.show_line_3}" },
+          { "type": "TextBody", "text": "${data.slot_1.line_4}", "visible": "${data.slot_1.show_line_4}" },
+
+          { "type": "RadioButtonsGroup", "name": "slot_2_choice", "label": "בחר חנות", "visible": "${data.slot_2.visible}", "init-value": "${data.slot_2.selected_value}", "data-source": "${data.slot_2.option_list}", "on-select-action": { "name": "data_exchange", "payload": { "step": "preview_store", "store_id": "${data.slot_2.id}", "query": "${data.query}", "city": "${data.city}", "category": "${data.category}" } } },
+          { "type": "TextBody", "text": "${data.slot_2.line_1}", "visible": "${data.slot_2.show_line_1}" },
+          { "type": "TextBody", "text": "${data.slot_2.line_2}", "visible": "${data.slot_2.show_line_2}" },
+          { "type": "TextBody", "text": "${data.slot_2.line_3}", "visible": "${data.slot_2.show_line_3}" },
+          { "type": "TextBody", "text": "${data.slot_2.line_4}", "visible": "${data.slot_2.show_line_4}" },
+
+          { "type": "RadioButtonsGroup", "name": "slot_3_choice", "label": "בחר חנות", "visible": "${data.slot_3.visible}", "init-value": "${data.slot_3.selected_value}", "data-source": "${data.slot_3.option_list}", "on-select-action": { "name": "data_exchange", "payload": { "step": "preview_store", "store_id": "${data.slot_3.id}", "query": "${data.query}", "city": "${data.city}", "category": "${data.category}" } } },
+          { "type": "TextBody", "text": "${data.slot_3.line_1}", "visible": "${data.slot_3.show_line_1}" },
+          { "type": "TextBody", "text": "${data.slot_3.line_2}", "visible": "${data.slot_3.show_line_2}" },
+          { "type": "TextBody", "text": "${data.slot_3.line_3}", "visible": "${data.slot_3.show_line_3}" },
+          { "type": "TextBody", "text": "${data.slot_3.line_4}", "visible": "${data.slot_3.show_line_4}" },
+
+          { "type": "RadioButtonsGroup", "name": "slot_4_choice", "label": "בחר חנות", "visible": "${data.slot_4.visible}", "init-value": "${data.slot_4.selected_value}", "data-source": "${data.slot_4.option_list}", "on-select-action": { "name": "data_exchange", "payload": { "step": "preview_store", "store_id": "${data.slot_4.id}", "query": "${data.query}", "city": "${data.city}", "category": "${data.category}" } } },
+          { "type": "TextBody", "text": "${data.slot_4.line_1}", "visible": "${data.slot_4.show_line_1}" },
+          { "type": "TextBody", "text": "${data.slot_4.line_2}", "visible": "${data.slot_4.show_line_2}" },
+          { "type": "TextBody", "text": "${data.slot_4.line_3}", "visible": "${data.slot_4.show_line_3}" },
+          { "type": "TextBody", "text": "${data.slot_4.line_4}", "visible": "${data.slot_4.show_line_4}" },
+
+          { "type": "RadioButtonsGroup", "name": "slot_5_choice", "label": "בחר חנות", "visible": "${data.slot_5.visible}", "init-value": "${data.slot_5.selected_value}", "data-source": "${data.slot_5.option_list}", "on-select-action": { "name": "data_exchange", "payload": { "step": "preview_store", "store_id": "${data.slot_5.id}", "query": "${data.query}", "city": "${data.city}", "category": "${data.category}" } } },
+          { "type": "TextBody", "text": "${data.slot_5.line_1}", "visible": "${data.slot_5.show_line_1}" },
+          { "type": "TextBody", "text": "${data.slot_5.line_2}", "visible": "${data.slot_5.show_line_2}" },
+          { "type": "TextBody", "text": "${data.slot_5.line_3}", "visible": "${data.slot_5.show_line_3}" },
+          { "type": "TextBody", "text": "${data.slot_5.line_4}", "visible": "${data.slot_5.show_line_4}" },
+
           {
             "type": "Footer",
-            "label": "בחר חנות",
+            "label": "המשך עם החנות שנבחרה",
             "on-click-action": {
               "name": "data_exchange",
-              "payload": { "step": "select_store", "store_id": "${form.store_id}" }
+              "payload": { "step": "select_store", "selected_store_id": "${data.selected_store_id}" }
             }
           }
         ]
