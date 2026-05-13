@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { createSupabaseService } from '@/lib/supabase/service';
 import { formatCurrencyILS } from '@/lib/pricing';
 import type { Order, Payment } from '@/lib/supabase/database.types';
+import { AutoReturnToWhatsApp } from './auto-return';
 import { PayDemoForm } from './pay-demo-form';
 
 export const dynamic = 'force-dynamic';
@@ -24,8 +25,18 @@ export default async function PaymentPage(props: { params: Promise<{ id: string 
     .maybeSingle<Pick<Order, 'order_number' | 'customer_name' | 'customer_phone' | 'total' | 'store_id'>>();
 
   const { data: store } = order
-    ? await supabase.from('stores').select('name').eq('id', order.store_id).maybeSingle<{ name: string }>()
-    : { data: null as { name: string } | null };
+    ? await supabase
+        .from('stores')
+        .select('name, whatsapp_phone')
+        .eq('id', order.store_id)
+        .maybeSingle<{ name: string; whatsapp_phone: string | null }>()
+    : { data: null as { name: string; whatsapp_phone: string | null } | null };
+
+  // Build a deep link back to WhatsApp. Prefer the store's WhatsApp number so
+  // the user lands directly on the right chat; fall back to the generic
+  // "open WhatsApp" URL when the store hasn't configured one.
+  const waPhone = (store?.whatsapp_phone ?? '').replace(/[^\d]/g, '');
+  const waUrl = waPhone ? `https://wa.me/${waPhone}` : 'https://wa.me/';
 
   const isPaid = payment.status === 'paid';
   const isFinal = payment.status !== 'pending';
@@ -93,24 +104,7 @@ export default async function PaymentPage(props: { params: Promise<{ id: string 
             <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 4 }}>
               התשלום אומת
             </div>
-            <div style={{ fontSize: 14 }}>
-              חזור ל־WhatsApp — ההזמנה תיסגר אוטומטית.
-            </div>
-            <a
-              href="https://wa.me/"
-              style={{
-                display: 'inline-block',
-                marginTop: 12,
-                background: '#25d366',
-                color: '#fff',
-                padding: '10px 20px',
-                borderRadius: 8,
-                textDecoration: 'none',
-                fontWeight: 600,
-              }}
-            >
-              חזור ל־WhatsApp
-            </a>
+            <AutoReturnToWhatsApp waUrl={waUrl} delaySeconds={2} />
           </div>
         )}
 
