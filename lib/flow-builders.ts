@@ -42,8 +42,6 @@ export interface StoreResultsOpts {
   selectedStoreId?: string;
 }
 
-const STORE_RESULT_SLOTS = 5;
-
 export async function buildStoreResultsScreen(
   stores: Store[],
   opts: StoreResultsOpts = {},
@@ -53,77 +51,60 @@ export async function buildStoreResultsScreen(
       error_message: 'לא נמצאו חנויות מתאימות. נסה לחפש בשם אחר.',
     });
   }
-  const top = stores.slice(0, STORE_RESULT_SLOTS);
+  const top = stores.slice(0, 10);
   const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
-
-  // Render each store as its own one-option RadioButtonsGroup so we can put
-  // the detail rows directly underneath it in the layout (a single
-  // RadioButtonsGroup with N options doesn't let us interleave content
-  // between rows). Tapping a slot's radio fires preview_store, which
-  // re-renders the screen with that slot marked as selected (`selected_value`
-  // gets set to the store id and the radio shows checked, while the other
-  // slots reset to empty init-value).
-  const slots: Record<string, unknown>[] = top.map((s, i) => {
-    const optionItem: Record<string, unknown> = {
+  const items = top.map((s, i) => {
+    const item: Record<string, unknown> = {
       id: s.id,
       title: truncate(s.name, 60),
       description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
     };
     if (thumbs[i]) {
-      optionItem.image = thumbs[i];
-      optionItem['alt-text'] = s.name;
+      item.image = thumbs[i];
+      item['alt-text'] = s.name;
     }
-    const isSelected = opts.selectedStoreId === s.id;
-    const lines = isSelected ? formatStoreDetailLines(s) : ['', '', '', ''];
-    return {
-      visible: true,
-      id: s.id,
-      option_list: [optionItem],
-      selected_value: isSelected ? s.id : '',
-      is_selected: isSelected,
-      line_1: lines[0] ?? '',
-      line_2: lines[1] ?? '',
-      line_3: lines[2] ?? '',
-      line_4: lines[3] ?? '',
-      show_line_1: isSelected && !!lines[0],
-      show_line_2: isSelected && !!lines[1],
-      show_line_3: isSelected && !!lines[2],
-      show_line_4: isSelected && !!lines[3],
-    };
+    return item;
   });
 
-  while (slots.length < STORE_RESULT_SLOTS) {
-    slots.push({
-      visible: false,
-      id: '',
-      option_list: [{ id: '_empty', title: '', description: '' }],
-      selected_value: '',
-      is_selected: false,
-      line_1: '', line_2: '', line_3: '', line_4: '',
-      show_line_1: false, show_line_2: false, show_line_3: false, show_line_4: false,
-    });
-  }
+  const selected = opts.selectedStoreId
+    ? stores.find((s) => s.id === opts.selectedStoreId) ?? null
+    : null;
+  const detailLines = selected ? formatStoreDetailLines(selected) : [];
 
   return {
     screen: 'STORE_RESULTS',
     data: {
-      title: `נמצאו ${top.length} חנויות`,
+      title: `נמצאו ${items.length} חנויות`,
+      stores: items,
       query: opts.search?.query ?? '',
       city: opts.search?.city ?? '',
       category: opts.search?.category ?? '',
-      selected_store_id: opts.selectedStoreId ?? '',
-      has_selected: !!opts.selectedStoreId,
-      slot_1: slots[0],
-      slot_2: slots[1],
-      slot_3: slots[2],
-      slot_4: slots[3],
-      slot_5: slots[4],
+      selected_store_id: selected?.id ?? '',
+      selected_title: selected ? selected.name : '',
+      // The detail panel renders as one TextSubheading + up to four TextBody
+      // rows. Each row has its own visibility flag so empty lines don't
+      // produce ghost gaps when a store doesn't have e.g. a minimum order.
+      selected_line_1: detailLines[0] ?? '',
+      selected_line_2: detailLines[1] ?? '',
+      selected_line_3: detailLines[2] ?? '',
+      selected_line_4: detailLines[3] ?? '',
+      has_line_1: !!detailLines[0],
+      has_line_2: !!detailLines[1],
+      has_line_3: !!detailLines[2],
+      has_line_4: !!detailLines[3],
+      has_selected: !!selected,
     },
   };
 }
 
 function formatStoreDetailLines(s: Store): string[] {
+  // Each entry becomes a separate TextBody row in the layout (WhatsApp Flow
+  // doesn't honour "\n" inside text components, so we split into rows
+  // ourselves). Order matters — the first non-empty entries are rendered
+  // top-to-bottom in the slots above.
   const lines: string[] = [];
+  const head = [s.city, s.category].filter(Boolean).join(' · ');
+  if (head) lines.push(head);
   const channels = [
     s.accepts_delivery ? 'משלוחים' : null,
     s.accepts_pickup ? 'איסוף עצמי' : null,
@@ -133,9 +114,10 @@ function formatStoreDetailLines(s: Store): string[] {
     s.estimated_preparation_minutes ? `זמן הכנה משוער: ${s.estimated_preparation_minutes} דקות` : null,
   ].filter(Boolean).join(' · ');
   if (channelsLine) lines.push(channelsLine);
-  if (s.minimum_order) lines.push(`מינימום הזמנה: ${formatCurrencyILS(s.minimum_order)}`);
-  const addr = [s.address, s.city].filter(Boolean).join(', ');
-  if (addr) lines.push(addr);
+  const moneyLine = s.minimum_order ? `מינימום הזמנה: ${formatCurrencyILS(s.minimum_order)}` : '';
+  const addrLine = [s.address, s.city].filter(Boolean).join(', ');
+  if (moneyLine) lines.push(moneyLine);
+  if (addrLine) lines.push(addrLine);
   if (s.description) lines.push(s.description);
   return lines;
 }
