@@ -55,13 +55,13 @@ export async function buildStoreResultsScreen(
   const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
   const items = top.map((s, i) => {
     const isSelected = !!opts.selectedStoreId && opts.selectedStoreId === s.id;
+    // For the selected store, bake the full info into the radio description
+    // so the details render *under that specific row* (RadioButtonsGroup
+    // doesn't allow inserting siblings between items, and the renderer
+    // drops "\n" from description text — keep it a single dot-separated line).
     const brief = [s.city, s.category].filter(Boolean).join(' · ');
-    // For the selected store, bake the full info block straight into its
-    // radio description so the details render *under that specific row*
-    // rather than below the whole list (RadioButtonsGroup doesn't allow
-    // inserting content between items).
     const description = isSelected
-      ? truncate([brief, formatStoreDetails(s)].filter(Boolean).join('\n'), 300)
+      ? truncate(formatStoreDetails(s), 300)
       : truncate(brief, 60);
     const item: Record<string, unknown> = {
       id: s.id,
@@ -89,20 +89,24 @@ export async function buildStoreResultsScreen(
 }
 
 function formatStoreDetails(s: Store): string {
-  const parts: string[] = [];
-  if (s.description) parts.push(s.description);
+  // Single line, dot-separated. WhatsApp Flow doesn't honour "\n" inside a
+  // RadioButtonsGroup description, so we trade vertical structure for
+  // compactness. Tokens are intentionally short (~25 דק', מינ' 50₪) to keep
+  // the line scannable when it wraps.
   const channels = [
     s.accepts_delivery ? 'משלוחים' : null,
-    s.accepts_pickup ? 'איסוף עצמי' : null,
-  ].filter(Boolean).join(' · ');
+    s.accepts_pickup ? 'איסוף' : null,
+  ].filter(Boolean).join('+');
+
+  const parts: string[] = [];
+  if (s.city) parts.push(s.city);
+  if (s.category) parts.push(s.category);
   if (channels) parts.push(channels);
-  if (s.estimated_preparation_minutes) {
-    parts.push(`זמן הכנה משוער: ${s.estimated_preparation_minutes} דקות`);
-  }
-  if (s.minimum_order) parts.push(`מינימום הזמנה: ${formatCurrencyILS(s.minimum_order)}`);
-  const addr = [s.address, s.city].filter(Boolean).join(', ');
-  if (addr) parts.push(addr);
-  return parts.join('\n');
+  if (s.estimated_preparation_minutes) parts.push(`~${s.estimated_preparation_minutes} דק'`);
+  if (s.minimum_order) parts.push(`מינ' ${formatCurrencyILS(s.minimum_order)}`);
+  if (s.address) parts.push(s.address);
+  if (s.description) parts.push(s.description);
+  return parts.join(' · ');
 }
 
 export async function buildCategoryScreen(store: Store, categories: Category[]): Promise<FlowScreenResponse> {
