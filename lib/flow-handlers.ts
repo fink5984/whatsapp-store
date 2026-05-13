@@ -154,6 +154,8 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
     switch (step) {
       case 'search_stores':
         return await stepSearchStores(data);
+      case 'preview_store':
+        return await stepPreviewStore(data);
       case 'select_store':
         return await stepSelectStore(body.flow_token, data);
       case 'get_categories':
@@ -198,25 +200,49 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
 /* steps                                                              */
 /* ------------------------------------------------------------------ */
 
-async function stepSearchStores(data: Record<string, any>) {
+interface StoreSearchParams {
+  query?: string;
+  city?: string;
+  category?: string;
+}
+
+async function queryStores(params: StoreSearchParams): Promise<Store[]> {
   const supabase = createSupabaseService();
-  const q = (data.query ?? '').trim();
-  const city = (data.city ?? '').trim();
-  const category = (data.category ?? '').trim();
+  const q = (params.query ?? '').trim();
+  const city = (params.city ?? '').trim();
+  const category = (params.category ?? '').trim();
 
   let query = supabase.from('stores').select('*').eq('is_active', true).limit(10);
-
   if (q) {
-    // Match name OR slug OR store_code
     query = query.or(`name.ilike.%${q}%,slug.ilike.%${q}%,store_code.ilike.%${q}%`);
   }
   if (city) query = query.ilike('city', `%${city}%`);
   if (category) query = query.ilike('category', `%${category}%`);
 
-  const { data: stores, error } = await query;
+  const { data, error } = await query;
   if (error) throw new Error(error.message);
+  return (data as Store[]) ?? [];
+}
 
-  return await buildStoreResultsScreen((stores as Store[]) ?? []);
+async function stepSearchStores(data: Record<string, any>) {
+  const search: StoreSearchParams = {
+    query: data.query as string | undefined,
+    city: data.city as string | undefined,
+    category: data.category as string | undefined,
+  };
+  const stores = await queryStores(search);
+  return await buildStoreResultsScreen(stores, { search });
+}
+
+async function stepPreviewStore(data: Record<string, any>) {
+  const storeId = (data.store_id as string) || '';
+  const search: StoreSearchParams = {
+    query: data.query as string | undefined,
+    city: data.city as string | undefined,
+    category: data.category as string | undefined,
+  };
+  const stores = await queryStores(search);
+  return await buildStoreResultsScreen(stores, { search, selectedStoreId: storeId });
 }
 
 async function stepSelectStore(flowToken: string, data: Record<string, any>) {

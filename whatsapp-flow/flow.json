@@ -88,7 +88,14 @@
           "__example__": [
             { "id": "s1", "title": "פיצה נאפולי", "description": "תל אביב · פיצריה" }
           ]
-        }
+        },
+        "query": { "type": "string", "__example__": "" },
+        "city": { "type": "string", "__example__": "" },
+        "category": { "type": "string", "__example__": "" },
+        "selected_store_id": { "type": "string", "__example__": "" },
+        "selected_title": { "type": "string", "__example__": "" },
+        "selected_details": { "type": "string", "__example__": "" },
+        "has_selected": { "type": "boolean", "__example__": false }
       },
       "layout": {
         "type": "SingleColumnLayout",
@@ -99,8 +106,21 @@
             "name": "store_id",
             "label": "בחר חנות",
             "required": true,
-            "data-source": "${data.stores}"
+            "init-value": "${data.selected_store_id}",
+            "data-source": "${data.stores}",
+            "on-select-action": {
+              "name": "data_exchange",
+              "payload": {
+                "step": "preview_store",
+                "store_id": "${form.store_id}",
+                "query": "${data.query}",
+                "city": "${data.city}",
+                "category": "${data.category}"
+              }
+            }
           },
+          { "type": "TextSubheading", "text": "${data.selected_title}", "visible": "${data.has_selected}" },
+          { "type": "TextBody", "text": "${data.selected_details}", "visible": "${data.has_selected}" },
           {
             "type": "Footer",
             "label": "בחר חנות",

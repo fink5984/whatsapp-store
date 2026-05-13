@@ -37,7 +37,15 @@ export function buildStoreSearchScreen(opts: { error_message?: string } = {}): F
   };
 }
 
-export async function buildStoreResultsScreen(stores: Store[]): Promise<FlowScreenResponse> {
+export interface StoreResultsOpts {
+  search?: { query?: string; city?: string; category?: string };
+  selectedStoreId?: string;
+}
+
+export async function buildStoreResultsScreen(
+  stores: Store[],
+  opts: StoreResultsOpts = {},
+): Promise<FlowScreenResponse> {
   if (stores.length === 0) {
     return buildStoreSearchScreen({
       error_message: 'לא נמצאו חנויות מתאימות. נסה לחפש בשם אחר.',
@@ -46,19 +54,12 @@ export async function buildStoreResultsScreen(stores: Store[]): Promise<FlowScre
   const top = stores.slice(0, 10);
   const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
   const items = top.map((s, i) => {
-    // Pack the info that used to live on the STORE_WELCOME screen into the
-    // radio description so the user can compare stores at a glance and skip
-    // the extra screen.
-    const parts = [
-      s.city,
-      s.category,
-      [s.accepts_delivery && 'משלוחים', s.accepts_pickup && 'איסוף'].filter(Boolean).join('+') || null,
-      s.estimated_preparation_minutes ? `~${s.estimated_preparation_minutes} דק'` : null,
-    ].filter(Boolean);
+    // Keep the inline description minimal — full details are shown below the
+    // radio in the "selected" panel after the customer taps a store.
     const item: Record<string, unknown> = {
       id: s.id,
       title: truncate(s.name, 60),
-      description: truncate(parts.join(' · '), 80),
+      description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
     };
     if (thumbs[i]) {
       item.image = thumbs[i];
@@ -66,13 +67,42 @@ export async function buildStoreResultsScreen(stores: Store[]): Promise<FlowScre
     }
     return item;
   });
+
+  const selected = opts.selectedStoreId
+    ? stores.find((s) => s.id === opts.selectedStoreId) ?? null
+    : null;
+
   return {
     screen: 'STORE_RESULTS',
     data: {
       title: `נמצאו ${items.length} חנויות`,
       stores: items,
+      query: opts.search?.query ?? '',
+      city: opts.search?.city ?? '',
+      category: opts.search?.category ?? '',
+      selected_store_id: selected?.id ?? '',
+      selected_title: selected ? selected.name : '',
+      selected_details: selected ? formatStoreDetails(selected) : '',
+      has_selected: !!selected,
     },
   };
+}
+
+function formatStoreDetails(s: Store): string {
+  const parts: string[] = [];
+  if (s.description) parts.push(s.description);
+  const channels = [
+    s.accepts_delivery ? 'משלוחים' : null,
+    s.accepts_pickup ? 'איסוף עצמי' : null,
+  ].filter(Boolean).join(' · ');
+  if (channels) parts.push(channels);
+  if (s.estimated_preparation_minutes) {
+    parts.push(`זמן הכנה משוער: ${s.estimated_preparation_minutes} דקות`);
+  }
+  if (s.minimum_order) parts.push(`מינימום הזמנה: ${formatCurrencyILS(s.minimum_order)}`);
+  const addr = [s.address, s.city].filter(Boolean).join(', ');
+  if (addr) parts.push(addr);
+  return parts.join('\n');
 }
 
 export async function buildCategoryScreen(store: Store, categories: Category[]): Promise<FlowScreenResponse> {
