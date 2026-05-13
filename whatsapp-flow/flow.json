@@ -1,5 +1,5 @@
 {
-  "version": "6.0",
+  "version": "6.3",
   "data_api_version": "3.0",
   "routing_model": {
     "STORE_SEARCH": ["STORE_RESULTS"],
@@ -20,9 +20,58 @@
       "title": "מצא חנות",
       "data": {
         "title": { "type": "string", "__example__": "מצא חנות" },
-        "subtitle": { "type": "string", "__example__": "חפש לפי שם, קוד או עיר" },
+        "subtitle": { "type": "string", "__example__": "בחר עיר, קטגוריה וכשרות" },
         "error_message": { "type": "string", "__example__": "" },
-        "has_error": { "type": "boolean", "__example__": false }
+        "has_error": { "type": "boolean", "__example__": false },
+        "has_cities": { "type": "boolean", "__example__": true },
+        "has_categories": { "type": "boolean", "__example__": true },
+        "cities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "enabled": { "type": "boolean" }
+            }
+          },
+          "__example__": [
+            { "id": "תל אביב", "title": "תל אביב" },
+            { "id": "ירושלים", "title": "ירושלים" }
+          ]
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "enabled": { "type": "boolean" }
+            }
+          },
+          "__example__": [
+            { "id": "פיצריה", "title": "פיצריה" },
+            { "id": "סושי", "title": "סושי" }
+          ]
+        },
+        "kosher_options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "enabled": { "type": "boolean" }
+            }
+          },
+          "__example__": [
+            { "id": "קהילות", "title": "קהילות" },
+            { "id": "לנדאו", "title": "לנדאו" },
+            { "id": "מחפוד", "title": "מחפוד" },
+            { "id": "עדה החרדית", "title": "עדה החרדית" }
+          ]
+        }
       },
       "layout": {
         "type": "SingleColumnLayout",
@@ -35,22 +84,25 @@
             "visible": "${data.has_error}"
           },
           {
-            "type": "TextInput",
-            "name": "query",
-            "label": "שם החנות / קוד",
-            "required": false
-          },
-          {
-            "type": "TextInput",
-            "name": "city",
+            "type": "ChipsSelector",
+            "name": "cities",
             "label": "עיר",
-            "required": false
+            "visible": "${data.has_cities}",
+            "max-selected-items": 1,
+            "data-source": "${data.cities}"
           },
           {
-            "type": "TextInput",
-            "name": "category",
+            "type": "ChipsSelector",
+            "name": "categories",
             "label": "קטגוריה",
-            "required": false
+            "visible": "${data.has_categories}",
+            "data-source": "${data.categories}"
+          },
+          {
+            "type": "ChipsSelector",
+            "name": "kosher",
+            "label": "כשרות",
+            "data-source": "${data.kosher_options}"
           },
           {
             "type": "Footer",
@@ -59,9 +111,9 @@
               "name": "data_exchange",
               "payload": {
                 "step": "search_stores",
-                "query": "${form.query}",
-                "city": "${form.city}",
-                "category": "${form.category}"
+                "cities": "${form.cities}",
+                "categories": "${form.categories}",
+                "kosher": "${form.kosher}"
               }
             }
           }
@@ -89,9 +141,9 @@
             { "id": "s1", "title": "פיצה נאפולי", "description": "תל אביב · פיצריה" }
           ]
         },
-        "query": { "type": "string", "__example__": "" },
         "city": { "type": "string", "__example__": "" },
-        "category": { "type": "string", "__example__": "" },
+        "categories": { "type": "array", "items": { "type": "string" }, "__example__": [] },
+        "kosher": { "type": "array", "items": { "type": "string" }, "__example__": [] },
         "selected_store_id": { "type": "string", "__example__": "" },
         "selected_title": { "type": "string", "__example__": "" },
         "selected_line_1": { "type": "string", "__example__": "" },
@@ -120,9 +172,9 @@
               "payload": {
                 "step": "preview_store",
                 "store_id": "${form.store_id}",
-                "query": "${data.query}",
                 "city": "${data.city}",
-                "category": "${data.category}"
+                "categories": "${data.categories}",
+                "kosher": "${data.kosher}"
               }
             }
           },

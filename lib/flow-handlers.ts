@@ -118,7 +118,7 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
 
   if (body.action === 'INIT') {
     await setCurrentScreen(body.flow_token, 'STORE_SEARCH');
-    return buildStoreSearchScreen();
+    return await buildStoreSearchScreen();
   }
 
   if (body.action === 'BACK') {
@@ -144,7 +144,7 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
       });
     }
     // For all other screens, default to the store search.
-    return buildStoreSearchScreen();
+    return await buildStoreSearchScreen();
   }
 
   const data = body.data ?? {};
@@ -201,23 +201,39 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
 /* ------------------------------------------------------------------ */
 
 interface StoreSearchParams {
-  query?: string;
   city?: string;
-  category?: string;
+  categories?: string[];
+  kosher?: string[];
+}
+
+function readSearchParams(data: Record<string, any>): StoreSearchParams {
+  // ChipsSelector posts an array; the city chip is capped to 1 selection so
+  // we treat its first element as the (optional) string filter. Padding ids
+  // (those prefixed with "_pad_") are placeholders to satisfy the min:2
+  // schema constraint when the DB has fewer real values — strip them out.
+  // preview_store also passes city through as a plain string (already
+  // resolved from the previous render), so accept both shapes.
+  const stripPad = (arr: unknown): string[] => {
+    if (!Array.isArray(arr)) return [];
+    return arr.filter((v): v is string => typeof v === 'string' && !!v && !v.startsWith('_pad_'));
+  };
+  let city: string | undefined;
+  if (Array.isArray(data.cities)) city = stripPad(data.cities)[0];
+  else if (typeof data.cities === 'string' && data.cities) city = data.cities;
+  else if (typeof data.city === 'string' && data.city) city = data.city;
+  return {
+    city,
+    categories: stripPad(data.categories),
+    kosher: stripPad(data.kosher),
+  };
 }
 
 async function queryStores(params: StoreSearchParams): Promise<Store[]> {
   const supabase = createSupabaseService();
-  const q = (params.query ?? '').trim();
-  const city = (params.city ?? '').trim();
-  const category = (params.category ?? '').trim();
-
   let query = supabase.from('stores').select('*').eq('is_active', true).limit(10);
-  if (q) {
-    query = query.or(`name.ilike.%${q}%,slug.ilike.%${q}%,store_code.ilike.%${q}%`);
-  }
-  if (city) query = query.ilike('city', `%${city}%`);
-  if (category) query = query.ilike('category', `%${category}%`);
+  if (params.city) query = query.eq('city', params.city);
+  if (params.categories?.length) query = query.in('category', params.categories);
+  if (params.kosher?.length) query = query.in('kosher_type', params.kosher);
 
   const { data, error } = await query;
   if (error) throw new Error(error.message);
@@ -225,22 +241,14 @@ async function queryStores(params: StoreSearchParams): Promise<Store[]> {
 }
 
 async function stepSearchStores(data: Record<string, any>) {
-  const search: StoreSearchParams = {
-    query: data.query as string | undefined,
-    city: data.city as string | undefined,
-    category: data.category as string | undefined,
-  };
+  const search = readSearchParams(data);
   const stores = await queryStores(search);
   return await buildStoreResultsScreen(stores, { search });
 }
 
 async function stepPreviewStore(data: Record<string, any>) {
   const storeId = (data.store_id as string) || '';
-  const search: StoreSearchParams = {
-    query: data.query as string | undefined,
-    city: data.city as string | undefined,
-    category: data.category as string | undefined,
-  };
+  const search = readSearchParams(data);
   const stores = await queryStores(search);
   return await buildStoreResultsScreen(stores, { search, selectedStoreId: storeId });
 }

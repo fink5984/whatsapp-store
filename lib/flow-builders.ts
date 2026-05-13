@@ -10,6 +10,33 @@ import type {
 } from './supabase/database.types';
 import { formatCurrencyILS } from './pricing';
 import { fetchManyAsBase64 } from './image-base64';
+import { createSupabaseService } from './supabase/service';
+
+// Hard-coded kosher filter options. The user maintains these in code for now —
+// they correspond to whatever string the admin enters in stores.kosher_type.
+// Add/rename freely; the id is the value we filter against in the DB.
+const KOSHER_OPTIONS = [
+  { id: 'קהילות', title: 'קהילות' },
+  { id: 'לנדאו', title: 'לנדאו' },
+  { id: 'מחפוד', title: 'מחפוד' },
+  { id: 'עדה החרדית', title: 'עדה החרדית' },
+];
+
+/**
+ * ChipsSelector requires a minimum of 2 data-source items per Meta's schema.
+ * When the live DB has fewer distinct values we pad with a disabled "—"
+ * placeholder so the JSON still validates, and the chip group is hidden
+ * client-side via its `visible` flag.
+ */
+function padChipsToMin(
+  arr: Array<{ id: string; title: string; enabled?: boolean }>,
+): Array<{ id: string; title: string; enabled?: boolean }> {
+  const out = arr.slice(0, 20);
+  while (out.length < 2) {
+    out.push({ id: `_pad_${out.length}`, title: '—', enabled: false });
+  }
+  return out;
+}
 
 export interface FlowScreenResponse {
   screen: string;
@@ -25,20 +52,43 @@ const truncate = (s: string | null | undefined, n: number) => {
 
 /* --------------------------- builders --------------------------- */
 
-export function buildStoreSearchScreen(opts: { error_message?: string } = {}): FlowScreenResponse {
+export async function buildStoreSearchScreen(opts: { error_message?: string } = {}): Promise<FlowScreenResponse> {
+  // Pull distinct city / category values from active stores so the chip
+  // selectors only offer real options. Kosher options are static (see
+  // KOSHER_OPTIONS above) until we have a dedicated kosher table.
+  const supabase = createSupabaseService();
+  const { data: storeRows } = await supabase
+    .from('stores')
+    .select('city, category')
+    .eq('is_active', true);
+
+  const dedupe = (vals: (string | null | undefined)[]) =>
+    Array.from(new Set(vals.filter((v): v is string => !!v && v.trim().length > 0)));
+
+  const cities = dedupe((storeRows ?? []).map((r) => (r as { city: string | null }).city)).sort();
+  const categories = dedupe((storeRows ?? []).map((r) => (r as { category: string | null }).category)).sort();
+
+  const cityChips = cities.map((c) => ({ id: c, title: c }));
+  const categoryChips = categories.map((c) => ({ id: c, title: c }));
+
   return {
     screen: 'STORE_SEARCH',
     data: {
       title: 'מצא חנות',
-      subtitle: 'חפש לפי שם, קוד או עיר',
+      subtitle: 'בחר עיר, קטגוריה וכשרות',
       error_message: opts.error_message ?? '',
       has_error: !!opts.error_message,
+      cities: padChipsToMin(cityChips),
+      categories: padChipsToMin(categoryChips),
+      kosher_options: KOSHER_OPTIONS,
+      has_cities: cityChips.length >= 1,
+      has_categories: categoryChips.length >= 1,
     },
   };
 }
 
 export interface StoreResultsOpts {
-  search?: { query?: string; city?: string; category?: string };
+  search?: { city?: string; categories?: string[]; kosher?: string[] };
   selectedStoreId?: string;
 }
 
@@ -47,7 +97,7 @@ export async function buildStoreResultsScreen(
   opts: StoreResultsOpts = {},
 ): Promise<FlowScreenResponse> {
   if (stores.length === 0) {
-    return buildStoreSearchScreen({
+    return await buildStoreSearchScreen({
       error_message: 'לא נמצאו חנויות מתאימות. נסה לחפש בשם אחר.',
     });
   }
@@ -76,9 +126,11 @@ export async function buildStoreResultsScreen(
     data: {
       title: `נמצאו ${items.length} חנויות`,
       stores: items,
-      query: opts.search?.query ?? '',
+      // Echo the active filters back so the preview_store round-trip can
+      // re-run the same query and keep the result list stable across taps.
       city: opts.search?.city ?? '',
-      category: opts.search?.category ?? '',
+      categories: opts.search?.categories ?? [],
+      kosher: opts.search?.kosher ?? [],
       selected_store_id: selected?.id ?? '',
       selected_title: selected ? selected.name : '',
       // The detail panel renders as one TextSubheading + up to four TextBody
@@ -453,5 +505,22 @@ export function buildPingResponse() {
 }
 
 export function buildErrorScreen(message: string): FlowScreenResponse {
-  return buildStoreSearchScreen({ error_message: message });
+  // Error responses stay synchronous so they're cheap to return from inside
+  // request handlers. We still render the STORE_SEARCH screen so the user
+  // can recover, but the chip selectors are padded + hidden — fetching live
+  // city/category lists would force every handler to be async.
+  return {
+    screen: 'STORE_SEARCH',
+    data: {
+      title: 'מצא חנות',
+      subtitle: 'בחר עיר, קטגוריה וכשרות',
+      error_message: message,
+      has_error: true,
+      cities: padChipsToMin([]),
+      categories: padChipsToMin([]),
+      kosher_options: KOSHER_OPTIONS,
+      has_cities: false,
+      has_categories: false,
+    },
+  };
 }
