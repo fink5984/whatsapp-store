@@ -3,8 +3,7 @@
   "data_api_version": "3.0",
   "routing_model": {
     "STORE_SEARCH": ["STORE_RESULTS"],
-    "STORE_RESULTS": ["STORE_WELCOME"],
-    "STORE_WELCOME": ["CATEGORY_SELECT"],
+    "STORE_RESULTS": ["CATEGORY_SELECT"],
     "CATEGORY_SELECT": ["PRODUCT_SELECT"],
     "PRODUCT_SELECT": ["PRODUCT_CUSTOMIZE"],
     "PRODUCT_CUSTOMIZE": ["CART"],
@@ -108,32 +107,6 @@
             "on-click-action": {
               "name": "data_exchange",
               "payload": { "step": "select_store", "store_id": "${form.store_id}" }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "STORE_WELCOME",
-      "title": "ברוכים הבאים",
-      "data": {
-        "store_id": { "type": "string", "__example__": "" },
-        "store_name": { "type": "string", "__example__": "פיצה נאפולי" },
-        "description": { "type": "string", "__example__": "ברוכים הבאים" },
-        "details": { "type": "string", "__example__": "" }
-      },
-      "layout": {
-        "type": "SingleColumnLayout",
-        "children": [
-          { "type": "TextHeading", "text": "${data.store_name}" },
-          { "type": "TextBody", "text": "${data.description}" },
-          { "type": "TextBody", "text": "${data.details}" },
-          {
-            "type": "Footer",
-            "label": "התחל הזמנה",
-            "on-click-action": {
-              "name": "data_exchange",
-              "payload": { "step": "get_categories" }
             }
           }
         ]

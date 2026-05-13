@@ -46,10 +46,19 @@ export async function buildStoreResultsScreen(stores: Store[]): Promise<FlowScre
   const top = stores.slice(0, 10);
   const thumbs = await fetchManyAsBase64(top.map((s) => s.logo_url), 80);
   const items = top.map((s, i) => {
+    // Pack the info that used to live on the STORE_WELCOME screen into the
+    // radio description so the user can compare stores at a glance and skip
+    // the extra screen.
+    const parts = [
+      s.city,
+      s.category,
+      [s.accepts_delivery && 'משלוחים', s.accepts_pickup && 'איסוף'].filter(Boolean).join('+') || null,
+      s.estimated_preparation_minutes ? `~${s.estimated_preparation_minutes} דק'` : null,
+    ].filter(Boolean);
     const item: Record<string, unknown> = {
       id: s.id,
       title: truncate(s.name, 60),
-      description: truncate([s.city, s.category].filter(Boolean).join(' · '), 60),
+      description: truncate(parts.join(' · '), 80),
     };
     if (thumbs[i]) {
       item.image = thumbs[i];
@@ -62,28 +71,6 @@ export async function buildStoreResultsScreen(stores: Store[]): Promise<FlowScre
     data: {
       title: `נמצאו ${items.length} חנויות`,
       stores: items,
-    },
-  };
-}
-
-export function buildStoreWelcomeScreen(store: Store): FlowScreenResponse {
-  const lines: string[] = [];
-  if (store.estimated_preparation_minutes) {
-    lines.push(`זמן הכנה משוער: ${store.estimated_preparation_minutes} דקות`);
-  }
-  const channels = [
-    store.accepts_delivery ? 'משלוחים' : null,
-    store.accepts_pickup ? 'איסוף עצמי' : null,
-  ].filter(Boolean).join(' · ');
-  if (channels) lines.push(channels);
-
-  return {
-    screen: 'STORE_WELCOME',
-    data: {
-      store_id: store.id,
-      store_name: store.name,
-      description: truncate(store.description, 240) || 'ברוכים הבאים!',
-      details: lines.join('\n'),
     },
   };
 }

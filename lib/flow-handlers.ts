@@ -13,7 +13,6 @@ import {
   buildStoreResultsScreen,
   buildStoreSearchScreen,
   buildPaymentPendingScreen,
-  buildStoreWelcomeScreen,
   buildSuccessScreen,
   type FlowScreenResponse,
   type OrderDraft,
@@ -225,19 +224,22 @@ async function stepSelectStore(flowToken: string, data: Record<string, any>) {
   if (!storeId) return buildErrorScreen('לא נבחרה חנות');
   const supabase = createSupabaseService();
 
-  const { data: store, error } = await supabase
-    .from('stores')
-    .select('*')
-    .eq('id', storeId)
-    .eq('is_active', true)
-    .maybeSingle();
+  const [{ data: store, error }, { data: cats }] = await Promise.all([
+    supabase.from('stores').select('*').eq('id', storeId).eq('is_active', true).maybeSingle(),
+    supabase
+      .from('categories')
+      .select('*')
+      .eq('store_id', storeId)
+      .eq('is_active', true)
+      .order('sort_order'),
+  ]);
 
   if (error) throw new Error(error.message);
   if (!store) return buildErrorScreen('החנות לא פעילה כרגע');
 
   await updateSessionStore(flowToken, storeId);
-  await setCurrentScreen(flowToken, 'STORE_WELCOME');
-  return buildStoreWelcomeScreen(store as Store);
+  await setCurrentScreen(flowToken, 'CATEGORY_SELECT');
+  return await buildCategoryScreen(store as Store, (cats as Category[]) ?? []);
 }
 
 async function stepGetCategories(storeId: string | null) {
