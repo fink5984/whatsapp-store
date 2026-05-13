@@ -88,12 +88,31 @@ export async function handleFlow(body: FlowRequestBody): Promise<FlowScreenRespo
     });
   }
 
-  // Resume lock: order created but payment not yet confirmed. Re-render
-  // PAYMENT_PENDING regardless of the action the client sent. The user can
-  // still click "בדוק תשלום" because the step itself is allowed below;
-  // the difference is that closing/reopening the flow lands them back here
-  // instead of restarting from STORE_SEARCH.
+  // Resume lock: order created but payment not yet confirmed. On INIT/BACK
+  // (the client re-foregrounded the flow after the user finished paying in
+  // an external browser) check the payment first — if the webhook already
+  // flipped it to paid, promote the session to completed and jump straight
+  // to ORDER_CONFIRMED without making the user click "בדוק תשלום". When the
+  // payment is still pending we re-render PAYMENT_PENDING so the user lands
+  // back on the same screen instead of restarting from STORE_SEARCH.
   if (session.status === 'pending_payment' && body.action !== 'data_exchange') {
+    const order = await findOrderByFlowToken(body.flow_token);
+    const payment = order ? await findActivePaymentForOrder(order.id) : null;
+    if (order && payment?.status === 'paid') {
+      await completeSession(body.flow_token);
+      const supabase = createSupabaseService();
+      const { data: store } = await supabase
+        .from('stores')
+        .select('estimated_preparation_minutes')
+        .eq('id', order.store_id)
+        .maybeSingle();
+      return buildSuccessScreen({
+        order_number: order.order_number,
+        total: Number(order.total),
+        estimated_minutes:
+          (store as { estimated_preparation_minutes?: number } | null)?.estimated_preparation_minutes ?? 0,
+      });
+    }
     const pending = await loadPendingPaymentScreen(body.flow_token);
     if (pending) return pending;
   }
